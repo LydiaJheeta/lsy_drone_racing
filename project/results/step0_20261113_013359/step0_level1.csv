@@ -1,0 +1,21 @@
+seed,success,n_gates,n_gates_total,steps,time_s,cause,detail,last_pos
+0,False,1,5,330,6.6,gate,gate_id=1 dist_to_frame=0.092 (heuristic),0.970 0.677 1.228
+1,True,5,5,860,17.2,success,,1.053 0.747 1.192
+2,True,5,5,854,17.08,success,,1.037 0.737 1.197
+3,True,5,5,859,17.18,success,,1.060 0.757 1.178
+4,True,5,5,856,17.12,success,,1.055 0.742 1.180
+5,True,5,5,857,17.14,success,,1.048 0.739 1.187
+6,True,5,5,855,17.1,success,,1.013 0.707 1.199
+7,True,5,5,856,17.12,success,,1.040 0.733 1.179
+8,True,5,5,856,17.12,success,,1.027 0.720 1.201
+9,True,5,5,853,17.06,success,,1.050 0.742 1.185
+10,True,5,5,854,17.08,success,,1.077 0.777 1.180
+11,False,3,5,687,13.74,gate,gate_id=3 dist_to_frame=0.091 (heuristic),0.010 -0.640 1.209
+12,True,5,5,857,17.14,success,,1.068 0.768 1.180
+13,False,4,5,691,13.82,gate,gate_id=3 dist_to_frame=0.100 (heuristic),0.057 -0.633 1.183
+14,True,5,5,859,17.18,success,,1.039 0.733 1.213
+15,True,5,5,857,17.14,success,,1.033 0.731 1.206
+16,True,5,5,856,17.12,success,,1.043 0.738 1.215
+17,True,5,5,858,17.16,success,,1.055 0.743 1.185
+18,True,5,5,860,17.2,success,,1.036 0.724 1.177
+19,True,5,5,857,17.14,success,,1.059 0.744 1.187

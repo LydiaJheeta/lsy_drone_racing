@@ -1,0 +1,11 @@
+T_traj,condition,n,n_success,success_rate,lap_time_mean_s,lap_time_std_s,gates_mean_all,gates_mean_failed,failure_causes
+18.75,nominal,20,20,1.0,17.119,0.029983328701130303,5.0,nan,-
+18.75,wrapped,20,0,0.0,nan,nan,0.0,0.0,"collision:3, fall:17"
+16.0,nominal,20,18,0.9,14.633333333333333,0.022110831935702967,4.8,3.0,collision:2
+16.0,wrapped,20,0,0.0,nan,nan,0.0,0.0,"collision:2, fall:18"
+14.0,nominal,20,13,0.65,12.795384615384613,0.030537589601968153,4.0,2.142857142857143,collision:7
+14.0,wrapped,20,0,0.0,nan,nan,0.0,0.0,"collision:1, fall:19"
+12.0,nominal,20,13,0.65,10.978461538461538,0.029831876045638757,3.65,1.1428571428571428,collision:7
+12.0,wrapped,20,0,0.0,nan,nan,0.05,0.05,"collision:17, fall:3"
+10.0,nominal,20,2,0.1,9.14,0.020000000000000462,1.65,1.2777777777777777,collision:18
+10.0,wrapped,20,0,0.0,nan,nan,0.05,0.05,"collision:10, fall:10"

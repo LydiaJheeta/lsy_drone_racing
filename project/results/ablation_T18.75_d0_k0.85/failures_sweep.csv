@@ -1,0 +1,2 @@
+stage,T_traj,condition,seed,success,n_gates,n_gates_total,steps,time_s,cause,detail,last_pos,min_z,min_z_airborne,final_z,group
+sweep,18.75,wrapped,3,False,3,5,682,13.64,gate,gate_id=3 dist_to_frame=0.096 (heuristic),-0.065 -0.620 1.161,-0.0010000000474974513,0.15195484459400177,1.1612920761108398,collision

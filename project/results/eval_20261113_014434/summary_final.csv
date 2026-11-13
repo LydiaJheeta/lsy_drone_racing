@@ -1,0 +1,3 @@
+T_traj,condition,n,n_success,success_rate,lap_time_mean_s,lap_time_std_s,gates_mean_all,gates_mean_failed,failure_causes
+16.0,nominal,50,44,0.88,14.62681818181818,0.028902086058144805,4.68,2.3333333333333335,collision:6
+16.0,wrapped,50,0,0.0,nan,nan,0.0,0.0,"collision:3, fall:46, out_of_bounds:1"

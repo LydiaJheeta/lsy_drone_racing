@@ -3,3 +3,11 @@ results/**/*.npz
 results/*.npz
 c_generated_code/
 __pycache__/
+
+# Re-include small result tables/params that the repo root ignores (**/*.csv, **/*.json).
+# c_generated_code/ stays ignored above (a directory ignore cannot be re-included by a file pattern).
+!*.csv
+!*.json
+# These params.json hold an absolute local path ("controller": "/home/<user>/...") -> keep local.
+results/ablation_*/params.json
+results/eval_*/params.json

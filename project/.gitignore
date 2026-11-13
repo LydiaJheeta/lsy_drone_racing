@@ -1,0 +1,5 @@
+# project/ local ignores
+results/**/*.npz
+results/*.npz
+c_generated_code/
+__pycache__/

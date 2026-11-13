@@ -1,0 +1,67 @@
+Writing results to results/ablation_T18.75_d2_k1.00
+params: {'ts': (18.75,), 'n_sweep': 10, 'n_final': 0, 'threshold': 0.9, 'k_end': 1.0, 'T_end': 18.0, 'delay': 2, 'config': 'att_level0.toml', 'controller': '/home/lydiajheeta/repos/lsy_drone_racing/project/my_mpc.py'}
+[sweep] T=18.75 nominal seed=  0 ok=True gates=5 t=17.12s group=success minz_air=0.153
+[sweep] T=18.75 nominal seed=  1 ok=True gates=5 t=17.14s group=success minz_air=0.153
+[sweep] T=18.75 nominal seed=  2 ok=True gates=5 t=17.10s group=success minz_air=0.153
+[sweep] T=18.75 nominal seed=  3 ok=True gates=5 t=17.12s group=success minz_air=0.153
+[sweep] T=18.75 nominal seed=  4 ok=True gates=5 t=17.14s group=success minz_air=0.151
+[sweep] T=18.75 nominal seed=  5 ok=True gates=5 t=17.16s group=success minz_air=0.152
+[sweep] T=18.75 nominal seed=  6 ok=True gates=5 t=17.12s group=success minz_air=0.150
+[sweep] T=18.75 nominal seed=  7 ok=True gates=5 t=17.16s group=success minz_air=0.151
+[sweep] T=18.75 nominal seed=  8 ok=True gates=5 t=17.08s group=success minz_air=0.152
+[sweep] T=18.75 nominal seed=  9 ok=True gates=5 t=17.06s group=success minz_air=0.152
+[sweep] T=18.75 wrapped seed=  0 ok=False gates=0 t=3.28s group=collision minz_air=0.058
+[sweep] T=18.75 wrapped seed=  1 ok=False gates=0 t=3.00s group=out_of_bounds minz_air=0.039
+[sweep] T=18.75 wrapped seed=  2 ok=False gates=0 t=1.02s group=fall minz_air=-0.001
+[sweep] T=18.75 wrapped seed=  3 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[sweep] T=18.75 wrapped seed=  4 ok=False gates=0 t=0.88s group=fall minz_air=-0.001
+[sweep] T=18.75 wrapped seed=  5 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[sweep] T=18.75 wrapped seed=  6 ok=False gates=0 t=2.98s group=collision minz_air=0.004
+[sweep] T=18.75 wrapped seed=  7 ok=False gates=0 t=2.64s group=collision minz_air=0.021
+[sweep] T=18.75 wrapped seed=  8 ok=False gates=0 t=1.00s group=fall minz_air=-0.000
+[sweep] T=18.75 wrapped seed=  9 ok=False gates=0 t=0.96s group=fall minz_air=-0.001
+
+## Sweep (level 0, seeds 0-9, same seeds in all rows)
+
+| T_traj | condition | n | n_success | success_rate | lap_time_mean_s | lap_time_std_s | gates_mean_all | gates_mean_failed | failure_causes |
+|---|---|---|---|---|---|---|---|---|---|
+| 18.75 | nominal | 10 | 10 | 1.00 | 17.12 | 0.031 | 5.00 | - | - |
+| 18.75 | wrapped | 10 | 0 | 0.000 | - | - | 0.000 | 0.000 | collision:3, fall:6, out_of_bounds:1 |
+
+### Failures (sweep)
+
+| T_traj | condition | seed | n_gates | time_s | group | cause | min_z_airborne | final_z | detail |
+|---|---|---|---|---|---|---|---|---|---|
+| 18.75 | wrapped | 0 | 0 | 3.28 | collision | obstacle | 0.058 | 0.499 | obstacle_id=0 xy_dist=0.070 (heuristic) |
+| 18.75 | wrapped | 1 | 0 | 3.00 | out_of_bounds | out_of_bounds | 0.039 | 0.740 | axes=[1] pos=[0.8930000066757202, 3.01200008392334, 0.7400000095367432] |
+| 18.75 | wrapped | 2 | 0 | 1.02 | fall | floor | -0.001 | -0.001 | z=-0.0010 < z_low=0.0 |
+| 18.75 | wrapped | 3 | 0 | 0.900 | fall | floor | -0.001 | -0.001 | z=-0.0009 < z_low=0.0 |
+| 18.75 | wrapped | 4 | 0 | 0.880 | fall | floor | -0.001 | -0.001 | z=-0.0010 < z_low=0.0 |
+| 18.75 | wrapped | 5 | 0 | 0.900 | fall | floor | -0.001 | -0.001 | z=-0.0010 < z_low=0.0 |
+| 18.75 | wrapped | 6 | 0 | 2.98 | collision | gate | 0.004 | 0.381 | gate_id=0 dist_to_frame=0.078 (heuristic) |
+| 18.75 | wrapped | 7 | 0 | 2.64 | collision | gate | 0.021 | 0.471 | gate_id=3 dist_to_frame=0.384 (heuristic) |
+| 18.75 | wrapped | 8 | 0 | 1.00 | fall | floor | -0.000 | -0.000 | z=-0.0001 < z_low=0.0 |
+| 18.75 | wrapped | 9 | 0 | 0.960 | fall | floor | -0.001 | -0.001 | z=-0.0010 < z_low=0.0 |
+
+
+Selected T_traj = 18.75 (smallest with nominal >= 90%)
+
+## Final (T_traj=18.75, seeds 0--1, paired)
+
+| T_traj | condition | n | n_success | success_rate | lap_time_mean_s | lap_time_std_s | gates_mean_all | gates_mean_failed | failure_causes |
+|---|---|---|---|---|---|---|---|---|---|
+
+
+### Paired outcomes (same seeds)
+
+- n_pairs: 0
+- both_success: 0
+- nominal_only: 0
+- wrapped_only: 0
+- both_fail: 0
+- lap_diff_mean_s: -
+
+### Failures (final)
+
+(no failures)
+

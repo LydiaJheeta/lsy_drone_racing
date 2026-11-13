@@ -1,0 +1,594 @@
+Writing results to results/grid_20261113_021212/expB
+[B] T=18.75 d=0 k=1 seed= 0 ok=True gates=5 t=17.12s group=success minz_air=0.153
+[B] T=18.75 d=0 k=1 seed= 1 ok=True gates=5 t=17.14s group=success minz_air=0.153
+[B] T=18.75 d=0 k=1 seed= 2 ok=True gates=5 t=17.10s group=success minz_air=0.153
+[B] T=18.75 d=0 k=1 seed= 3 ok=True gates=5 t=17.12s group=success minz_air=0.153
+[B] T=18.75 d=0 k=1 seed= 4 ok=True gates=5 t=17.14s group=success minz_air=0.151
+[B] T=18.75 d=0 k=1 seed= 5 ok=True gates=5 t=17.16s group=success minz_air=0.152
+[B] T=18.75 d=0 k=1 seed= 6 ok=True gates=5 t=17.12s group=success minz_air=0.150
+[B] T=18.75 d=0 k=1 seed= 7 ok=True gates=5 t=17.16s group=success minz_air=0.151
+[B] T=18.75 d=0 k=1 seed= 8 ok=True gates=5 t=17.08s group=success minz_air=0.152
+[B] T=18.75 d=0 k=1 seed= 9 ok=True gates=5 t=17.06s group=success minz_air=0.152
+[B] T=18.75 d=0 k=1 seed=10 ok=True gates=5 t=17.12s group=success minz_air=0.152
+[B] T=18.75 d=0 k=1 seed=11 ok=True gates=5 t=17.10s group=success minz_air=0.151
+[B] T=18.75 d=0 k=1 seed=12 ok=True gates=5 t=17.08s group=success minz_air=0.152
+[B] T=18.75 d=0 k=1 seed=13 ok=True gates=5 t=17.10s group=success minz_air=0.152
+[B] T=18.75 d=0 k=1 seed=14 ok=True gates=5 t=17.18s group=success minz_air=0.153
+[B] T=18.75 d=0 k=1 seed=15 ok=True gates=5 t=17.08s group=success minz_air=0.152
+[B] T=18.75 d=0 k=1 seed=16 ok=True gates=5 t=17.14s group=success minz_air=0.151
+[B] T=18.75 d=0 k=1 seed=17 ok=True gates=5 t=17.12s group=success minz_air=0.153
+[B] T=18.75 d=0 k=1 seed=18 ok=True gates=5 t=17.12s group=success minz_air=0.151
+[B] T=18.75 d=0 k=1 seed=19 ok=True gates=5 t=17.14s group=success minz_air=0.151
+[B] T=18.75 d=0 k=0.85 seed= 0 ok=True gates=5 t=17.08s group=success minz_air=0.152
+[B] T=18.75 d=0 k=0.85 seed= 1 ok=True gates=5 t=17.12s group=success minz_air=0.152
+[B] T=18.75 d=0 k=0.85 seed= 2 ok=True gates=5 t=17.12s group=success minz_air=0.151
+[B] T=18.75 d=0 k=0.85 seed= 3 ok=False gates=3 t=13.64s group=collision minz_air=0.152
+[B] T=18.75 d=0 k=0.85 seed= 4 ok=True gates=5 t=17.14s group=success minz_air=0.153
+[B] T=18.75 d=0 k=0.85 seed= 5 ok=True gates=5 t=17.16s group=success minz_air=0.153
+[B] T=18.75 d=0 k=0.85 seed= 6 ok=True gates=5 t=17.14s group=success minz_air=0.151
+[B] T=18.75 d=0 k=0.85 seed= 7 ok=True gates=5 t=17.06s group=success minz_air=0.150
+[B] T=18.75 d=0 k=0.85 seed= 8 ok=True gates=5 t=17.08s group=success minz_air=0.151
+[B] T=18.75 d=0 k=0.85 seed= 9 ok=True gates=5 t=17.10s group=success minz_air=0.151
+[B] T=18.75 d=0 k=0.85 seed=10 ok=True gates=5 t=17.12s group=success minz_air=0.151
+[B] T=18.75 d=0 k=0.85 seed=11 ok=True gates=5 t=17.12s group=success minz_air=0.151
+[B] T=18.75 d=0 k=0.85 seed=12 ok=True gates=5 t=17.16s group=success minz_air=0.152
+[B] T=18.75 d=0 k=0.85 seed=13 ok=True gates=5 t=17.10s group=success minz_air=0.151
+[B] T=18.75 d=0 k=0.85 seed=14 ok=True gates=5 t=17.12s group=success minz_air=0.152
+[B] T=18.75 d=0 k=0.85 seed=15 ok=True gates=5 t=17.16s group=success minz_air=0.152
+[B] T=18.75 d=0 k=0.85 seed=16 ok=True gates=5 t=17.12s group=success minz_air=0.150
+[B] T=18.75 d=0 k=0.85 seed=17 ok=True gates=5 t=17.14s group=success minz_air=0.151
+[B] T=18.75 d=0 k=0.85 seed=18 ok=True gates=5 t=17.12s group=success minz_air=0.151
+[B] T=18.75 d=0 k=0.85 seed=19 ok=True gates=5 t=17.12s group=success minz_air=0.151
+[B] T=18.75 d=0 k=0.7 seed= 0 ok=True gates=5 t=17.16s group=success minz_air=0.152
+[B] T=18.75 d=0 k=0.7 seed= 1 ok=True gates=5 t=17.16s group=success minz_air=0.151
+[B] T=18.75 d=0 k=0.7 seed= 2 ok=True gates=5 t=17.08s group=success minz_air=0.151
+[B] T=18.75 d=0 k=0.7 seed= 3 ok=True gates=5 t=17.12s group=success minz_air=0.151
+[B] T=18.75 d=0 k=0.7 seed= 4 ok=True gates=5 t=17.16s group=success minz_air=0.152
+[B] T=18.75 d=0 k=0.7 seed= 5 ok=True gates=5 t=17.14s group=success minz_air=0.153
+[B] T=18.75 d=0 k=0.7 seed= 6 ok=True gates=5 t=17.12s group=success minz_air=0.153
+[B] T=18.75 d=0 k=0.7 seed= 7 ok=True gates=5 t=17.12s group=success minz_air=0.151
+[B] T=18.75 d=0 k=0.7 seed= 8 ok=True gates=5 t=17.12s group=success minz_air=0.151
+[B] T=18.75 d=0 k=0.7 seed= 9 ok=True gates=5 t=17.12s group=success minz_air=0.151
+[B] T=18.75 d=0 k=0.7 seed=10 ok=True gates=5 t=17.14s group=success minz_air=0.151
+[B] T=18.75 d=0 k=0.7 seed=11 ok=True gates=5 t=17.16s group=success minz_air=0.153
+[B] T=18.75 d=0 k=0.7 seed=12 ok=True gates=5 t=17.14s group=success minz_air=0.151
+[B] T=18.75 d=0 k=0.7 seed=13 ok=True gates=5 t=17.10s group=success minz_air=0.151
+[B] T=18.75 d=0 k=0.7 seed=14 ok=True gates=5 t=17.16s group=success minz_air=0.152
+[B] T=18.75 d=0 k=0.7 seed=15 ok=True gates=5 t=17.18s group=success minz_air=0.151
+[B] T=18.75 d=0 k=0.7 seed=16 ok=True gates=5 t=17.08s group=success minz_air=0.153
+[B] T=18.75 d=0 k=0.7 seed=17 ok=True gates=5 t=17.14s group=success minz_air=0.153
+[B] T=18.75 d=0 k=0.7 seed=18 ok=True gates=5 t=17.14s group=success minz_air=0.153
+[B] T=18.75 d=0 k=0.7 seed=19 ok=True gates=5 t=17.14s group=success minz_air=0.151
+[B] T=18.75 d=0 k=0.55 seed= 0 ok=False gates=4 t=17.10s group=collision minz_air=0.151
+[B] T=18.75 d=0 k=0.55 seed= 1 ok=True gates=5 t=17.14s group=success minz_air=0.150
+[B] T=18.75 d=0 k=0.55 seed= 2 ok=False gates=4 t=16.96s group=collision minz_air=0.153
+[B] T=18.75 d=0 k=0.55 seed= 3 ok=True gates=5 t=17.14s group=success minz_air=0.151
+[B] T=18.75 d=0 k=0.55 seed= 4 ok=False gates=4 t=16.94s group=collision minz_air=0.152
+[B] T=18.75 d=0 k=0.55 seed= 5 ok=True gates=5 t=17.16s group=success minz_air=0.153
+[B] T=18.75 d=0 k=0.55 seed= 6 ok=True gates=5 t=17.18s group=success minz_air=0.153
+[B] T=18.75 d=0 k=0.55 seed= 7 ok=True gates=5 t=17.12s group=success minz_air=0.151
+[B] T=18.75 d=0 k=0.55 seed= 8 ok=True gates=5 t=17.14s group=success minz_air=0.150
+[B] T=18.75 d=0 k=0.55 seed= 9 ok=True gates=5 t=17.12s group=success minz_air=0.150
+[B] T=18.75 d=0 k=0.55 seed=10 ok=True gates=5 t=17.14s group=success minz_air=0.150
+[B] T=18.75 d=0 k=0.55 seed=11 ok=False gates=4 t=16.94s group=collision minz_air=0.151
+[B] T=18.75 d=0 k=0.55 seed=12 ok=False gates=4 t=17.00s group=collision minz_air=0.150
+[B] T=18.75 d=0 k=0.55 seed=13 ok=False gates=4 t=16.94s group=collision minz_air=0.150
+[B] T=18.75 d=0 k=0.55 seed=14 ok=True gates=5 t=17.10s group=success minz_air=0.152
+[B] T=18.75 d=0 k=0.55 seed=15 ok=False gates=4 t=17.16s group=collision minz_air=0.150
+[B] T=18.75 d=0 k=0.55 seed=16 ok=False gates=4 t=17.06s group=collision minz_air=0.152
+[B] T=18.75 d=0 k=0.55 seed=17 ok=True gates=5 t=17.10s group=success minz_air=0.152
+[B] T=18.75 d=0 k=0.55 seed=18 ok=False gates=4 t=17.06s group=collision minz_air=0.151
+[B] T=18.75 d=0 k=0.55 seed=19 ok=True gates=5 t=17.14s group=success minz_air=0.150
+[B] T=18.75 d=1 k=1 seed= 0 ok=False gates=0 t=0.96s group=fall minz_air=nan
+[B] T=18.75 d=1 k=1 seed= 1 ok=False gates=0 t=3.78s group=collision minz_air=0.076
+[B] T=18.75 d=1 k=1 seed= 2 ok=False gates=0 t=0.94s group=fall minz_air=nan
+[B] T=18.75 d=1 k=1 seed= 3 ok=False gates=0 t=2.20s group=collision minz_air=0.153
+[B] T=18.75 d=1 k=1 seed= 4 ok=False gates=0 t=0.92s group=fall minz_air=nan
+[B] T=18.75 d=1 k=1 seed= 5 ok=False gates=0 t=1.86s group=collision minz_air=0.164
+[B] T=18.75 d=1 k=1 seed= 6 ok=False gates=2 t=7.22s group=collision minz_air=0.151
+[B] T=18.75 d=1 k=1 seed= 7 ok=False gates=0 t=0.94s group=fall minz_air=nan
+[B] T=18.75 d=1 k=1 seed= 8 ok=False gates=0 t=3.70s group=collision minz_air=0.155
+[B] T=18.75 d=1 k=1 seed= 9 ok=False gates=0 t=1.56s group=fall minz_air=nan
+[B] T=18.75 d=1 k=1 seed=10 ok=False gates=0 t=3.88s group=collision minz_air=0.152
+[B] T=18.75 d=1 k=1 seed=11 ok=False gates=0 t=3.42s group=collision minz_air=0.154
+[B] T=18.75 d=1 k=1 seed=12 ok=False gates=0 t=2.78s group=collision minz_air=0.166
+[B] T=18.75 d=1 k=1 seed=13 ok=False gates=1 t=6.16s group=collision minz_air=0.161
+[B] T=18.75 d=1 k=1 seed=14 ok=False gates=0 t=2.78s group=collision minz_air=0.151
+[B] T=18.75 d=1 k=1 seed=15 ok=False gates=0 t=4.10s group=collision minz_air=0.156
+[B] T=18.75 d=1 k=1 seed=16 ok=False gates=0 t=3.68s group=collision minz_air=0.159
+[B] T=18.75 d=1 k=1 seed=17 ok=False gates=0 t=2.64s group=collision minz_air=0.153
+[B] T=18.75 d=1 k=1 seed=18 ok=False gates=0 t=3.74s group=collision minz_air=0.157
+[B] T=18.75 d=1 k=1 seed=19 ok=False gates=0 t=2.84s group=collision minz_air=0.110
+[B] T=18.75 d=1 k=0.85 seed= 0 ok=False gates=0 t=8.18s group=collision minz_air=0.117
+[B] T=18.75 d=1 k=0.85 seed= 1 ok=False gates=0 t=3.56s group=collision minz_air=0.154
+[B] T=18.75 d=1 k=0.85 seed= 2 ok=False gates=0 t=0.94s group=fall minz_air=nan
+[B] T=18.75 d=1 k=0.85 seed= 3 ok=False gates=0 t=3.46s group=collision minz_air=0.163
+[B] T=18.75 d=1 k=0.85 seed= 4 ok=False gates=0 t=0.94s group=fall minz_air=nan
+[B] T=18.75 d=1 k=0.85 seed= 5 ok=False gates=0 t=3.60s group=collision minz_air=0.156
+[B] T=18.75 d=1 k=0.85 seed= 6 ok=False gates=1 t=5.06s group=collision minz_air=0.154
+[B] T=18.75 d=1 k=0.85 seed= 7 ok=False gates=0 t=0.96s group=fall minz_air=nan
+[B] T=18.75 d=1 k=0.85 seed= 8 ok=False gates=1 t=6.96s group=collision minz_air=0.155
+[B] T=18.75 d=1 k=0.85 seed= 9 ok=False gates=0 t=2.02s group=fall minz_air=-0.001
+[B] T=18.75 d=1 k=0.85 seed=10 ok=False gates=2 t=8.66s group=collision minz_air=0.152
+[B] T=18.75 d=1 k=0.85 seed=11 ok=False gates=2 t=8.24s group=collision minz_air=0.150
+[B] T=18.75 d=1 k=0.85 seed=12 ok=False gates=0 t=2.34s group=fall minz_air=-0.001
+[B] T=18.75 d=1 k=0.85 seed=13 ok=False gates=0 t=3.30s group=collision minz_air=0.157
+[B] T=18.75 d=1 k=0.85 seed=14 ok=False gates=1 t=6.32s group=out_of_bounds minz_air=0.161
+[B] T=18.75 d=1 k=0.85 seed=15 ok=False gates=0 t=3.72s group=collision minz_air=0.155
+[B] T=18.75 d=1 k=0.85 seed=16 ok=False gates=0 t=3.02s group=collision minz_air=0.152
+[B] T=18.75 d=1 k=0.85 seed=17 ok=False gates=0 t=3.50s group=collision minz_air=0.163
+[B] T=18.75 d=1 k=0.85 seed=18 ok=False gates=0 t=3.74s group=collision minz_air=0.151
+[B] T=18.75 d=1 k=0.85 seed=19 ok=False gates=0 t=2.66s group=out_of_bounds minz_air=0.153
+[B] T=18.75 d=1 k=0.7 seed= 0 ok=True gates=5 t=17.24s group=success minz_air=0.174
+[B] T=18.75 d=1 k=0.7 seed= 1 ok=True gates=5 t=17.46s group=success minz_air=0.152
+[B] T=18.75 d=1 k=0.7 seed= 2 ok=False gates=0 t=0.96s group=fall minz_air=nan
+[B] T=18.75 d=1 k=0.7 seed= 3 ok=False gates=0 t=3.66s group=collision minz_air=0.163
+[B] T=18.75 d=1 k=0.7 seed= 4 ok=False gates=0 t=0.92s group=fall minz_air=nan
+[B] T=18.75 d=1 k=0.7 seed= 5 ok=False gates=0 t=1.84s group=fall minz_air=nan
+[B] T=18.75 d=1 k=0.7 seed= 6 ok=False gates=0 t=2.32s group=collision minz_air=0.083
+[B] T=18.75 d=1 k=0.7 seed= 7 ok=False gates=0 t=0.96s group=fall minz_air=nan
+[B] T=18.75 d=1 k=0.7 seed= 8 ok=False gates=4 t=17.16s group=collision minz_air=0.154
+[B] T=18.75 d=1 k=0.7 seed= 9 ok=False gates=0 t=2.24s group=fall minz_air=-0.001
+[B] T=18.75 d=1 k=0.7 seed=10 ok=False gates=0 t=2.46s group=collision minz_air=0.152
+[B] T=18.75 d=1 k=0.7 seed=11 ok=False gates=0 t=3.74s group=collision minz_air=0.152
+[B] T=18.75 d=1 k=0.7 seed=12 ok=False gates=0 t=3.80s group=collision minz_air=0.150
+[B] T=18.75 d=1 k=0.7 seed=13 ok=False gates=0 t=3.68s group=collision minz_air=0.151
+[B] T=18.75 d=1 k=0.7 seed=14 ok=False gates=0 t=3.50s group=collision minz_air=0.158
+[B] T=18.75 d=1 k=0.7 seed=15 ok=False gates=0 t=2.74s group=collision minz_air=0.151
+[B] T=18.75 d=1 k=0.7 seed=16 ok=False gates=0 t=6.62s group=collision minz_air=0.159
+[B] T=18.75 d=1 k=0.7 seed=17 ok=False gates=0 t=1.12s group=fall minz_air=nan
+[B] T=18.75 d=1 k=0.7 seed=18 ok=False gates=3 t=10.74s group=collision minz_air=0.154
+[B] T=18.75 d=1 k=0.7 seed=19 ok=False gates=2 t=8.92s group=collision minz_air=0.150
+[B] T=18.75 d=1 k=0.55 seed= 0 ok=False gates=0 t=3.80s group=collision minz_air=0.161
+[B] T=18.75 d=1 k=0.55 seed= 1 ok=False gates=0 t=2.34s group=collision minz_air=0.159
+[B] T=18.75 d=1 k=0.55 seed= 2 ok=False gates=0 t=0.96s group=fall minz_air=nan
+[B] T=18.75 d=1 k=0.55 seed= 3 ok=False gates=1 t=6.72s group=collision minz_air=0.164
+[B] T=18.75 d=1 k=0.55 seed= 4 ok=False gates=0 t=0.92s group=fall minz_air=nan
+[B] T=18.75 d=1 k=0.55 seed= 5 ok=False gates=0 t=1.86s group=fall minz_air=nan
+[B] T=18.75 d=1 k=0.55 seed= 6 ok=False gates=0 t=3.72s group=collision minz_air=0.160
+[B] T=18.75 d=1 k=0.55 seed= 7 ok=False gates=0 t=0.94s group=fall minz_air=nan
+[B] T=18.75 d=1 k=0.55 seed= 8 ok=False gates=2 t=7.58s group=collision minz_air=0.152
+[B] T=18.75 d=1 k=0.55 seed= 9 ok=False gates=0 t=4.00s group=collision minz_air=0.159
+[B] T=18.75 d=1 k=0.55 seed=10 ok=False gates=0 t=3.62s group=collision minz_air=0.155
+[B] T=18.75 d=1 k=0.55 seed=11 ok=False gates=1 t=6.62s group=collision minz_air=0.158
+[B] T=18.75 d=1 k=0.55 seed=12 ok=False gates=0 t=2.52s group=collision minz_air=0.146
+[B] T=18.75 d=1 k=0.55 seed=13 ok=False gates=1 t=6.64s group=collision minz_air=0.155
+[B] T=18.75 d=1 k=0.55 seed=14 ok=False gates=0 t=3.86s group=collision minz_air=0.157
+[B] T=18.75 d=1 k=0.55 seed=15 ok=False gates=0 t=4.58s group=collision minz_air=0.155
+[B] T=18.75 d=1 k=0.55 seed=16 ok=False gates=0 t=1.18s group=fall minz_air=nan
+[B] T=18.75 d=1 k=0.55 seed=17 ok=False gates=0 t=1.00s group=fall minz_air=nan
+[B] T=18.75 d=1 k=0.55 seed=18 ok=False gates=1 t=6.38s group=collision minz_air=0.151
+[B] T=18.75 d=1 k=0.55 seed=19 ok=False gates=0 t=3.10s group=collision minz_air=0.158
+[B] T=18.75 d=2 k=1 seed= 0 ok=False gates=0 t=3.28s group=collision minz_air=0.058
+[B] T=18.75 d=2 k=1 seed= 1 ok=False gates=0 t=3.00s group=out_of_bounds minz_air=0.039
+[B] T=18.75 d=2 k=1 seed= 2 ok=False gates=0 t=1.02s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=1 seed= 3 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=1 seed= 4 ok=False gates=0 t=0.88s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=1 seed= 5 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=1 seed= 6 ok=False gates=0 t=2.98s group=collision minz_air=0.004
+[B] T=18.75 d=2 k=1 seed= 7 ok=False gates=0 t=2.64s group=collision minz_air=0.021
+[B] T=18.75 d=2 k=1 seed= 8 ok=False gates=0 t=1.00s group=fall minz_air=-0.000
+[B] T=18.75 d=2 k=1 seed= 9 ok=False gates=0 t=0.96s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=1 seed=10 ok=False gates=0 t=2.56s group=collision minz_air=0.013
+[B] T=18.75 d=2 k=1 seed=11 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=1 seed=12 ok=False gates=0 t=0.88s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=1 seed=13 ok=False gates=0 t=1.86s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=1 seed=14 ok=False gates=0 t=3.14s group=collision minz_air=0.021
+[B] T=18.75 d=2 k=1 seed=15 ok=False gates=0 t=1.16s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=1 seed=16 ok=False gates=0 t=0.94s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=1 seed=17 ok=False gates=0 t=0.98s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=1 seed=18 ok=False gates=0 t=1.72s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=1 seed=19 ok=False gates=0 t=0.92s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.85 seed= 0 ok=False gates=0 t=6.58s group=collision minz_air=0.052
+[B] T=18.75 d=2 k=0.85 seed= 1 ok=False gates=0 t=3.94s group=collision minz_air=0.036
+[B] T=18.75 d=2 k=0.85 seed= 2 ok=False gates=0 t=3.62s group=collision minz_air=0.013
+[B] T=18.75 d=2 k=0.85 seed= 3 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.85 seed= 4 ok=False gates=0 t=0.88s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.85 seed= 5 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.85 seed= 6 ok=False gates=0 t=1.40s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.85 seed= 7 ok=False gates=0 t=2.92s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.85 seed= 8 ok=False gates=0 t=1.00s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.85 seed= 9 ok=False gates=0 t=0.96s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.85 seed=10 ok=False gates=0 t=1.44s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.85 seed=11 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.85 seed=12 ok=False gates=0 t=0.88s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.85 seed=13 ok=False gates=0 t=2.16s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.85 seed=14 ok=False gates=0 t=3.96s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.85 seed=15 ok=False gates=0 t=1.18s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.85 seed=16 ok=False gates=0 t=0.94s group=fall minz_air=nan
+[B] T=18.75 d=2 k=0.85 seed=17 ok=False gates=0 t=0.98s group=fall minz_air=-0.000
+[B] T=18.75 d=2 k=0.85 seed=18 ok=False gates=0 t=1.68s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.85 seed=19 ok=False gates=0 t=0.92s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.7 seed= 0 ok=False gates=0 t=3.10s group=collision minz_air=0.060
+[B] T=18.75 d=2 k=0.7 seed= 1 ok=False gates=0 t=2.32s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.7 seed= 2 ok=False gates=0 t=1.96s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.7 seed= 3 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.7 seed= 4 ok=False gates=0 t=0.88s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.7 seed= 5 ok=False gates=0 t=0.90s group=fall minz_air=-0.000
+[B] T=18.75 d=2 k=0.7 seed= 6 ok=False gates=0 t=1.44s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.7 seed= 7 ok=False gates=0 t=5.98s group=collision minz_air=0.020
+[B] T=18.75 d=2 k=0.7 seed= 8 ok=False gates=0 t=0.98s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.7 seed= 9 ok=False gates=0 t=0.96s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.7 seed=10 ok=False gates=0 t=1.28s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.7 seed=11 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.7 seed=12 ok=False gates=0 t=0.88s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.7 seed=13 ok=False gates=0 t=4.18s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.7 seed=14 ok=False gates=0 t=7.02s group=collision minz_air=0.014
+[B] T=18.75 d=2 k=0.7 seed=15 ok=False gates=0 t=1.16s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.7 seed=16 ok=False gates=0 t=0.96s group=fall minz_air=nan
+[B] T=18.75 d=2 k=0.7 seed=17 ok=False gates=0 t=1.00s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.7 seed=18 ok=False gates=0 t=1.68s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.7 seed=19 ok=False gates=0 t=0.92s group=fall minz_air=nan
+[B] T=18.75 d=2 k=0.55 seed= 0 ok=False gates=0 t=2.40s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.55 seed= 1 ok=False gates=0 t=3.80s group=collision minz_air=0.030
+[B] T=18.75 d=2 k=0.55 seed= 2 ok=False gates=0 t=4.54s group=collision minz_air=0.029
+[B] T=18.75 d=2 k=0.55 seed= 3 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.55 seed= 4 ok=False gates=0 t=0.88s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.55 seed= 5 ok=False gates=0 t=0.92s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.55 seed= 6 ok=False gates=0 t=1.36s group=fall minz_air=-0.000
+[B] T=18.75 d=2 k=0.55 seed= 7 ok=False gates=0 t=3.92s group=collision minz_air=0.021
+[B] T=18.75 d=2 k=0.55 seed= 8 ok=False gates=0 t=0.96s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.55 seed= 9 ok=False gates=0 t=0.98s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.55 seed=10 ok=False gates=0 t=2.30s group=collision minz_air=0.009
+[B] T=18.75 d=2 k=0.55 seed=11 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.55 seed=12 ok=False gates=0 t=0.88s group=fall minz_air=nan
+[B] T=18.75 d=2 k=0.55 seed=13 ok=False gates=0 t=9.32s group=collision minz_air=0.016
+[B] T=18.75 d=2 k=0.55 seed=14 ok=False gates=0 t=1.38s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.55 seed=15 ok=False gates=0 t=1.18s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.55 seed=16 ok=False gates=0 t=3.00s group=collision minz_air=0.153
+[B] T=18.75 d=2 k=0.55 seed=17 ok=False gates=0 t=0.96s group=fall minz_air=nan
+[B] T=18.75 d=2 k=0.55 seed=18 ok=False gates=0 t=3.80s group=fall minz_air=-0.001
+[B] T=18.75 d=2 k=0.55 seed=19 ok=False gates=0 t=0.92s group=fall minz_air=nan
+[B] T=16 d=0 k=1 seed= 0 ok=True gates=5 t=14.68s group=success minz_air=0.151
+[B] T=16 d=0 k=1 seed= 1 ok=True gates=5 t=14.66s group=success minz_air=0.152
+[B] T=16 d=0 k=1 seed= 2 ok=True gates=5 t=14.64s group=success minz_air=0.153
+[B] T=16 d=0 k=1 seed= 3 ok=True gates=5 t=14.62s group=success minz_air=0.151
+[B] T=16 d=0 k=1 seed= 4 ok=True gates=5 t=14.64s group=success minz_air=0.154
+[B] T=16 d=0 k=1 seed= 5 ok=True gates=5 t=14.60s group=success minz_air=0.153
+[B] T=16 d=0 k=1 seed= 6 ok=True gates=5 t=14.66s group=success minz_air=0.150
+[B] T=16 d=0 k=1 seed= 7 ok=True gates=5 t=14.66s group=success minz_air=0.155
+[B] T=16 d=0 k=1 seed= 8 ok=True gates=5 t=14.64s group=success minz_air=0.151
+[B] T=16 d=0 k=1 seed= 9 ok=True gates=5 t=14.62s group=success minz_air=0.155
+[B] T=16 d=0 k=1 seed=10 ok=False gates=3 t=11.68s group=collision minz_air=0.152
+[B] T=16 d=0 k=1 seed=11 ok=True gates=5 t=14.66s group=success minz_air=0.154
+[B] T=16 d=0 k=1 seed=12 ok=True gates=5 t=14.62s group=success minz_air=0.152
+[B] T=16 d=0 k=1 seed=13 ok=True gates=5 t=14.62s group=success minz_air=0.152
+[B] T=16 d=0 k=1 seed=14 ok=True gates=5 t=14.62s group=success minz_air=0.150
+[B] T=16 d=0 k=1 seed=15 ok=True gates=5 t=14.62s group=success minz_air=0.154
+[B] T=16 d=0 k=1 seed=16 ok=True gates=5 t=14.60s group=success minz_air=0.153
+[B] T=16 d=0 k=1 seed=17 ok=True gates=5 t=14.62s group=success minz_air=0.152
+[B] T=16 d=0 k=1 seed=18 ok=False gates=3 t=11.68s group=collision minz_air=0.152
+[B] T=16 d=0 k=1 seed=19 ok=True gates=5 t=14.62s group=success minz_air=0.153
+[B] T=16 d=0 k=0.85 seed= 0 ok=True gates=5 t=14.64s group=success minz_air=0.151
+[B] T=16 d=0 k=0.85 seed= 1 ok=True gates=5 t=14.62s group=success minz_air=0.152
+[B] T=16 d=0 k=0.85 seed= 2 ok=True gates=5 t=14.60s group=success minz_air=0.152
+[B] T=16 d=0 k=0.85 seed= 3 ok=True gates=5 t=14.68s group=success minz_air=0.150
+[B] T=16 d=0 k=0.85 seed= 4 ok=True gates=5 t=14.66s group=success minz_air=0.153
+[B] T=16 d=0 k=0.85 seed= 5 ok=True gates=5 t=14.62s group=success minz_air=0.153
+[B] T=16 d=0 k=0.85 seed= 6 ok=True gates=5 t=14.66s group=success minz_air=0.150
+[B] T=16 d=0 k=0.85 seed= 7 ok=True gates=5 t=14.56s group=success minz_air=0.154
+[B] T=16 d=0 k=0.85 seed= 8 ok=True gates=5 t=14.66s group=success minz_air=0.151
+[B] T=16 d=0 k=0.85 seed= 9 ok=True gates=5 t=14.56s group=success minz_air=0.154
+[B] T=16 d=0 k=0.85 seed=10 ok=True gates=5 t=14.64s group=success minz_air=0.152
+[B] T=16 d=0 k=0.85 seed=11 ok=True gates=5 t=14.62s group=success minz_air=0.154
+[B] T=16 d=0 k=0.85 seed=12 ok=True gates=5 t=14.66s group=success minz_air=0.152
+[B] T=16 d=0 k=0.85 seed=13 ok=True gates=5 t=14.58s group=success minz_air=0.151
+[B] T=16 d=0 k=0.85 seed=14 ok=False gates=1 t=5.64s group=collision minz_air=0.156
+[B] T=16 d=0 k=0.85 seed=15 ok=True gates=5 t=14.60s group=success minz_air=0.154
+[B] T=16 d=0 k=0.85 seed=16 ok=True gates=5 t=14.64s group=success minz_air=0.153
+[B] T=16 d=0 k=0.85 seed=17 ok=True gates=5 t=14.64s group=success minz_air=0.152
+[B] T=16 d=0 k=0.85 seed=18 ok=True gates=5 t=14.62s group=success minz_air=0.152
+[B] T=16 d=0 k=0.85 seed=19 ok=True gates=5 t=14.64s group=success minz_air=0.153
+[B] T=16 d=0 k=0.7 seed= 0 ok=True gates=5 t=14.66s group=success minz_air=0.151
+[B] T=16 d=0 k=0.7 seed= 1 ok=True gates=5 t=14.66s group=success minz_air=0.152
+[B] T=16 d=0 k=0.7 seed= 2 ok=True gates=5 t=14.68s group=success minz_air=0.152
+[B] T=16 d=0 k=0.7 seed= 3 ok=True gates=5 t=14.64s group=success minz_air=0.155
+[B] T=16 d=0 k=0.7 seed= 4 ok=True gates=5 t=14.62s group=success minz_air=0.153
+[B] T=16 d=0 k=0.7 seed= 5 ok=True gates=5 t=14.62s group=success minz_air=0.153
+[B] T=16 d=0 k=0.7 seed= 6 ok=True gates=5 t=14.66s group=success minz_air=0.150
+[B] T=16 d=0 k=0.7 seed= 7 ok=True gates=5 t=14.64s group=success minz_air=0.154
+[B] T=16 d=0 k=0.7 seed= 8 ok=True gates=5 t=14.64s group=success minz_air=0.150
+[B] T=16 d=0 k=0.7 seed= 9 ok=True gates=5 t=14.66s group=success minz_air=0.154
+[B] T=16 d=0 k=0.7 seed=10 ok=True gates=5 t=14.70s group=success minz_air=0.151
+[B] T=16 d=0 k=0.7 seed=11 ok=True gates=5 t=14.62s group=success minz_air=0.153
+[B] T=16 d=0 k=0.7 seed=12 ok=True gates=5 t=14.68s group=success minz_air=0.151
+[B] T=16 d=0 k=0.7 seed=13 ok=True gates=5 t=14.62s group=success minz_air=0.151
+[B] T=16 d=0 k=0.7 seed=14 ok=True gates=5 t=14.64s group=success minz_air=0.156
+[B] T=16 d=0 k=0.7 seed=15 ok=True gates=5 t=14.64s group=success minz_air=0.154
+[B] T=16 d=0 k=0.7 seed=16 ok=False gates=1 t=5.68s group=collision minz_air=0.153
+[B] T=16 d=0 k=0.7 seed=17 ok=True gates=5 t=14.68s group=success minz_air=0.151
+[B] T=16 d=0 k=0.7 seed=18 ok=True gates=5 t=14.66s group=success minz_air=0.152
+[B] T=16 d=0 k=0.7 seed=19 ok=True gates=5 t=14.64s group=success minz_air=0.152
+[B] T=16 d=0 k=0.55 seed= 0 ok=True gates=5 t=14.68s group=success minz_air=0.150
+[B] T=16 d=0 k=0.55 seed= 1 ok=True gates=5 t=14.68s group=success minz_air=0.151
+[B] T=16 d=0 k=0.55 seed= 2 ok=True gates=5 t=14.64s group=success minz_air=0.151
+[B] T=16 d=0 k=0.55 seed= 3 ok=True gates=5 t=14.72s group=success minz_air=0.155
+[B] T=16 d=0 k=0.55 seed= 4 ok=True gates=5 t=14.64s group=success minz_air=0.153
+[B] T=16 d=0 k=0.55 seed= 5 ok=True gates=5 t=14.60s group=success minz_air=0.152
+[B] T=16 d=0 k=0.55 seed= 6 ok=True gates=5 t=14.68s group=success minz_air=0.150
+[B] T=16 d=0 k=0.55 seed= 7 ok=True gates=5 t=14.62s group=success minz_air=0.154
+[B] T=16 d=0 k=0.55 seed= 8 ok=False gates=3 t=11.70s group=collision minz_air=0.155
+[B] T=16 d=0 k=0.55 seed= 9 ok=True gates=5 t=14.68s group=success minz_air=0.153
+[B] T=16 d=0 k=0.55 seed=10 ok=True gates=5 t=14.68s group=success minz_air=0.151
+[B] T=16 d=0 k=0.55 seed=11 ok=False gates=1 t=5.64s group=collision minz_air=0.153
+[B] T=16 d=0 k=0.55 seed=12 ok=True gates=5 t=14.68s group=success minz_air=0.151
+[B] T=16 d=0 k=0.55 seed=13 ok=True gates=5 t=14.62s group=success minz_air=0.151
+[B] T=16 d=0 k=0.55 seed=14 ok=True gates=5 t=14.64s group=success minz_air=0.155
+[B] T=16 d=0 k=0.55 seed=15 ok=True gates=5 t=14.66s group=success minz_air=0.153
+[B] T=16 d=0 k=0.55 seed=16 ok=True gates=5 t=14.64s group=success minz_air=0.152
+[B] T=16 d=0 k=0.55 seed=17 ok=True gates=5 t=14.66s group=success minz_air=0.151
+[B] T=16 d=0 k=0.55 seed=18 ok=True gates=5 t=14.60s group=success minz_air=0.151
+[B] T=16 d=0 k=0.55 seed=19 ok=False gates=1 t=5.64s group=collision minz_air=0.152
+[B] T=16 d=1 k=1 seed= 0 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[B] T=16 d=1 k=1 seed= 1 ok=False gates=0 t=2.78s group=fall minz_air=-0.001
+[B] T=16 d=1 k=1 seed= 2 ok=False gates=1 t=5.70s group=collision minz_air=0.036
+[B] T=16 d=1 k=1 seed= 3 ok=False gates=0 t=2.06s group=out_of_bounds minz_air=0.032
+[B] T=16 d=1 k=1 seed= 4 ok=False gates=0 t=3.08s group=collision minz_air=0.153
+[B] T=16 d=1 k=1 seed= 5 ok=False gates=0 t=3.78s group=collision minz_air=0.152
+[B] T=16 d=1 k=1 seed= 6 ok=False gates=0 t=0.92s group=fall minz_air=-0.001
+[B] T=16 d=1 k=1 seed= 7 ok=False gates=1 t=6.40s group=collision minz_air=0.152
+[B] T=16 d=1 k=1 seed= 8 ok=False gates=1 t=5.70s group=collision minz_air=0.143
+[B] T=16 d=1 k=1 seed= 9 ok=False gates=1 t=6.64s group=fall minz_air=-0.001
+[B] T=16 d=1 k=1 seed=10 ok=False gates=0 t=2.42s group=fall minz_air=-0.001
+[B] T=16 d=1 k=1 seed=11 ok=False gates=0 t=3.16s group=collision minz_air=0.146
+[B] T=16 d=1 k=1 seed=12 ok=False gates=0 t=2.80s group=fall minz_air=-0.001
+[B] T=16 d=1 k=1 seed=13 ok=False gates=0 t=0.94s group=fall minz_air=-0.001
+[B] T=16 d=1 k=1 seed=14 ok=False gates=0 t=2.54s group=fall minz_air=-0.000
+[B] T=16 d=1 k=1 seed=15 ok=False gates=0 t=4.02s group=collision minz_air=0.152
+[B] T=16 d=1 k=1 seed=16 ok=False gates=0 t=7.78s group=fall minz_air=-0.001
+[B] T=16 d=1 k=1 seed=17 ok=False gates=0 t=5.28s group=collision minz_air=0.020
+[B] T=16 d=1 k=1 seed=18 ok=False gates=2 t=8.82s group=collision minz_air=0.149
+[B] T=16 d=1 k=1 seed=19 ok=False gates=0 t=3.40s group=collision minz_air=0.123
+[B] T=16 d=1 k=0.85 seed= 0 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[B] T=16 d=1 k=0.85 seed= 1 ok=False gates=0 t=1.80s group=collision minz_air=0.120
+[B] T=16 d=1 k=0.85 seed= 2 ok=False gates=0 t=3.06s group=collision minz_air=0.053
+[B] T=16 d=1 k=0.85 seed= 3 ok=False gates=0 t=1.50s group=fall minz_air=-0.001
+[B] T=16 d=1 k=0.85 seed= 4 ok=False gates=0 t=2.98s group=collision minz_air=0.152
+[B] T=16 d=1 k=0.85 seed= 5 ok=False gates=0 t=3.14s group=collision minz_air=0.151
+[B] T=16 d=1 k=0.85 seed= 6 ok=False gates=0 t=0.92s group=fall minz_air=-0.001
+[B] T=16 d=1 k=0.85 seed= 7 ok=False gates=1 t=5.32s group=collision minz_air=0.151
+[B] T=16 d=1 k=0.85 seed= 8 ok=False gates=1 t=6.44s group=out_of_bounds minz_air=0.142
+[B] T=16 d=1 k=0.85 seed= 9 ok=False gates=1 t=5.42s group=collision minz_air=0.117
+[B] T=16 d=1 k=0.85 seed=10 ok=False gates=0 t=1.02s group=fall minz_air=-0.001
+[B] T=16 d=1 k=0.85 seed=11 ok=False gates=1 t=5.00s group=collision minz_air=0.143
+[B] T=16 d=1 k=0.85 seed=12 ok=False gates=0 t=2.84s group=collision minz_air=0.138
+[B] T=16 d=1 k=0.85 seed=13 ok=False gates=0 t=0.94s group=fall minz_air=-0.001
+[B] T=16 d=1 k=0.85 seed=14 ok=False gates=0 t=2.42s group=collision minz_air=0.021
+[B] T=16 d=1 k=0.85 seed=15 ok=False gates=0 t=2.52s group=out_of_bounds minz_air=0.101
+[B] T=16 d=1 k=0.85 seed=16 ok=False gates=3 t=10.16s group=out_of_bounds minz_air=0.151
+[B] T=16 d=1 k=0.85 seed=17 ok=False gates=0 t=2.68s group=collision minz_air=0.145
+[B] T=16 d=1 k=0.85 seed=18 ok=False gates=0 t=2.96s group=fall minz_air=-0.001
+[B] T=16 d=1 k=0.85 seed=19 ok=False gates=0 t=3.20s group=collision minz_air=0.124
+[B] T=16 d=1 k=0.7 seed= 0 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[B] T=16 d=1 k=0.7 seed= 1 ok=False gates=0 t=1.80s group=collision minz_air=0.117
+[B] T=16 d=1 k=0.7 seed= 2 ok=False gates=0 t=2.74s group=collision minz_air=0.045
+[B] T=16 d=1 k=0.7 seed= 3 ok=False gates=0 t=1.18s group=fall minz_air=-0.001
+[B] T=16 d=1 k=0.7 seed= 4 ok=False gates=0 t=5.86s group=collision minz_air=0.152
+[B] T=16 d=1 k=0.7 seed= 5 ok=False gates=3 t=11.68s group=collision minz_air=0.149
+[B] T=16 d=1 k=0.7 seed= 6 ok=False gates=0 t=0.92s group=fall minz_air=nan
+[B] T=16 d=1 k=0.7 seed= 7 ok=False gates=0 t=2.34s group=collision minz_air=0.150
+[B] T=16 d=1 k=0.7 seed= 8 ok=False gates=1 t=3.28s group=collision minz_air=0.141
+[B] T=16 d=1 k=0.7 seed= 9 ok=False gates=0 t=2.92s group=fall minz_air=-0.001
+[B] T=16 d=1 k=0.7 seed=10 ok=False gates=0 t=1.06s group=fall minz_air=-0.001
+[B] T=16 d=1 k=0.7 seed=11 ok=False gates=0 t=3.12s group=collision minz_air=0.142
+[B] T=16 d=1 k=0.7 seed=12 ok=False gates=0 t=3.08s group=collision minz_air=0.136
+[B] T=16 d=1 k=0.7 seed=13 ok=False gates=0 t=0.94s group=fall minz_air=-0.001
+[B] T=16 d=1 k=0.7 seed=14 ok=False gates=0 t=2.38s group=collision minz_air=0.021
+[B] T=16 d=1 k=0.7 seed=15 ok=False gates=0 t=5.52s group=collision minz_air=0.151
+[B] T=16 d=1 k=0.7 seed=16 ok=False gates=0 t=3.22s group=collision minz_air=0.150
+[B] T=16 d=1 k=0.7 seed=17 ok=False gates=0 t=3.18s group=collision minz_air=0.144
+[B] T=16 d=1 k=0.7 seed=18 ok=False gates=1 t=5.72s group=collision minz_air=0.150
+[B] T=16 d=1 k=0.7 seed=19 ok=False gates=1 t=5.64s group=collision minz_air=0.150
+[B] T=16 d=1 k=0.55 seed= 0 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[B] T=16 d=1 k=0.55 seed= 1 ok=False gates=0 t=3.44s group=collision minz_air=0.118
+[B] T=16 d=1 k=0.55 seed= 2 ok=False gates=0 t=3.12s group=collision minz_air=0.019
+[B] T=16 d=1 k=0.55 seed= 3 ok=False gates=0 t=1.24s group=fall minz_air=-0.000
+[B] T=16 d=1 k=0.55 seed= 4 ok=False gates=0 t=4.26s group=collision minz_air=0.151
+[B] T=16 d=1 k=0.55 seed= 5 ok=False gates=0 t=3.40s group=collision minz_air=0.079
+[B] T=16 d=1 k=0.55 seed= 6 ok=False gates=0 t=0.92s group=fall minz_air=nan
+[B] T=16 d=1 k=0.55 seed= 7 ok=False gates=3 t=11.76s group=collision minz_air=0.153
+[B] T=16 d=1 k=0.55 seed= 8 ok=False gates=3 t=11.48s group=collision minz_air=0.139
+[B] T=16 d=1 k=0.55 seed= 9 ok=False gates=0 t=3.32s group=collision minz_air=0.106
+[B] T=16 d=1 k=0.55 seed=10 ok=False gates=0 t=2.30s group=fall minz_air=-0.000
+[B] T=16 d=1 k=0.55 seed=11 ok=False gates=2 t=8.44s group=collision minz_air=0.141
+[B] T=16 d=1 k=0.55 seed=12 ok=False gates=0 t=2.38s group=collision minz_air=0.135
+[B] T=16 d=1 k=0.55 seed=13 ok=False gates=0 t=0.94s group=fall minz_air=-0.001
+[B] T=16 d=1 k=0.55 seed=14 ok=False gates=0 t=2.40s group=collision minz_air=0.022
+[B] T=16 d=1 k=0.55 seed=15 ok=False gates=0 t=3.26s group=collision minz_air=0.151
+[B] T=16 d=1 k=0.55 seed=16 ok=False gates=0 t=3.20s group=collision minz_air=0.150
+[B] T=16 d=1 k=0.55 seed=17 ok=False gates=0 t=2.98s group=collision minz_air=0.151
+[B] T=16 d=1 k=0.55 seed=18 ok=False gates=1 t=4.48s group=out_of_bounds minz_air=0.024
+[B] T=16 d=1 k=0.55 seed=19 ok=False gates=0 t=3.88s group=collision minz_air=0.153
+[B] T=16 d=2 k=1 seed= 0 ok=False gates=0 t=0.88s group=fall minz_air=-0.001
+[B] T=16 d=2 k=1 seed= 1 ok=False gates=0 t=1.96s group=fall minz_air=-0.001
+[B] T=16 d=2 k=1 seed= 2 ok=False gates=0 t=0.88s group=fall minz_air=-0.001
+[B] T=16 d=2 k=1 seed= 3 ok=False gates=0 t=0.92s group=fall minz_air=-0.001
+[B] T=16 d=2 k=1 seed= 4 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[B] T=16 d=2 k=1 seed= 5 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[B] T=16 d=2 k=1 seed= 6 ok=False gates=0 t=2.84s group=collision minz_air=0.041
+[B] T=16 d=2 k=1 seed= 7 ok=False gates=0 t=0.88s group=fall minz_air=-0.001
+[B] T=16 d=2 k=1 seed= 8 ok=False gates=0 t=2.32s group=fall minz_air=-0.001
+[B] T=16 d=2 k=1 seed= 9 ok=False gates=0 t=0.94s group=fall minz_air=-0.001
+[B] T=16 d=2 k=1 seed=10 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[B] T=16 d=2 k=1 seed=11 ok=False gates=0 t=0.86s group=fall minz_air=-0.001
+[B] T=16 d=2 k=1 seed=12 ok=False gates=0 t=0.92s group=fall minz_air=-0.001
+[B] T=16 d=2 k=1 seed=13 ok=False gates=0 t=1.90s group=out_of_bounds minz_air=0.066
+[B] T=16 d=2 k=1 seed=14 ok=False gates=0 t=0.88s group=fall minz_air=-0.001
+[B] T=16 d=2 k=1 seed=15 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[B] T=16 d=2 k=1 seed=16 ok=False gates=0 t=0.86s group=fall minz_air=-0.001
+[B] T=16 d=2 k=1 seed=17 ok=False gates=0 t=1.12s group=fall minz_air=-0.001
+[B] T=16 d=2 k=1 seed=18 ok=False gates=0 t=0.92s group=fall minz_air=-0.001
+[B] T=16 d=2 k=1 seed=19 ok=False gates=0 t=0.96s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.85 seed= 0 ok=False gates=0 t=0.88s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.85 seed= 1 ok=False gates=0 t=1.80s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.85 seed= 2 ok=False gates=0 t=0.88s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.85 seed= 3 ok=False gates=0 t=0.92s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.85 seed= 4 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.85 seed= 5 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.85 seed= 6 ok=False gates=0 t=2.42s group=collision minz_air=0.039
+[B] T=16 d=2 k=0.85 seed= 7 ok=False gates=0 t=0.88s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.85 seed= 8 ok=False gates=0 t=3.42s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.85 seed= 9 ok=False gates=0 t=0.94s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.85 seed=10 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.85 seed=11 ok=False gates=0 t=0.86s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.85 seed=12 ok=False gates=0 t=0.92s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.85 seed=13 ok=False gates=0 t=2.20s group=collision minz_air=0.072
+[B] T=16 d=2 k=0.85 seed=14 ok=False gates=0 t=0.88s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.85 seed=15 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.85 seed=16 ok=False gates=0 t=0.86s group=fall minz_air=-0.000
+[B] T=16 d=2 k=0.85 seed=17 ok=False gates=0 t=1.10s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.85 seed=18 ok=False gates=0 t=0.92s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.85 seed=19 ok=False gates=0 t=0.92s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.7 seed= 0 ok=False gates=0 t=0.88s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.7 seed= 1 ok=False gates=0 t=1.86s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.7 seed= 2 ok=False gates=0 t=0.88s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.7 seed= 3 ok=False gates=0 t=0.92s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.7 seed= 4 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.7 seed= 5 ok=False gates=0 t=0.94s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.7 seed= 6 ok=False gates=0 t=2.60s group=collision minz_air=0.039
+[B] T=16 d=2 k=0.7 seed= 7 ok=False gates=0 t=0.88s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.7 seed= 8 ok=False gates=0 t=2.36s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.7 seed= 9 ok=False gates=0 t=0.94s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.7 seed=10 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.7 seed=11 ok=False gates=0 t=0.86s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.7 seed=12 ok=False gates=0 t=0.92s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.7 seed=13 ok=False gates=0 t=2.84s group=collision minz_air=0.079
+[B] T=16 d=2 k=0.7 seed=14 ok=False gates=0 t=0.88s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.7 seed=15 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.7 seed=16 ok=False gates=0 t=0.86s group=fall minz_air=-0.000
+[B] T=16 d=2 k=0.7 seed=17 ok=False gates=0 t=1.08s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.7 seed=18 ok=False gates=0 t=0.92s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.7 seed=19 ok=False gates=0 t=2.12s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.55 seed= 0 ok=False gates=0 t=0.88s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.55 seed= 1 ok=False gates=0 t=1.88s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.55 seed= 2 ok=False gates=0 t=0.88s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.55 seed= 3 ok=False gates=0 t=0.94s group=fall minz_air=-0.000
+[B] T=16 d=2 k=0.55 seed= 4 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.55 seed= 5 ok=False gates=0 t=0.94s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.55 seed= 6 ok=False gates=0 t=3.30s group=collision minz_air=0.038
+[B] T=16 d=2 k=0.55 seed= 7 ok=False gates=0 t=0.88s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.55 seed= 8 ok=False gates=0 t=3.24s group=collision minz_air=0.026
+[B] T=16 d=2 k=0.55 seed= 9 ok=False gates=0 t=0.94s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.55 seed=10 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.55 seed=11 ok=False gates=0 t=0.86s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.55 seed=12 ok=False gates=0 t=0.92s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.55 seed=13 ok=False gates=0 t=3.12s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.55 seed=14 ok=False gates=0 t=0.88s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.55 seed=15 ok=False gates=0 t=0.90s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.55 seed=16 ok=False gates=0 t=0.88s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.55 seed=17 ok=False gates=0 t=1.06s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.55 seed=18 ok=False gates=0 t=0.92s group=fall minz_air=-0.001
+[B] T=16 d=2 k=0.55 seed=19 ok=False gates=0 t=2.20s group=fall minz_air=-0.001
+
+### T_traj = 18.75  (success rate; `*` = within 30-70%)
+
+| d \ k_end | 1 | 0.85 | 0.7 | 0.55 |
+|---|---|---|---|---|
+| d=0 | 100% (20/20) | 95% (19/20) | 100% (20/20) | 55% (11/20) * |
+| d=1 | 0% (0/20) | 0% (0/20) | 10% (2/20) | 0% (0/20) |
+| d=2 | 0% (0/20) | 0% (0/20) | 0% (0/20) | 0% (0/20) |
+
+### T_traj = 18.75  (success on seeds where nominal d=0,k=1 succeeded)
+
+| d \ k_end | 1 | 0.85 | 0.7 | 0.55 |
+|---|---|---|---|---|
+| d=0 | 100% (20/20) | 95% (19/20) | 100% (20/20) | 55% (11/20) * |
+| d=1 | 0% (0/20) | 0% (0/20) | 10% (2/20) | 0% (0/20) |
+| d=2 | 0% (0/20) | 0% (0/20) | 0% (0/20) | 0% (0/20) |
+
+### T_traj = 18.75  (mean lap time of successes [s])
+
+| d \ k_end | 1 | 0.85 | 0.7 | 0.55 |
+|---|---|---|---|---|
+| d=0 | 17.12 | 17.12 | 17.13 | 17.13 |
+| d=1 | - | - | 17.35 | - |
+| d=2 | - | - | - | - |
+
+### T_traj = 18.75  (mean gates passed, all episodes)
+
+| d \ k_end | 1 | 0.85 | 0.7 | 0.55 |
+|---|---|---|---|---|
+| d=0 | 5.00 | 4.90 | 5.00 | 4.55 |
+| d=1 | 0.150 | 0.350 | 0.950 | 0.300 |
+| d=2 | 0.000 | 0.000 | 0.000 | 0.000 |
+
+### T_traj = 18.75  (min z after take-off over all episodes [m])
+
+| d \ k_end | 1 | 0.85 | 0.7 | 0.55 |
+|---|---|---|---|---|
+| d=0 | 0.150 | 0.150 | 0.151 | 0.150 |
+| d=1 | 0.076 | -0.001 | -0.001 | 0.146 |
+| d=2 | -0.001 | -0.001 | -0.001 | -0.001 |
+
+### T_traj = 16  (success rate; `*` = within 30-70%)
+
+| d \ k_end | 1 | 0.85 | 0.7 | 0.55 |
+|---|---|---|---|---|
+| d=0 | 90% (18/20) | 95% (19/20) | 95% (19/20) | 85% (17/20) |
+| d=1 | 0% (0/20) | 0% (0/20) | 0% (0/20) | 0% (0/20) |
+| d=2 | 0% (0/20) | 0% (0/20) | 0% (0/20) | 0% (0/20) |
+
+### T_traj = 16  (success on seeds where nominal d=0,k=1 succeeded)
+
+| d \ k_end | 1 | 0.85 | 0.7 | 0.55 |
+|---|---|---|---|---|
+| d=0 | 100% (18/18) | 94% (17/18) | 94% (17/18) | 83% (15/18) |
+| d=1 | 0% (0/18) | 0% (0/18) | 0% (0/18) | 0% (0/18) |
+| d=2 | 0% (0/18) | 0% (0/18) | 0% (0/18) | 0% (0/18) |
+
+### T_traj = 16  (mean lap time of successes [s])
+
+| d \ k_end | 1 | 0.85 | 0.7 | 0.55 |
+|---|---|---|---|---|
+| d=0 | 14.63 | 14.63 | 14.65 | 14.65 |
+| d=1 | - | - | - | - |
+| d=2 | - | - | - | - |
+
+### T_traj = 16  (mean gates passed, all episodes)
+
+| d \ k_end | 1 | 0.85 | 0.7 | 0.55 |
+|---|---|---|---|---|
+| d=0 | 4.80 | 4.80 | 4.80 | 4.50 |
+| d=1 | 0.300 | 0.350 | 0.300 | 0.450 |
+| d=2 | 0.000 | 0.000 | 0.000 | 0.000 |
+
+### T_traj = 16  (min z after take-off over all episodes [m])
+
+| d \ k_end | 1 | 0.85 | 0.7 | 0.55 |
+|---|---|---|---|---|
+| d=0 | 0.150 | 0.150 | 0.150 | 0.150 |
+| d=1 | -0.001 | -0.001 | -0.001 | -0.001 |
+| d=2 | -0.001 | -0.001 | -0.001 | -0.001 |
+
+### Failure causes per condition
+
+| T_traj | d | k_end | causes |
+|---|---|---|---|
+| 18.75 | 0 | 1 | - |
+| 18.75 | 0 | 0.85 | collision:1 |
+| 18.75 | 0 | 0.7 | - |
+| 18.75 | 0 | 0.55 | collision:9 |
+| 18.75 | 1 | 1 | collision:15, fall:5 |
+| 18.75 | 1 | 0.85 | collision:13, fall:5, out_of_bounds:2 |
+| 18.75 | 1 | 0.7 | collision:12, fall:6 |
+| 18.75 | 1 | 0.55 | collision:14, fall:6 |
+| 18.75 | 2 | 1 | collision:5, fall:14, out_of_bounds:1 |
+| 18.75 | 2 | 0.85 | collision:3, fall:17 |
+| 18.75 | 2 | 0.7 | collision:3, fall:17 |
+| 18.75 | 2 | 0.55 | collision:6, fall:14 |
+| 16 | 0 | 1 | collision:2 |
+| 16 | 0 | 0.85 | collision:1 |
+| 16 | 0 | 0.7 | collision:1 |
+| 16 | 0 | 0.55 | collision:3 |
+| 16 | 1 | 1 | collision:10, fall:9, out_of_bounds:1 |
+| 16 | 1 | 0.85 | collision:11, fall:6, out_of_bounds:3 |
+| 16 | 1 | 0.7 | collision:14, fall:6 |
+| 16 | 1 | 0.55 | collision:14, fall:5, out_of_bounds:1 |
+| 16 | 2 | 1 | collision:1, fall:18, out_of_bounds:1 |
+| 16 | 2 | 0.85 | collision:2, fall:18 |
+| 16 | 2 | 0.7 | collision:2, fall:18 |
+| 16 | 2 | 0.55 | collision:2, fall:18 |
+
+### Conditions in the 30-70% band
+
+- T=18.75, d=0, k_end=0.55: 55% (11/20)

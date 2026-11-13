@@ -1,0 +1,52 @@
+Writing results to /home/lydiajheeta/repos/lsy_drone_racing/project/results/step0_20261113_013359
+L0 seed=  0 ok=True gates=5/5 t=17.12s cause=success 
+L0 seed=  1 ok=True gates=5/5 t=17.14s cause=success 
+L0 seed=  2 ok=True gates=5/5 t=17.10s cause=success 
+L0 seed=  3 ok=True gates=5/5 t=17.12s cause=success 
+L0 seed=  4 ok=True gates=5/5 t=17.14s cause=success 
+L0 seed=  5 ok=True gates=5/5 t=17.16s cause=success 
+L0 seed=  6 ok=True gates=5/5 t=17.12s cause=success 
+L0 seed=  7 ok=True gates=5/5 t=17.16s cause=success 
+L0 seed=  8 ok=True gates=5/5 t=17.08s cause=success 
+L0 seed=  9 ok=True gates=5/5 t=17.06s cause=success 
+L0 seed= 10 ok=True gates=5/5 t=17.12s cause=success 
+L0 seed= 11 ok=True gates=5/5 t=17.10s cause=success 
+L0 seed= 12 ok=True gates=5/5 t=17.08s cause=success 
+L0 seed= 13 ok=True gates=5/5 t=17.10s cause=success 
+L0 seed= 14 ok=True gates=5/5 t=17.18s cause=success 
+L0 seed= 15 ok=True gates=5/5 t=17.08s cause=success 
+L0 seed= 16 ok=True gates=5/5 t=17.14s cause=success 
+L0 seed= 17 ok=True gates=5/5 t=17.12s cause=success 
+L0 seed= 18 ok=True gates=5/5 t=17.12s cause=success 
+L0 seed= 19 ok=True gates=5/5 t=17.14s cause=success 
+
+== Level 0: 20/20 successes ==
+L1 seed=  0 ok=False gates=1/5 t=6.60s cause=gate gate_id=1 dist_to_frame=0.092 (heuristic)
+L1 seed=  1 ok=True gates=5/5 t=17.20s cause=success 
+L1 seed=  2 ok=True gates=5/5 t=17.08s cause=success 
+L1 seed=  3 ok=True gates=5/5 t=17.18s cause=success 
+L1 seed=  4 ok=True gates=5/5 t=17.12s cause=success 
+L1 seed=  5 ok=True gates=5/5 t=17.14s cause=success 
+L1 seed=  6 ok=True gates=5/5 t=17.10s cause=success 
+L1 seed=  7 ok=True gates=5/5 t=17.12s cause=success 
+L1 seed=  8 ok=True gates=5/5 t=17.12s cause=success 
+L1 seed=  9 ok=True gates=5/5 t=17.06s cause=success 
+L1 seed= 10 ok=True gates=5/5 t=17.08s cause=success 
+L1 seed= 11 ok=False gates=3/5 t=13.74s cause=gate gate_id=3 dist_to_frame=0.091 (heuristic)
+L1 seed= 12 ok=True gates=5/5 t=17.14s cause=success 
+L1 seed= 13 ok=False gates=4/5 t=13.82s cause=gate gate_id=3 dist_to_frame=0.100 (heuristic)
+L1 seed= 14 ok=True gates=5/5 t=17.18s cause=success 
+L1 seed= 15 ok=True gates=5/5 t=17.14s cause=success 
+L1 seed= 16 ok=True gates=5/5 t=17.12s cause=success 
+L1 seed= 17 ok=True gates=5/5 t=17.16s cause=success 
+L1 seed= 18 ok=True gates=5/5 t=17.20s cause=success 
+L1 seed= 19 ok=True gates=5/5 t=17.14s cause=success 
+
+== Level 1: 17/20 successes ==
+  FAIL seed=0 t=6.60s gates=1 cause=gate (gate_id=1 dist_to_frame=0.092 (heuristic)) impact_pos=[0.97, 0.677, 1.228]
+  FAIL seed=11 t=13.74s gates=3 cause=gate (gate_id=3 dist_to_frame=0.091 (heuristic)) impact_pos=[0.01, -0.64, 1.209]
+  FAIL seed=13 t=13.82s gates=4 cause=gate (gate_id=3 dist_to_frame=0.100 (heuristic)) impact_pos=[0.057, -0.633, 1.183]
+  -- reproducibility: re-running failing seeds --
+  seed=0: rerun steps=330 gates=1 cause=gate identical=True
+  seed=11: rerun steps=687 gates=3 cause=gate identical=True
+  seed=13: rerun steps=691 gates=4 cause=gate identical=True

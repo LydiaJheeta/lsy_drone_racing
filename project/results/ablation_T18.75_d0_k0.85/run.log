@@ -1,0 +1,58 @@
+Writing results to results/ablation_T18.75_d0_k0.85
+params: {'ts': (18.75,), 'n_sweep': 10, 'n_final': 0, 'threshold': 0.9, 'k_end': 0.85, 'T_end': 18.0, 'delay': 0, 'config': 'att_level0.toml', 'controller': '/home/lydiajheeta/repos/lsy_drone_racing/project/my_mpc.py'}
+[sweep] T=18.75 nominal seed=  0 ok=True gates=5 t=17.12s group=success minz_air=0.153
+[sweep] T=18.75 nominal seed=  1 ok=True gates=5 t=17.14s group=success minz_air=0.153
+[sweep] T=18.75 nominal seed=  2 ok=True gates=5 t=17.10s group=success minz_air=0.153
+[sweep] T=18.75 nominal seed=  3 ok=True gates=5 t=17.12s group=success minz_air=0.153
+[sweep] T=18.75 nominal seed=  4 ok=True gates=5 t=17.14s group=success minz_air=0.151
+[sweep] T=18.75 nominal seed=  5 ok=True gates=5 t=17.16s group=success minz_air=0.152
+[sweep] T=18.75 nominal seed=  6 ok=True gates=5 t=17.12s group=success minz_air=0.150
+[sweep] T=18.75 nominal seed=  7 ok=True gates=5 t=17.16s group=success minz_air=0.151
+[sweep] T=18.75 nominal seed=  8 ok=True gates=5 t=17.08s group=success minz_air=0.152
+[sweep] T=18.75 nominal seed=  9 ok=True gates=5 t=17.06s group=success minz_air=0.152
+[sweep] T=18.75 wrapped seed=  0 ok=True gates=5 t=17.08s group=success minz_air=0.152
+[sweep] T=18.75 wrapped seed=  1 ok=True gates=5 t=17.12s group=success minz_air=0.152
+[sweep] T=18.75 wrapped seed=  2 ok=True gates=5 t=17.12s group=success minz_air=0.151
+[sweep] T=18.75 wrapped seed=  3 ok=False gates=3 t=13.64s group=collision minz_air=0.152
+[sweep] T=18.75 wrapped seed=  4 ok=True gates=5 t=17.14s group=success minz_air=0.153
+[sweep] T=18.75 wrapped seed=  5 ok=True gates=5 t=17.16s group=success minz_air=0.153
+[sweep] T=18.75 wrapped seed=  6 ok=True gates=5 t=17.14s group=success minz_air=0.151
+[sweep] T=18.75 wrapped seed=  7 ok=True gates=5 t=17.06s group=success minz_air=0.150
+[sweep] T=18.75 wrapped seed=  8 ok=True gates=5 t=17.08s group=success minz_air=0.151
+[sweep] T=18.75 wrapped seed=  9 ok=True gates=5 t=17.10s group=success minz_air=0.151
+
+## Sweep (level 0, seeds 0-9, same seeds in all rows)
+
+| T_traj | condition | n | n_success | success_rate | lap_time_mean_s | lap_time_std_s | gates_mean_all | gates_mean_failed | failure_causes |
+|---|---|---|---|---|---|---|---|---|---|
+| 18.75 | nominal | 10 | 10 | 1.00 | 17.12 | 0.031 | 5.00 | - | - |
+| 18.75 | wrapped | 10 | 9 | 0.900 | 17.11 | 0.031 | 4.80 | 3.00 | collision:1 |
+
+### Failures (sweep)
+
+| T_traj | condition | seed | n_gates | time_s | group | cause | min_z_airborne | final_z | detail |
+|---|---|---|---|---|---|---|---|---|---|
+| 18.75 | wrapped | 3 | 3 | 13.64 | collision | gate | 0.152 | 1.16 | gate_id=3 dist_to_frame=0.096 (heuristic) |
+
+
+Selected T_traj = 18.75 (smallest with nominal >= 90%)
+
+## Final (T_traj=18.75, seeds 0--1, paired)
+
+| T_traj | condition | n | n_success | success_rate | lap_time_mean_s | lap_time_std_s | gates_mean_all | gates_mean_failed | failure_causes |
+|---|---|---|---|---|---|---|---|---|---|
+
+
+### Paired outcomes (same seeds)
+
+- n_pairs: 0
+- both_success: 0
+- nominal_only: 0
+- wrapped_only: 0
+- both_fail: 0
+- lap_diff_mean_s: -
+
+### Failures (final)
+
+(no failures)
+

@@ -1,0 +1,7 @@
+Writing results to /home/lydiajheeta/repos/lsy_drone_racing/project/results/grid_20261113_021212/expA
+[A] fill=first seed=0 ok=False gates=0 t_end=3.26s cause=obstacle t_takeoff=0.48 zmax=0.65 tilt_first=0.857 tilt_last=0.708
+[A] fill=first seed=1 ok=False gates=0 t_end=2.98s cause=out_of_bounds t_takeoff=0.50 zmax=0.83 tilt_first=0.647 tilt_last=0.548
+[A] fill=first seed=2 ok=False gates=0 t_end=1.00s cause=floor t_takeoff=0.48 zmax=0.16 tilt_first=0.724 tilt_last=0.724
+[A] fill=hover seed=0 ok=False gates=0 t_end=0.86s cause=floor t_takeoff=0.48 zmax=0.16 tilt_first=1.239 tilt_last=1.239
+[A] fill=hover seed=1 ok=False gates=0 t_end=1.96s cause=floor t_takeoff=0.50 zmax=0.28 tilt_first=0.549 tilt_last=1.315
+[A] fill=hover seed=2 ok=False gates=0 t_end=1.06s cause=floor t_takeoff=0.48 zmax=0.16 tilt_first=0.768 tilt_last=0.768

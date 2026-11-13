@@ -1,0 +1,39 @@
+{
+  "exp": "CD",
+  "seeds": "0-19",
+  "config": "att_level0.toml",
+  "controller": "my_mpc.py",
+  "tilt_sat_rad": 0.49,
+  "C": {
+    "T_traj": 18.75,
+    "delays": [
+      0,
+      1,
+      2
+    ],
+    "u_weight_scales": [
+      1.0,
+      3.0,
+      10.0,
+      30.0
+    ],
+    "k_end": 1.0
+  },
+  "D": {
+    "ts": [
+      16.0,
+      14.0,
+      12.0
+    ],
+    "ks": [
+      1.0,
+      0.9,
+      0.8,
+      0.7,
+      0.6
+    ],
+    "delay": 0,
+    "u_weight_scale": 1.0,
+    "T_end": "= T_traj"
+  }
+}

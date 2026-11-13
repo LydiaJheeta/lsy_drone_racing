@@ -130,7 +130,7 @@ def exp_a(out: Path, seeds: tuple[int, ...] = (0, 1, 2), T: float = 18.75, delay
     rows = []
     for fill in fills:
         env, lg = _build_env(cfg, "wrapped", sub / "logs",
-                             dict(k_end=k_end, delay=delay, fill=fill, hover_thrust=hov))
+                             dict(k_end=k_end, delay=delay, T_end=T, fill=fill, hover_thrust=hov))
         lg.tag = f"A_{fill}"
         for seed in seeds:
             cmds: list[np.ndarray] = []
@@ -262,7 +262,7 @@ def exp_b(out: Path, seeds: range = range(20), ts: tuple[float, ...] = T_VALUES,
     for T in ts:
         for d in ds:
             for k in ks:
-                env.set_params(k_end=k, delay=d)
+                env.set_params(k_end=k, delay=d, T_end=T)  # k(t) must reach k_end within the lap
                 lg.tag = f"B_T{T:g}_d{d}_k{k:g}"
                 for seed in seeds:
                     res = run_episode(env, functools.partial(mpc, T_traj=T), cfg, seed)

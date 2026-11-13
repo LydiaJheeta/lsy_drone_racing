@@ -10,9 +10,11 @@ Stage 2 (final): smallest T_traj whose nominal success rate is >= `threshold`; O
     run again (nominal and wrapped) with seeds 0..n_final-1.
 
 Both conditions use config level 0 (att_level0.toml). "nominal" has no wrapper; "wrapped" has
-ThrustDegradeDelay(k_end, T_end, delay). Success = n_gates_passed == 5. Lap time = steps / 50 and is
-averaged over successful runs only. Failures are listed separately. Results go to a NEW folder
-`results/eval_<timestamp>/` (never overwritten).
+ThrustDegradeDelay(k_end, T_end, delay), with `T_end` set to the `T_traj` of the block that is
+running (unless `--T_end` is given), so that k(t) always reaches `k_end` inside the lap.
+Success = n_gates_passed == 5. Lap time = steps / 50 and is averaged over successful runs only.
+Failures are listed separately. Results go to a NEW folder `results/eval_<timestamp>/`
+(never overwritten).
 """
 
 from __future__ import annotations
@@ -156,6 +158,19 @@ def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         w.writerows(rows)
 
 
+def set_T_end(env: Any, T_end: float) -> bool:
+    """Set the degradation duration on a ThrustDegradeDelay env (no-op for an unwrapped env).
+
+    k(t) falls linearly over `T_end` seconds, so `T_end` has to be the `T_traj` of the block that
+    is about to run: with a fixed `T_end` a fast lap ends before k reaches `k_end`.
+    """
+    fn = getattr(env, "set_params", None)
+    if fn is None:
+        return False
+    fn(T_end=T_end)
+    return True
+
+
 def _build_env(cfg: Any, condition: str, log_dir: Path | None, wrapper_kw: dict) -> tuple:
     """Env with the logger innermost and (for `wrapped`) the wrapper outside it."""
     holder: dict[str, EpisodeLogger] = {}
@@ -193,7 +208,7 @@ def run_eval(
     n_final: int = 50,
     threshold: float = 0.9,
     k_end: float = 0.85,
-    T_end: float = 18.0,
+    T_end: float | None = None,  # None -> T_end = T_traj of the block that is running
     delay: int = 2,
     config: str = "att_level0.toml",
     controller: str = str(PROJECT_DIR / "my_mpc.py"),
@@ -211,7 +226,8 @@ def run_eval(
 
     cfg = load_cfg(config)
     ctrl_cls = load_controller_cls(controller)
-    wrapper_kw = dict(k_end=k_end, T_end=T_end, delay=delay)
+    # T_end must cover the lap: with a fixed T_end a short T_traj never reaches k_end.
+    wrapper_kw = dict(k_end=k_end, T_end=T_end if T_end is not None else max(ts), delay=delay)
     log_dir = out / "episode_logs" if log_episodes else None
     envs = {c: _build_env(cfg, c, log_dir, wrapper_kw) for c in CONDITIONS}
 
@@ -228,6 +244,7 @@ def run_eval(
     for T in ts:
         for cond in CONDITIONS:
             env, lg = envs[cond]
+            set_T_end(env, T if T_end is None else T_end)
             sweep_rows += run_block("sweep", T, cond, range(n_sweep), cfg, env, lg, ctrl_cls, sink)
     sweep = summarize(sweep_rows)
     write_csv(out / "summary_sweep.csv", sweep)
@@ -249,6 +266,7 @@ def run_eval(
     final_rows: list[dict[str, Any]] = []
     for cond in CONDITIONS:
         env, lg = envs[cond]
+        set_T_end(env, T_star if T_end is None else T_end)
         final_rows += run_block("final", T_star, cond, range(n_final), cfg, env, lg, ctrl_cls, sink)
     final = summarize(final_rows)
     pair = paired_table(final_rows, T_star)

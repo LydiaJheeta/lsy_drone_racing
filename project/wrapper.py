@@ -10,6 +10,11 @@ Order of operations for the command applied at env step n (t = n / freq):
     2. degrade: thrust *= k(t)  with  k(t) = 1 + (k_end - 1) * min(t / T_end, 1)
     3. clip:    to the env's action-space bounds (thrust limits are checked *after* scaling)
 
+`T_end` must be set to the reference duration (`T_traj`) of the experiment being run, so that the
+drone sees the whole degradation 1.0 -> k_end within one lap. With a fixed `T_end` (the old default
+of 18 s) a fast lap (small `T_traj`) only ever saw part of the drop. No single default can be
+right for every `T_traj`, so callers pass it explicitly (`T_end=T_traj`, `set_params(T_end=...)`).
+
 The wrapper contains no randomness. It accepts a `seed` that is forwarded to `env.reset`, so two runs
 with the same seed and the same commands are identical.
 """
@@ -45,7 +50,9 @@ class ThrustDegradeDelay(gymnasium.Wrapper):
         Args:
             env: Env with a 4-element attitude `Box` action space.
             k_end: Thrust scale reached at `T_end` and kept afterwards.
-            T_end: Time in seconds over which k falls linearly from 1.0 to `k_end`.
+            T_end: Time in seconds over which k falls linearly from 1.0 to `k_end`. Set this to
+                the `T_traj` of the experiment (the default 18.0 only fits the nominal 18.75 s
+                reference); `set_params` can change it between the blocks of a sweep.
             delay: Command delay in env steps (2 steps at 50 Hz = 40 ms).
             freq: Env step frequency in Hz (time = steps / freq).
             seed: Default seed used by `reset()` when none is passed.
@@ -72,14 +79,24 @@ class ThrustDegradeDelay(gymnasium.Wrapper):
         self._n = 0
         self.last_applied_action: NDArray | None = None
 
-    def set_params(self, k_end: float | None = None, delay: int | None = None) -> None:
-        """Change `k_end` and/or `delay`; takes effect from the next `reset()`."""
+    def set_params(
+        self, k_end: float | None = None, delay: int | None = None, T_end: float | None = None
+    ) -> None:
+        """Change `k_end`, `delay` and/or `T_end`; takes effect from the next `reset()`.
+
+        `T_end` must be the reference duration `T_traj` of the experiment that is about to run,
+        otherwise a fast lap ends before k(t) has reached `k_end` (see the module docstring).
+        """
         if k_end is not None:
             self.k_end = float(k_end)
         if delay is not None:
             if delay < 0:
                 raise ValueError("delay must be >= 0")
             self.delay = int(delay)
+        if T_end is not None:
+            if T_end <= 0:
+                raise ValueError("T_end must be > 0")
+            self.T_end = float(T_end)
 
     def thrust_scale(self, t: float) -> float:
         """k(t): 1.0 at t=0, `k_end` at t=T_end, linear in between, constant after."""

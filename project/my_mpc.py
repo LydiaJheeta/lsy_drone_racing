@@ -6,10 +6,19 @@ current state observations and desired waypoints.
 The waypoints are generated using cubic spline interpolation from a set of predefined waypoints.
 Note that the trajectory uses pre-defined waypoints instead of dynamically generating a good path.
 
-Copy of lsy_drone_racing/control/attitude_mpc.py. The ONLY functional change: the duration of the
-reference spline is a constructor argument `T_traj` (default 18.75 s = the original value).
-Smaller `T_traj` flies the same waypoints faster. Also, `lsy_drone_racing` is imported first
-because crazyflow must be imported before scipy.
+Copy of lsy_drone_racing/control/attitude_mpc.py with two added constructor arguments; with their
+defaults the controller is bit-identical to the original:
+
+* `T_traj` (default 18.75 s = the original value): duration of the reference spline. A smaller
+  `T_traj` flies the same waypoints faster.
+* `u_weight_scale` (default 1.0): multiplies the WHOLE input-weight block
+  `R = diag([1, 1, 1, 50])` of the LINEAR_LS cost, i.e. the only terms that penalise the commands
+  (roll/pitch/yaw towards 0 and collective thrust towards hover). The formulation has no
+  rate-of-change (du) term, so there is nothing else to scale. Scaling R uniformly keeps the
+  original 1:1:1:50 ratio between the attitude and the thrust command penalties and moves the
+  whole cost towards "cheap tracking error, expensive control effort" as the scale grows.
+
+Also, `lsy_drone_racing` is imported first because crazyflow must be imported before scipy.
 """
 
 from __future__ import annotations  # Python 3.10 type hints
@@ -63,9 +72,20 @@ def create_acados_model(parameters: dict) -> AcadosModel:
 
 
 def create_ocp_solver(
-    Tf: float, N: int, parameters: dict, verbose: bool = False
+    Tf: float, N: int, parameters: dict, verbose: bool = False, u_weight_scale: float = 1.0
 ) -> tuple[AcadosOcpSolver, AcadosOcp]:
-    """Creates an acados Optimal Control Problem and Solver."""
+    """Creates an acados Optimal Control Problem and Solver.
+
+    Args:
+        Tf: Prediction horizon in seconds.
+        N: Number of horizon steps.
+        parameters: Drone parameters from `crazyflow.dynamics.load_params`.
+        verbose: Passed to `AcadosOcpSolver`.
+        u_weight_scale: Factor applied to the whole input-weight block R (see module docstring).
+            1.0 reproduces the original tuning; > 1 penalises the commands more.
+    """
+    if u_weight_scale <= 0:
+        raise ValueError("u_weight_scale must be > 0")
     ocp = AcadosOcp()
 
     # Set model
@@ -107,8 +127,9 @@ def create_ocp_solver(
             5.0,  # drpy
         ]
     )
-    # Input weights (reference is upright orientation and hover thrust)
-    R = np.diag(
+    # Input weights (reference is upright orientation and hover thrust). The whole block is
+    # scaled by `u_weight_scale`: the only command-penalising terms (there is no du cost).
+    R = u_weight_scale * np.diag(
         [
             1.0,  # rpy
             1.0,  # rpy
@@ -183,6 +204,16 @@ def create_ocp_solver(
         cmake_builder=cmake_builder,
     )
 
+    # The weights have to be pushed into the solver at runtime, not only through the generated
+    # code: every solver of this process is loaded from the same shared library path
+    # (c_generated_code/lib..._basic_example_mpc.so), and the OS loader returns the image it
+    # already has open, so a solver built later in the same process silently keeps the FIRST
+    # build's W. Verified: without these calls, u_weight_scale=30 reproduced the
+    # u_weight_scale=1 trajectory step for step. cost_set writes into this solver instance only.
+    for stage in range(N):
+        acados_ocp_solver.cost_set(stage, "W", ocp.cost.W)
+    acados_ocp_solver.cost_set(N, "W", ocp.cost.W_e)
+
     return acados_ocp_solver, ocp
 
 
@@ -195,6 +226,7 @@ class AttitudeMPC(Controller):
         info: dict,
         config: dict,
         T_traj: float = DEFAULT_T_TRAJ,
+        u_weight_scale: float = 1.0,
     ):
         """Initialize the attitude controller.
 
@@ -204,6 +236,8 @@ class AttitudeMPC(Controller):
             info: Additional environment information from the reset.
             config: The configuration of the environment.
             T_traj: Duration in seconds of the reference spline through the waypoints.
+            u_weight_scale: Factor on the input-weight block R of the cost (see module docstring).
+                1.0 is the original tuning.
         """
         super().__init__(obs, info, config)
         self._N = 25
@@ -241,8 +275,9 @@ class AttitudeMPC(Controller):
         self._waypoints_yaw = self._waypoints_pos[:, 0] * 0
 
         self.drone_params = load_params(Dynamics.so_rpy, config.sim.drone)
+        self.u_weight_scale = float(u_weight_scale)
         self._acados_ocp_solver, self._ocp = create_ocp_solver(
-            self._T_HORIZON, self._N, self.drone_params
+            self._T_HORIZON, self._N, self.drone_params, u_weight_scale=self.u_weight_scale
         )
         self._nx = self._ocp.model.x.rows()
         self._nu = self._ocp.model.u.rows()

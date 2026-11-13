@@ -11,9 +11,11 @@ Everything here lives outside the upstream repo code; nothing in `lsy_drone_raci
 | `wrapper.py` | `ThrustDegradeDelay`: thrust scaling k(t) + command delay |
 | `my_mpc.py` | copy of `attitude_mpc.py` with a `T_traj` argument (default 18.75 s) |
 | `run_eval.py` | Step 4: T_traj sweep, nominal vs. wrapped, paired seeds, tables + CSV |
+| `round3.py` | Experiment C (delay x cost-weight scale) and D (T_traj x k_end), tables + CSV |
+| `HANDOFF.md` | the brief this round of work was given (verbatim) |
 | `config/att_level{0,1}.toml` | copies of `config/level{0,1}.toml` with `control_mode="attitude"`, `render=false` |
 | `tests/` | one pytest module per module above |
-| `results/` | every run writes to a NEW timestamped folder (`step0_<ts>/`, `eval_<ts>/`) |
+| `results/` | every run writes to a NEW timestamped folder (`step0_<ts>/`, `eval_<ts>/`, ...) |
 
 ## Running
 
@@ -23,7 +25,12 @@ Run from `project/` — acados writes `c_generated_code/` into the working direc
 cd project
 pixi run python diagnose.py --levels="[0,1]" --n_runs=20 --seed0=0     # Step 0
 pixi run python run_eval.py                                            # Step 4 (sweep + final)
+pixi run python grid.py --exp=A                                        # experiments A, B
+pixi run python round3.py --exp=CD                                     # experiments C, D
 ```
+
+`--exp=CD` runs both round-3 experiments into one `results/round3_<ts>/` folder; `--exp=C` and
+`--exp=D --out_dir=results/round3_<ts>` run them separately into the same folder.
 
 Tests (never install pytest in the default env; use the `tests` env, locked):
 
@@ -57,6 +64,26 @@ pytest otherwise auto-loads ROS's `launch_testing` plugin and crashes on `import
   terminates: it ends as `timeout` / `trajectory_end`. We therefore log `min_z`, `min_z_airborne`
   (min z after first exceeding 0.15 m) and `final_z`, and report `fall` when a non-terminated
   failure ends below 5 cm or dips below 5 cm after take-off.
+* **`T_end` is the `T_traj` of the experiment, not a constant.** k(t) falls linearly from 1.0 to
+  `k_end` over `T_end` seconds of absolute time, so a fixed `T_end` (the old default of 18 s) meant
+  a fast lap (small `T_traj`) ended before k had reached `k_end` and the condition label was a lie.
+  `wrapper.set_params(T_end=...)` now exists, `run_eval.py` sets `T_end = T_traj` of each block
+  unless `--T_end` is given, and `grid.py`/`round3.py` set it per block. Consequence: the earlier
+  `grid_20261113_021212/expB` numbers at T_traj=16 were run with T_end=18 s, i.e. they never
+  reached the stated `k_end`; experiment D supersedes them.
+* **Cost weights: `my_mpc.py` takes `u_weight_scale`** (default 1.0 = the original tuning). The
+  LINEAR_LS cost penalises the commands only through the input block `R = diag([1, 1, 1, 50])`
+  (roll/pitch/yaw towards 0, thrust towards hover); there is **no** rate-of-change (du) term, so
+  there is nothing else to scale. `u_weight_scale` multiplies all four entries, which keeps the
+  original 1:1:1:50 ratio between the attitude and thrust penalties. Scaling the attitude and the
+  thrust penalty separately is the obvious follow-up but is not implemented.
+* **acados gotcha: the generated solver library is dlopen-cached per path.** Every solver in a
+  process is loaded from `c_generated_code/lib..._basic_example_mpc.so`; once that file has been
+  opened, rebuilding it does not affect a solver created later in the same process, which silently
+  keeps the FIRST build's cost matrix. Measured: before the fix, `u_weight_scale=30` reproduced the
+  `u_weight_scale=1` trajectory step for step. `create_ocp_solver` therefore pushes `W` into each
+  solver instance with `cost_set` after creating it. This never mattered before, because nothing
+  but `T_traj` (a Python-side reference, not part of the OCP) used to change between episodes.
 * **Wrapper order of operations** for step n (t = n/50 s): delay -> thrust *= k(t) -> clip to the
   env's action bounds. While the delay buffer fills (n < d) the *first* command is repeated.
   k(t) falls linearly 1.0 -> `k_end` over `T_end` seconds of **absolute** time and is constant

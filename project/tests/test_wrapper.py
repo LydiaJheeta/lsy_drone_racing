@@ -118,3 +118,35 @@ def test_set_params_applies_from_next_reset():
         w.step(c)
     for n, got in enumerate(env.received):
         assert np.allclose(got, cmds[max(n - 3, 0)], atol=1e-6)
+
+
+def test_set_params_changes_T_end_so_k_reaches_k_end_at_T_traj():
+    """The bug this guards: a fixed T_end means a fast lap never sees the full thrust drop."""
+    w = ThrustDegradeDelay(FakeEnv(), k_end=0.6, T_end=18.0, delay=0)
+    assert w.thrust_scale(12.0) == pytest.approx(1 - 0.4 * 12.0 / 18.0)  # 0.733, not 0.6
+    w.set_params(T_end=12.0)  # T_end = T_traj of the experiment about to run
+    assert w.T_end == 12.0
+    assert w.thrust_scale(12.0) == pytest.approx(0.6)
+    assert w.thrust_scale(6.0) == pytest.approx(0.8)  # half way down
+    assert w.thrust_scale(13.0) == pytest.approx(0.6)  # constant afterwards
+    w.set_params(k_end=0.9)  # changing one parameter leaves the others alone
+    assert (w.T_end, w.delay) == (12.0, 0) and w.k_end == pytest.approx(0.9)
+
+
+def test_set_params_rejects_a_non_positive_T_end():
+    w = ThrustDegradeDelay(FakeEnv(), T_end=18.0)
+    for bad in (0.0, -1.0):
+        with pytest.raises(ValueError):
+            w.set_params(T_end=bad)
+    assert w.T_end == 18.0
+
+
+def test_new_T_end_is_applied_to_the_commands_of_the_next_episode():
+    env = FakeEnv(n_steps=200)
+    w = ThrustDegradeDelay(env, k_end=0.5, T_end=2.0, delay=0, freq=50.0)
+    w.set_params(T_end=1.0)
+    w.reset(seed=0)
+    for n in range(51):
+        w.step(_cmd(n, 0.6))
+    assert env.received[25][3] == pytest.approx(0.6 * 0.75, rel=1e-6)  # t=0.5 s -> k=0.75
+    assert env.received[50][3] == pytest.approx(0.6 * 0.5, rel=1e-6)  # t=1.0 s -> k=k_end

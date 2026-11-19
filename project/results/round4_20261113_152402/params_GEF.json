@@ -1,0 +1,54 @@
+{
+  "exp": "GEF",
+  "seeds": "0-19",
+  "config": "att_level0.toml",
+  "controller": "my_mpc.py",
+  "E": {
+    "ts": [
+      14.0,
+      12.0
+    ],
+    "ks": [
+      1.0,
+      0.99,
+      0.97,
+      0.95,
+      0.9,
+      0.8
+    ],
+    "delay": 0,
+    "u_weight_scale": 1.0,
+    "T_end": "= T_traj",
+    "flip_ks": [
+      0.99,
+      0.97
+    ]
+  },
+  "F": {
+    "T_traj": 18.75,
+    "delays": [
+      0,
+      1
+    ],
+    "rpy_scales": [
+      1.0,
+      10.0,
+      30.0
+    ],
+    "thrust_scales": [
+      1.0,
+      10.0,
+      30.0
+    ],
+    "k_end": 1.0
+  },
+  "G": {
+    "ts": [
+      18.75,
+      16.0
+    ],
+    "seed": 0,
+    "gate_half_inner": 0.2,
+    "gate_half_outer": 0.36
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "timestamp": "20261113_155148",
+  "args": {
+    "seed": 42,
+    "torch_deterministic": true,
+    "total_timesteps": 2000000,
+    "learning_rate": 0.0015,
+    "num_envs": 256,
+    "num_steps": 32,
+    "anneal_lr": true,
+    "gamma": 0.94,
+    "gae_lambda": 0.97,
+    "num_minibatches": 8,
+    "update_epochs": 10,
+    "norm_adv": true,
+    "clip_coef": 0.26,
+    "clip_vloss": true,
+    "ent_coef": 0.007,
+    "vf_coef": 0.7,
+    "max_grad_norm": 1.5,
+    "target_kl": null,
+    "config": "att_level0.toml",
+    "batch_size": 8192,
+    "minibatch_size": 1024,
+    "num_iterations": 244
+  },
+  "obs_dim": 41,
+  "act_dim": 3,
+  "n_passes": 5,
+  "device": "cpu",
+  "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+  "torch": "2.8.0+cu128",
+  "machine_load_at_start": {
+    "loadavg": [
+      3.35,
+      2.33,
+      1.94
+    ],
+    "n_cpus": 8,
+    "torch_threads": 4,
+    "n_python_procs": 10,
+    "other_jobs": [
+      "round4"
+    ]
+  },
+  "machine_load_at_end": {
+    "loadavg": [
+      7.98,
+      6.67,
+      3.96
+    ],
+    "n_cpus": 8,
+    "torch_threads": 4,
+    "n_python_procs": 10,
+    "other_jobs": [
+      "round4"
+    ]
+  },
+  "wall_s": 287.56,
+  "global_step": 1998848
+}

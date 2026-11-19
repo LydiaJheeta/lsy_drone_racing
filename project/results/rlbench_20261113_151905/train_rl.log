@@ -1,0 +1,24 @@
+
+=== train_rl | num_envs=1 | 200 steps ===
+  build   2.06s | compile   1.89s |    9.068 ms/vec-step (p50 8.896, p99 10.366)
+  steps/s blocked      110.3 | pipelined      104.8 | done frac 0.0800
+
+=== train_rl | num_envs=16 | 200 steps ===
+  build   0.66s | compile   2.66s |   29.796 ms/vec-step (p50 29.108, p99 50.398)
+  steps/s blocked      537.0 | pipelined      578.3 | done frac 0.0769
+
+=== train_rl | num_envs=64 | 200 steps ===
+  build   0.62s | compile   2.74s |   33.723 ms/vec-step (p50 33.417, p99 40.535)
+  steps/s blocked     1897.8 | pipelined     1820.4 | done frac 0.0749
+
+=== train_rl | num_envs=256 | 200 steps ===
+  build   0.65s | compile   2.72s |   37.663 ms/vec-step (p50 37.215, p99 41.642)
+  steps/s blocked     6797.1 | pipelined     6727.5 | done frac 0.0771
+
+pipeline          N   ms/step     steps/s  steps/s(pipe)    done
+train_rl          1     9.068       110.3          104.8  0.0800
+train_rl         16    29.796       537.0          578.3  0.0769
+train_rl         64    33.723      1897.8         1820.4  0.0749
+train_rl        256    37.663      6797.1         6727.5  0.0771
+
+Wrote results/rlbench_20261113_151905/train_rl/throughput.csv

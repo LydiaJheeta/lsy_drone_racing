@@ -1,0 +1,803 @@
+Writing results to results/round4_20261113_152402 (exp GEF, seeds 0-19)
+
+## Diagnosis G -- geometry of the FIXED reference spline at each gate pass
+
+Gate opening: half-width 0.2 m; frame material out to 0.36 m. `in_plane_offset_m` < 0.2 goes through the opening; `clearance_to_frame_m` is 0 when the reference is inside the frame material. `approach_angle_to_normal_deg` is 0 for a reference crossing straight through.
+
+Gate sequence (0-based ids, 5 passes): [0, 1, 2, 3, 1]
+
+| T_traj | pass | gate_id | found_by | t_s | ref_speed_mps | dist_to_centre_m | in_plane_offset_m | clearance_to_frame_m | min_clearance_in_window_m | approach_angle_to_normal_deg | inside_opening | ref_accel_mps2 | required_thrust_N | max_required_thrust_in_window_N |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 18.75 | 1 | 0 | plane_crossing | 3.65 | 0.934 | 0.031 | 0.024 | 0.176 | 0.175 | 12.84 | True | 0.189 | 0.423 | 0.428 |
+| 18.75 | 2 | 1 | plane_crossing | 6.49 | 0.732 | 0.002 | 0.002 | 0.198 | 0.198 | 6.45 | True | 1.14 | 0.410 | 0.418 |
+| 18.75 | 3 | 2 | plane_crossing | 9.52 | 0.374 | 0.036 | 0.034 | 0.166 | 0.161 | 18.35 | True | 0.460 | 0.437 | 0.441 |
+| 18.75 | 4 | 3 | plane_crossing | 13.64 | 0.881 | 0.050 | 0.050 | 0.150 | 0.150 | 3.83 | True | 0.633 | 0.430 | 0.430 |
+| 18.75 | 5 | 1 | plane_crossing | 17.05 | 0.613 | 0.001 | 0.000 | 0.200 | 0.199 | 4.11 | True | 0.262 | 0.426 | 0.426 |
+| 16.00 | 1 | 0 | plane_crossing | 3.10 | 1.10 | 0.032 | 0.023 | 0.177 | 0.175 | 12.94 | True | 0.263 | 0.423 | 0.430 |
+| 16.00 | 2 | 1 | plane_crossing | 5.55 | 0.854 | 0.008 | 0.002 | 0.198 | 0.198 | 6.54 | True | 1.58 | 0.405 | 0.418 |
+| 16.00 | 3 | 2 | plane_crossing | 8.13 | 0.436 | 0.034 | 0.032 | 0.168 | 0.161 | 19.00 | True | 0.624 | 0.441 | 0.448 |
+| 16.00 | 4 | 3 | plane_crossing | 11.63 | 1.03 | 0.050 | 0.050 | 0.150 | 0.150 | 4.11 | True | 0.870 | 0.431 | 0.431 |
+| 16.00 | 5 | 1 | plane_crossing | 14.54 | 0.718 | 0.005 | 0.000 | 0.200 | 0.199 | 4.36 | True | 0.363 | 0.426 | 0.426 |
+
+### Dynamic demand of the whole reference (drag ignored)
+
+`k_end_that_removes_the_headroom` is the thrust scale at which the peak demand of the reference equals the actuator limit.
+
+| T_traj | mass_kg | max_speed_mps | max_accel_mps2 | max_required_thrust_N | mean_required_thrust_N | thrust_max_N | headroom_at_peak | k_end_that_removes_the_headroom |
+|---|---|---|---|---|---|---|---|---|
+| 18.75 | 0.043 | 1.17 | 1.63 | 0.446 | 0.426 | 0.800 | 1.79 | 0.557 |
+| 16.00 | 0.043 | 1.38 | 2.23 | 0.454 | 0.426 | 0.800 | 1.76 | 0.567 |
+
+### Gate poses used (true positions of this episode)
+
+| gate_id | position | yaw [deg] |
+|---|---|---|
+| 0 | [0.5, 0.25, 0.699999988079071] | -44.7 |
+| 1 | [1.0499999523162842, 0.75, 1.2000000476837158] | 134.6 |
+| 2 | [-1.0, -0.25, 0.699999988079071] | 179.9 |
+| 3 | [0.0, -0.75, 1.2000000476837158] | 0.0 |
+[expE] T=14 d=0 k=1 u1 seed= 0 ok=True gates=5 t=12.76s group=success tilt_sat=45.3% thr_max=0.800 ring_min=0.130
+[expE] T=14 d=0 k=1 u1 seed= 1 ok=True gates=5 t=12.76s group=success tilt_sat=50.3% thr_max=0.800 ring_min=0.116
+[expE] T=14 d=0 k=1 u1 seed= 2 ok=False gates=1 t=4.88s group=collision tilt_sat=43.0% thr_max=0.800 ring_min=0.096
+[expE] T=14 d=0 k=1 u1 seed= 3 ok=True gates=5 t=12.82s group=success tilt_sat=51.3% thr_max=0.800 ring_min=0.124
+[expE] T=14 d=0 k=1 u1 seed= 4 ok=False gates=3 t=10.22s group=collision tilt_sat=57.9% thr_max=0.800 ring_min=0.114
+[expE] T=14 d=0 k=1 u1 seed= 5 ok=False gates=1 t=4.92s group=collision tilt_sat=46.3% thr_max=0.800 ring_min=0.089
+[expE] T=14 d=0 k=1 u1 seed= 6 ok=True gates=5 t=12.80s group=success tilt_sat=46.9% thr_max=0.800 ring_min=0.092
+[expE] T=14 d=0 k=1 u1 seed= 7 ok=False gates=3 t=10.24s group=collision tilt_sat=49.2% thr_max=0.800 ring_min=0.077
+[expE] T=14 d=0 k=1 u1 seed= 8 ok=True gates=5 t=12.82s group=success tilt_sat=50.1% thr_max=0.800 ring_min=0.105
+[expE] T=14 d=0 k=1 u1 seed= 9 ok=True gates=5 t=12.82s group=success tilt_sat=50.1% thr_max=0.800 ring_min=0.107
+[expE] T=14 d=0 k=1 u1 seed=10 ok=True gates=5 t=12.78s group=success tilt_sat=54.8% thr_max=0.800 ring_min=0.097
+[expE] T=14 d=0 k=1 u1 seed=11 ok=False gates=3 t=10.20s group=collision tilt_sat=58.0% thr_max=0.800 ring_min=0.104
+[expE] T=14 d=0 k=1 u1 seed=12 ok=False gates=3 t=10.20s group=collision tilt_sat=60.0% thr_max=0.800 ring_min=0.101
+[expE] T=14 d=0 k=1 u1 seed=13 ok=True gates=5 t=12.76s group=success tilt_sat=50.2% thr_max=0.800 ring_min=0.104
+[expE] T=14 d=0 k=1 u1 seed=14 ok=True gates=5 t=12.84s group=success tilt_sat=49.1% thr_max=0.800 ring_min=0.118
+[expE] T=14 d=0 k=1 u1 seed=15 ok=True gates=5 t=12.74s group=success tilt_sat=53.7% thr_max=0.800 ring_min=0.092
+[expE] T=14 d=0 k=1 u1 seed=16 ok=True gates=5 t=12.80s group=success tilt_sat=51.2% thr_max=0.800 ring_min=0.112
+[expE] T=14 d=0 k=1 u1 seed=17 ok=True gates=5 t=12.82s group=success tilt_sat=53.8% thr_max=0.800 ring_min=0.125
+[expE] T=14 d=0 k=1 u1 seed=18 ok=False gates=1 t=4.92s group=collision tilt_sat=48.0% thr_max=0.800 ring_min=0.087
+[expE] T=14 d=0 k=1 u1 seed=19 ok=True gates=5 t=12.82s group=success tilt_sat=49.9% thr_max=0.800 ring_min=0.109
+[expE] T=14 d=0 k=0.99 u1 seed= 0 ok=True gates=5 t=12.74s group=success tilt_sat=54.5% thr_max=0.800 ring_min=0.117
+[expE] T=14 d=0 k=0.99 u1 seed= 1 ok=True gates=5 t=12.80s group=success tilt_sat=55.9% thr_max=0.800 ring_min=0.125
+[expE] T=14 d=0 k=0.99 u1 seed= 2 ok=True gates=5 t=12.84s group=success tilt_sat=55.3% thr_max=0.800 ring_min=0.118
+[expE] T=14 d=0 k=0.99 u1 seed= 3 ok=True gates=5 t=12.86s group=success tilt_sat=53.3% thr_max=0.800 ring_min=0.126
+[expE] T=14 d=0 k=0.99 u1 seed= 4 ok=True gates=5 t=12.78s group=success tilt_sat=51.5% thr_max=0.800 ring_min=0.107
+[expE] T=14 d=0 k=0.99 u1 seed= 5 ok=True gates=5 t=12.80s group=success tilt_sat=53.1% thr_max=0.800 ring_min=0.116
+[expE] T=14 d=0 k=0.99 u1 seed= 6 ok=True gates=5 t=12.84s group=success tilt_sat=48.8% thr_max=0.800 ring_min=0.108
+[expE] T=14 d=0 k=0.99 u1 seed= 7 ok=True gates=5 t=12.80s group=success tilt_sat=56.9% thr_max=0.800 ring_min=0.115
+[expE] T=14 d=0 k=0.99 u1 seed= 8 ok=False gates=3 t=10.22s group=collision tilt_sat=47.4% thr_max=0.800 ring_min=0.110
+[expE] T=14 d=0 k=0.99 u1 seed= 9 ok=True gates=5 t=12.84s group=success tilt_sat=49.1% thr_max=0.800 ring_min=0.107
+[expE] T=14 d=0 k=0.99 u1 seed=10 ok=True gates=5 t=12.74s group=success tilt_sat=45.4% thr_max=0.800 ring_min=0.110
+[expE] T=14 d=0 k=0.99 u1 seed=11 ok=False gates=3 t=10.16s group=collision tilt_sat=60.8% thr_max=0.800 ring_min=0.106
+[expE] T=14 d=0 k=0.99 u1 seed=12 ok=False gates=3 t=10.20s group=collision tilt_sat=57.3% thr_max=0.800 ring_min=0.112
+[expE] T=14 d=0 k=0.99 u1 seed=13 ok=False gates=1 t=4.92s group=collision tilt_sat=46.7% thr_max=0.800 ring_min=0.102
+[expE] T=14 d=0 k=0.99 u1 seed=14 ok=True gates=5 t=12.82s group=success tilt_sat=46.8% thr_max=0.800 ring_min=0.114
+[expE] T=14 d=0 k=0.99 u1 seed=15 ok=True gates=5 t=12.80s group=success tilt_sat=53.1% thr_max=0.800 ring_min=0.110
+[expE] T=14 d=0 k=0.99 u1 seed=16 ok=True gates=5 t=12.84s group=success tilt_sat=45.5% thr_max=0.800 ring_min=0.125
+[expE] T=14 d=0 k=0.99 u1 seed=17 ok=True gates=5 t=12.82s group=success tilt_sat=46.2% thr_max=0.800 ring_min=0.098
+[expE] T=14 d=0 k=0.99 u1 seed=18 ok=False gates=3 t=10.24s group=collision tilt_sat=46.5% thr_max=0.800 ring_min=0.112
+[expE] T=14 d=0 k=0.99 u1 seed=19 ok=True gates=5 t=12.82s group=success tilt_sat=52.3% thr_max=0.800 ring_min=0.099
+[expE] T=14 d=0 k=0.97 u1 seed= 0 ok=True gates=5 t=12.76s group=success tilt_sat=53.0% thr_max=0.800 ring_min=0.122
+[expE] T=14 d=0 k=0.97 u1 seed= 1 ok=True gates=5 t=12.78s group=success tilt_sat=51.8% thr_max=0.800 ring_min=0.111
+[expE] T=14 d=0 k=0.97 u1 seed= 2 ok=True gates=5 t=12.78s group=success tilt_sat=54.1% thr_max=0.800 ring_min=0.094
+[expE] T=14 d=0 k=0.97 u1 seed= 3 ok=True gates=5 t=12.84s group=success tilt_sat=51.7% thr_max=0.800 ring_min=0.111
+[expE] T=14 d=0 k=0.97 u1 seed= 4 ok=True gates=5 t=12.78s group=success tilt_sat=60.3% thr_max=0.800 ring_min=0.113
+[expE] T=14 d=0 k=0.97 u1 seed= 5 ok=True gates=5 t=12.82s group=success tilt_sat=53.7% thr_max=0.800 ring_min=0.115
+[expE] T=14 d=0 k=0.97 u1 seed= 6 ok=True gates=5 t=12.80s group=success tilt_sat=54.8% thr_max=0.800 ring_min=0.092
+[expE] T=14 d=0 k=0.97 u1 seed= 7 ok=True gates=5 t=12.74s group=success tilt_sat=56.2% thr_max=0.800 ring_min=0.107
+[expE] T=14 d=0 k=0.97 u1 seed= 8 ok=True gates=5 t=12.82s group=success tilt_sat=54.6% thr_max=0.800 ring_min=0.104
+[expE] T=14 d=0 k=0.97 u1 seed= 9 ok=True gates=5 t=12.82s group=success tilt_sat=49.0% thr_max=0.800 ring_min=0.117
+[expE] T=14 d=0 k=0.97 u1 seed=10 ok=True gates=5 t=12.78s group=success tilt_sat=53.1% thr_max=0.800 ring_min=0.111
+[expE] T=14 d=0 k=0.97 u1 seed=11 ok=True gates=5 t=12.82s group=success tilt_sat=49.1% thr_max=0.800 ring_min=0.079
+[expE] T=14 d=0 k=0.97 u1 seed=12 ok=True gates=5 t=12.78s group=success tilt_sat=50.4% thr_max=0.800 ring_min=0.088
+[expE] T=14 d=0 k=0.97 u1 seed=13 ok=False gates=0 t=2.76s group=collision tilt_sat=58.7% thr_max=0.800 ring_min=0.088
+[expE] T=14 d=0 k=0.97 u1 seed=14 ok=True gates=5 t=12.82s group=success tilt_sat=50.4% thr_max=0.800 ring_min=0.094
+[expE] T=14 d=0 k=0.97 u1 seed=15 ok=True gates=5 t=12.80s group=success tilt_sat=53.9% thr_max=0.800 ring_min=0.118
+[expE] T=14 d=0 k=0.97 u1 seed=16 ok=True gates=5 t=12.78s group=success tilt_sat=62.0% thr_max=0.800 ring_min=0.122
+[expE] T=14 d=0 k=0.97 u1 seed=17 ok=True gates=5 t=12.78s group=success tilt_sat=52.9% thr_max=0.800 ring_min=0.107
+[expE] T=14 d=0 k=0.97 u1 seed=18 ok=True gates=5 t=12.80s group=success tilt_sat=59.8% thr_max=0.800 ring_min=0.101
+[expE] T=14 d=0 k=0.97 u1 seed=19 ok=True gates=5 t=12.84s group=success tilt_sat=56.9% thr_max=0.800 ring_min=0.104
+[expE] T=14 d=0 k=0.95 u1 seed= 0 ok=True gates=5 t=12.76s group=success tilt_sat=47.5% thr_max=0.800 ring_min=0.108
+[expE] T=14 d=0 k=0.95 u1 seed= 1 ok=True gates=5 t=12.78s group=success tilt_sat=56.2% thr_max=0.800 ring_min=0.110
+[expE] T=14 d=0 k=0.95 u1 seed= 2 ok=True gates=5 t=12.78s group=success tilt_sat=61.8% thr_max=0.800 ring_min=0.126
+[expE] T=14 d=0 k=0.95 u1 seed= 3 ok=True gates=5 t=12.86s group=success tilt_sat=57.2% thr_max=0.800 ring_min=0.096
+[expE] T=14 d=0 k=0.95 u1 seed= 4 ok=True gates=5 t=12.80s group=success tilt_sat=57.8% thr_max=0.800 ring_min=0.095
+[expE] T=14 d=0 k=0.95 u1 seed= 5 ok=True gates=5 t=12.74s group=success tilt_sat=52.3% thr_max=0.800 ring_min=0.077
+[expE] T=14 d=0 k=0.95 u1 seed= 6 ok=True gates=5 t=12.80s group=success tilt_sat=51.1% thr_max=0.800 ring_min=0.087
+[expE] T=14 d=0 k=0.95 u1 seed= 7 ok=True gates=5 t=12.78s group=success tilt_sat=55.9% thr_max=0.800 ring_min=0.119
+[expE] T=14 d=0 k=0.95 u1 seed= 8 ok=True gates=5 t=12.84s group=success tilt_sat=54.2% thr_max=0.800 ring_min=0.105
+[expE] T=14 d=0 k=0.95 u1 seed= 9 ok=True gates=5 t=12.82s group=success tilt_sat=52.9% thr_max=0.800 ring_min=0.104
+[expE] T=14 d=0 k=0.95 u1 seed=10 ok=True gates=5 t=12.72s group=success tilt_sat=52.2% thr_max=0.800 ring_min=0.105
+[expE] T=14 d=0 k=0.95 u1 seed=11 ok=False gates=1 t=4.90s group=collision tilt_sat=51.4% thr_max=0.800 ring_min=0.104
+[expE] T=14 d=0 k=0.95 u1 seed=12 ok=True gates=5 t=12.80s group=success tilt_sat=54.7% thr_max=0.800 ring_min=0.088
+[expE] T=14 d=0 k=0.95 u1 seed=13 ok=False gates=1 t=4.96s group=collision tilt_sat=51.2% thr_max=0.800 ring_min=0.105
+[expE] T=14 d=0 k=0.95 u1 seed=14 ok=True gates=5 t=12.80s group=success tilt_sat=51.9% thr_max=0.800 ring_min=0.113
+[expE] T=14 d=0 k=0.95 u1 seed=15 ok=True gates=5 t=12.78s group=success tilt_sat=59.9% thr_max=0.800 ring_min=0.118
+[expE] T=14 d=0 k=0.95 u1 seed=16 ok=True gates=5 t=12.80s group=success tilt_sat=61.7% thr_max=0.800 ring_min=0.117
+[expE] T=14 d=0 k=0.95 u1 seed=17 ok=True gates=5 t=12.80s group=success tilt_sat=54.8% thr_max=0.800 ring_min=0.093
+[expE] T=14 d=0 k=0.95 u1 seed=18 ok=True gates=5 t=12.82s group=success tilt_sat=51.0% thr_max=0.800 ring_min=0.084
+[expE] T=14 d=0 k=0.95 u1 seed=19 ok=True gates=5 t=12.80s group=success tilt_sat=51.6% thr_max=0.800 ring_min=0.108
+[expE] T=14 d=0 k=0.9 u1 seed= 0 ok=True gates=5 t=12.76s group=success tilt_sat=51.3% thr_max=0.800 ring_min=0.122
+[expE] T=14 d=0 k=0.9 u1 seed= 1 ok=True gates=5 t=12.78s group=success tilt_sat=54.6% thr_max=0.800 ring_min=0.112
+[expE] T=14 d=0 k=0.9 u1 seed= 2 ok=True gates=5 t=12.82s group=success tilt_sat=55.1% thr_max=0.800 ring_min=0.102
+[expE] T=14 d=0 k=0.9 u1 seed= 3 ok=True gates=5 t=12.84s group=success tilt_sat=53.9% thr_max=0.800 ring_min=0.101
+[expE] T=14 d=0 k=0.9 u1 seed= 4 ok=True gates=5 t=12.80s group=success tilt_sat=59.1% thr_max=0.800 ring_min=0.089
+[expE] T=14 d=0 k=0.9 u1 seed= 5 ok=True gates=5 t=12.80s group=success tilt_sat=54.4% thr_max=0.800 ring_min=0.112
+[expE] T=14 d=0 k=0.9 u1 seed= 6 ok=False gates=4 t=10.34s group=collision tilt_sat=48.2% thr_max=0.800 ring_min=0.090
+[expE] T=14 d=0 k=0.9 u1 seed= 7 ok=True gates=5 t=12.78s group=success tilt_sat=55.4% thr_max=0.800 ring_min=0.123
+[expE] T=14 d=0 k=0.9 u1 seed= 8 ok=True gates=5 t=12.82s group=success tilt_sat=59.1% thr_max=0.800 ring_min=0.114
+[expE] T=14 d=0 k=0.9 u1 seed= 9 ok=False gates=1 t=4.94s group=collision tilt_sat=34.4% thr_max=0.800 ring_min=0.096
+[expE] T=14 d=0 k=0.9 u1 seed=10 ok=True gates=5 t=12.78s group=success tilt_sat=56.7% thr_max=0.800 ring_min=0.102
+[expE] T=14 d=0 k=0.9 u1 seed=11 ok=True gates=5 t=12.84s group=success tilt_sat=51.9% thr_max=0.800 ring_min=0.105
+[expE] T=14 d=0 k=0.9 u1 seed=12 ok=False gates=3 t=10.18s group=collision tilt_sat=51.9% thr_max=0.800 ring_min=0.101
+[expE] T=14 d=0 k=0.9 u1 seed=13 ok=False gates=1 t=4.94s group=collision tilt_sat=50.6% thr_max=0.800 ring_min=0.100
+[expE] T=14 d=0 k=0.9 u1 seed=14 ok=True gates=5 t=12.86s group=success tilt_sat=56.3% thr_max=0.800 ring_min=0.111
+[expE] T=14 d=0 k=0.9 u1 seed=15 ok=True gates=5 t=12.78s group=success tilt_sat=56.0% thr_max=0.800 ring_min=0.101
+[expE] T=14 d=0 k=0.9 u1 seed=16 ok=True gates=5 t=12.76s group=success tilt_sat=53.9% thr_max=0.800 ring_min=0.133
+[expE] T=14 d=0 k=0.9 u1 seed=17 ok=True gates=5 t=12.78s group=success tilt_sat=55.2% thr_max=0.800 ring_min=0.092
+[expE] T=14 d=0 k=0.9 u1 seed=18 ok=False gates=3 t=10.28s group=collision tilt_sat=54.7% thr_max=0.800 ring_min=0.077
+[expE] T=14 d=0 k=0.9 u1 seed=19 ok=True gates=5 t=12.80s group=success tilt_sat=49.8% thr_max=0.800 ring_min=0.129
+[expE] T=14 d=0 k=0.8 u1 seed= 0 ok=True gates=5 t=12.78s group=success tilt_sat=47.7% thr_max=0.800 ring_min=0.112
+[expE] T=14 d=0 k=0.8 u1 seed= 1 ok=True gates=5 t=12.80s group=success tilt_sat=51.6% thr_max=0.800 ring_min=0.093
+[expE] T=14 d=0 k=0.8 u1 seed= 2 ok=False gates=1 t=4.96s group=collision tilt_sat=48.0% thr_max=0.800 ring_min=0.105
+[expE] T=14 d=0 k=0.8 u1 seed= 3 ok=True gates=5 t=12.84s group=success tilt_sat=58.1% thr_max=0.800 ring_min=0.101
+[expE] T=14 d=0 k=0.8 u1 seed= 4 ok=True gates=5 t=12.76s group=success tilt_sat=58.8% thr_max=0.800 ring_min=0.110
+[expE] T=14 d=0 k=0.8 u1 seed= 5 ok=False gates=1 t=4.92s group=collision tilt_sat=51.2% thr_max=0.800 ring_min=0.104
+[expE] T=14 d=0 k=0.8 u1 seed= 6 ok=True gates=5 t=12.78s group=success tilt_sat=56.0% thr_max=0.800 ring_min=0.097
+[expE] T=14 d=0 k=0.8 u1 seed= 7 ok=True gates=5 t=12.80s group=success tilt_sat=49.8% thr_max=0.800 ring_min=0.126
+[expE] T=14 d=0 k=0.8 u1 seed= 8 ok=True gates=5 t=12.82s group=success tilt_sat=57.7% thr_max=0.800 ring_min=0.108
+[expE] T=14 d=0 k=0.8 u1 seed= 9 ok=True gates=5 t=12.80s group=success tilt_sat=57.7% thr_max=0.800 ring_min=0.110
+[expE] T=14 d=0 k=0.8 u1 seed=10 ok=True gates=5 t=12.74s group=success tilt_sat=51.3% thr_max=0.800 ring_min=0.112
+[expE] T=14 d=0 k=0.8 u1 seed=11 ok=True gates=5 t=12.80s group=success tilt_sat=57.2% thr_max=0.800 ring_min=0.116
+[expE] T=14 d=0 k=0.8 u1 seed=12 ok=False gates=3 t=10.18s group=collision tilt_sat=55.8% thr_max=0.800 ring_min=0.103
+[expE] T=14 d=0 k=0.8 u1 seed=13 ok=False gates=1 t=4.94s group=collision tilt_sat=49.4% thr_max=0.800 ring_min=0.103
+[expE] T=14 d=0 k=0.8 u1 seed=14 ok=True gates=5 t=12.82s group=success tilt_sat=53.7% thr_max=0.800 ring_min=0.124
+[expE] T=14 d=0 k=0.8 u1 seed=15 ok=True gates=5 t=12.76s group=success tilt_sat=59.6% thr_max=0.800 ring_min=0.124
+[expE] T=14 d=0 k=0.8 u1 seed=16 ok=True gates=5 t=12.78s group=success tilt_sat=51.2% thr_max=0.800 ring_min=0.139
+[expE] T=14 d=0 k=0.8 u1 seed=17 ok=False gates=1 t=4.92s group=collision tilt_sat=50.0% thr_max=0.800 ring_min=0.101
+[expE] T=14 d=0 k=0.8 u1 seed=18 ok=True gates=5 t=12.80s group=success tilt_sat=51.2% thr_max=0.800 ring_min=0.104
+[expE] T=14 d=0 k=0.8 u1 seed=19 ok=True gates=5 t=12.78s group=success tilt_sat=50.7% thr_max=0.800 ring_min=0.096
+[expE] T=12 d=0 k=1 u1 seed= 0 ok=True gates=5 t=10.96s group=success tilt_sat=52.2% thr_max=0.800 ring_min=0.085
+[expE] T=12 d=0 k=1 u1 seed= 1 ok=False gates=1 t=4.22s group=collision tilt_sat=42.2% thr_max=0.800 ring_min=0.091
+[expE] T=12 d=0 k=1 u1 seed= 2 ok=True gates=5 t=10.96s group=success tilt_sat=45.4% thr_max=0.800 ring_min=0.116
+[expE] T=12 d=0 k=1 u1 seed= 3 ok=True gates=5 t=10.98s group=success tilt_sat=53.4% thr_max=0.800 ring_min=0.127
+[expE] T=12 d=0 k=1 u1 seed= 4 ok=True gates=5 t=10.94s group=success tilt_sat=53.2% thr_max=0.800 ring_min=0.094
+[expE] T=12 d=0 k=1 u1 seed= 5 ok=True gates=5 t=10.98s group=success tilt_sat=52.1% thr_max=0.800 ring_min=0.092
+[expE] T=12 d=0 k=1 u1 seed= 6 ok=False gates=1 t=4.18s group=collision tilt_sat=45.9% thr_max=0.800 ring_min=0.097
+[expE] T=12 d=0 k=1 u1 seed= 7 ok=True gates=5 t=10.98s group=success tilt_sat=58.8% thr_max=0.800 ring_min=0.084
+[expE] T=12 d=0 k=1 u1 seed= 8 ok=True gates=5 t=11.02s group=success tilt_sat=55.7% thr_max=0.800 ring_min=0.098
+[expE] T=12 d=0 k=1 u1 seed= 9 ok=True gates=5 t=10.98s group=success tilt_sat=57.4% thr_max=0.800 ring_min=0.107
+[expE] T=12 d=0 k=1 u1 seed=10 ok=True gates=5 t=10.92s group=success tilt_sat=59.3% thr_max=0.800 ring_min=0.114
+[expE] T=12 d=0 k=1 u1 seed=11 ok=True gates=5 t=11.00s group=success tilt_sat=48.5% thr_max=0.800 ring_min=0.119
+[expE] T=12 d=0 k=1 u1 seed=12 ok=False gates=1 t=4.24s group=collision tilt_sat=41.0% thr_max=0.800 ring_min=0.097
+[expE] T=12 d=0 k=1 u1 seed=13 ok=False gates=3 t=8.76s group=collision tilt_sat=55.5% thr_max=0.800 ring_min=0.107
+[expE] T=12 d=0 k=1 u1 seed=14 ok=True gates=5 t=11.04s group=success tilt_sat=53.4% thr_max=0.800 ring_min=0.095
+[expE] T=12 d=0 k=1 u1 seed=15 ok=False gates=1 t=4.24s group=collision tilt_sat=50.5% thr_max=0.800 ring_min=0.104
+[expE] T=12 d=0 k=1 u1 seed=16 ok=True gates=5 t=10.98s group=success tilt_sat=55.7% thr_max=0.800 ring_min=0.099
+[expE] T=12 d=0 k=1 u1 seed=17 ok=True gates=5 t=10.98s group=success tilt_sat=52.8% thr_max=0.800 ring_min=0.103
+[expE] T=12 d=0 k=1 u1 seed=18 ok=False gates=0 t=2.42s group=collision tilt_sat=54.5% thr_max=0.800 ring_min=0.094
+[expE] T=12 d=0 k=1 u1 seed=19 ok=False gates=1 t=4.18s group=collision tilt_sat=45.9% thr_max=0.800 ring_min=0.086
+[expE] T=12 d=0 k=0.99 u1 seed= 0 ok=False gates=1 t=4.18s group=collision tilt_sat=55.5% thr_max=0.800 ring_min=0.096
+[expE] T=12 d=0 k=0.99 u1 seed= 1 ok=True gates=5 t=10.96s group=success tilt_sat=54.2% thr_max=0.800 ring_min=0.088
+[expE] T=12 d=0 k=0.99 u1 seed= 2 ok=False gates=1 t=4.18s group=collision tilt_sat=49.3% thr_max=0.800 ring_min=0.094
+[expE] T=12 d=0 k=0.99 u1 seed= 3 ok=True gates=5 t=11.00s group=success tilt_sat=54.0% thr_max=0.800 ring_min=0.116
+[expE] T=12 d=0 k=0.99 u1 seed= 4 ok=True gates=5 t=10.96s group=success tilt_sat=50.0% thr_max=0.800 ring_min=0.082
+[expE] T=12 d=0 k=0.99 u1 seed= 5 ok=True gates=5 t=10.98s group=success tilt_sat=51.7% thr_max=0.800 ring_min=0.100
+[expE] T=12 d=0 k=0.99 u1 seed= 6 ok=False gates=1 t=4.24s group=collision tilt_sat=44.3% thr_max=0.800 ring_min=0.103
+[expE] T=12 d=0 k=0.99 u1 seed= 7 ok=True gates=5 t=10.96s group=success tilt_sat=54.7% thr_max=0.800 ring_min=0.088
+[expE] T=12 d=0 k=0.99 u1 seed= 8 ok=False gates=4 t=8.84s group=collision tilt_sat=49.1% thr_max=0.800 ring_min=0.079
+[expE] T=12 d=0 k=0.99 u1 seed= 9 ok=False gates=1 t=4.24s group=collision tilt_sat=52.4% thr_max=0.800 ring_min=0.102
+[expE] T=12 d=0 k=0.99 u1 seed=10 ok=True gates=5 t=10.94s group=success tilt_sat=53.6% thr_max=0.800 ring_min=0.109
+[expE] T=12 d=0 k=0.99 u1 seed=11 ok=True gates=5 t=11.00s group=success tilt_sat=54.4% thr_max=0.800 ring_min=0.119
+[expE] T=12 d=0 k=0.99 u1 seed=12 ok=True gates=5 t=10.98s group=success tilt_sat=58.5% thr_max=0.800 ring_min=0.111
+[expE] T=12 d=0 k=0.99 u1 seed=13 ok=True gates=5 t=10.98s group=success tilt_sat=53.4% thr_max=0.800 ring_min=0.078
+[expE] T=12 d=0 k=0.99 u1 seed=14 ok=False gates=1 t=4.20s group=collision tilt_sat=44.8% thr_max=0.800 ring_min=0.089
+[expE] T=12 d=0 k=0.99 u1 seed=15 ok=False gates=1 t=4.22s group=collision tilt_sat=51.2% thr_max=0.800 ring_min=0.091
+[expE] T=12 d=0 k=0.99 u1 seed=16 ok=True gates=5 t=10.96s group=success tilt_sat=54.7% thr_max=0.800 ring_min=0.097
+[expE] T=12 d=0 k=0.99 u1 seed=17 ok=False gates=1 t=4.26s group=collision tilt_sat=54.5% thr_max=0.800 ring_min=0.095
+[expE] T=12 d=0 k=0.99 u1 seed=18 ok=True gates=5 t=10.94s group=success tilt_sat=57.8% thr_max=0.800 ring_min=0.113
+[expE] T=12 d=0 k=0.99 u1 seed=19 ok=False gates=1 t=4.24s group=collision tilt_sat=52.8% thr_max=0.800 ring_min=0.096
+[expE] T=12 d=0 k=0.97 u1 seed= 0 ok=True gates=5 t=10.96s group=success tilt_sat=52.2% thr_max=0.800 ring_min=0.083
+[expE] T=12 d=0 k=0.97 u1 seed= 1 ok=True gates=5 t=10.96s group=success tilt_sat=55.7% thr_max=0.800 ring_min=0.087
+[expE] T=12 d=0 k=0.97 u1 seed= 2 ok=True gates=5 t=10.94s group=success tilt_sat=53.4% thr_max=0.800 ring_min=0.130
+[expE] T=12 d=0 k=0.97 u1 seed= 3 ok=True gates=5 t=11.00s group=success tilt_sat=51.5% thr_max=0.800 ring_min=0.091
+[expE] T=12 d=0 k=0.97 u1 seed= 4 ok=True gates=5 t=10.96s group=success tilt_sat=54.2% thr_max=0.800 ring_min=0.094
+[expE] T=12 d=0 k=0.97 u1 seed= 5 ok=True gates=5 t=10.96s group=success tilt_sat=51.5% thr_max=0.800 ring_min=0.085
+[expE] T=12 d=0 k=0.97 u1 seed= 6 ok=True gates=5 t=10.96s group=success tilt_sat=52.2% thr_max=0.800 ring_min=0.090
+[expE] T=12 d=0 k=0.97 u1 seed= 7 ok=True gates=5 t=10.98s group=success tilt_sat=55.6% thr_max=0.800 ring_min=0.085
+[expE] T=12 d=0 k=0.97 u1 seed= 8 ok=False gates=2 t=4.18s group=collision tilt_sat=64.1% thr_max=0.800 ring_min=0.102
+[expE] T=12 d=0 k=0.97 u1 seed= 9 ok=False gates=1 t=4.28s group=collision tilt_sat=41.6% thr_max=0.800 ring_min=0.104
+[expE] T=12 d=0 k=0.97 u1 seed=10 ok=True gates=5 t=10.98s group=success tilt_sat=61.7% thr_max=0.800 ring_min=0.122
+[expE] T=12 d=0 k=0.97 u1 seed=11 ok=True gates=5 t=10.98s group=success tilt_sat=58.1% thr_max=0.800 ring_min=0.129
+[expE] T=12 d=0 k=0.97 u1 seed=12 ok=True gates=5 t=10.92s group=success tilt_sat=56.6% thr_max=0.800 ring_min=0.113
+[expE] T=12 d=0 k=0.97 u1 seed=13 ok=False gates=0 t=2.40s group=collision tilt_sat=57.5% thr_max=0.800 ring_min=0.096
+[expE] T=12 d=0 k=0.97 u1 seed=14 ok=False gates=1 t=4.18s group=collision tilt_sat=45.0% thr_max=0.800 ring_min=0.090
+[expE] T=12 d=0 k=0.97 u1 seed=15 ok=False gates=1 t=4.26s group=collision tilt_sat=52.6% thr_max=0.800 ring_min=0.100
+[expE] T=12 d=0 k=0.97 u1 seed=16 ok=False gates=3 t=8.78s group=collision tilt_sat=53.3% thr_max=0.800 ring_min=0.111
+[expE] T=12 d=0 k=0.97 u1 seed=17 ok=False gates=0 t=2.40s group=collision tilt_sat=55.8% thr_max=0.800 ring_min=0.089
+[expE] T=12 d=0 k=0.97 u1 seed=18 ok=True gates=5 t=10.96s group=success tilt_sat=56.9% thr_max=0.800 ring_min=0.097
+[expE] T=12 d=0 k=0.97 u1 seed=19 ok=True gates=5 t=10.98s group=success tilt_sat=52.5% thr_max=0.800 ring_min=0.102
+[expE] T=12 d=0 k=0.95 u1 seed= 0 ok=True gates=5 t=10.98s group=success tilt_sat=59.9% thr_max=0.800 ring_min=0.096
+[expE] T=12 d=0 k=0.95 u1 seed= 1 ok=False gates=1 t=4.18s group=collision tilt_sat=48.3% thr_max=0.800 ring_min=0.096
+[expE] T=12 d=0 k=0.95 u1 seed= 2 ok=True gates=5 t=11.00s group=success tilt_sat=52.4% thr_max=0.800 ring_min=0.117
+[expE] T=12 d=0 k=0.95 u1 seed= 3 ok=True gates=5 t=11.02s group=success tilt_sat=56.8% thr_max=0.800 ring_min=0.104
+[expE] T=12 d=0 k=0.95 u1 seed= 4 ok=True gates=5 t=10.94s group=success tilt_sat=57.8% thr_max=0.800 ring_min=0.098
+[expE] T=12 d=0 k=0.95 u1 seed= 5 ok=True gates=5 t=10.96s group=success tilt_sat=54.9% thr_max=0.800 ring_min=0.108
+[expE] T=12 d=0 k=0.95 u1 seed= 6 ok=False gates=1 t=4.22s group=collision tilt_sat=46.0% thr_max=0.800 ring_min=0.105
+[expE] T=12 d=0 k=0.95 u1 seed= 7 ok=False gates=3 t=8.72s group=collision tilt_sat=54.4% thr_max=0.800 ring_min=0.113
+[expE] T=12 d=0 k=0.95 u1 seed= 8 ok=True gates=5 t=11.00s group=success tilt_sat=64.0% thr_max=0.800 ring_min=0.103
+[expE] T=12 d=0 k=0.95 u1 seed= 9 ok=False gates=3 t=8.74s group=collision tilt_sat=45.3% thr_max=0.800 ring_min=0.115
+[expE] T=12 d=0 k=0.95 u1 seed=10 ok=True gates=5 t=10.96s group=success tilt_sat=55.3% thr_max=0.800 ring_min=0.096
+[expE] T=12 d=0 k=0.95 u1 seed=11 ok=True gates=5 t=10.98s group=success tilt_sat=51.5% thr_max=0.800 ring_min=0.094
+[expE] T=12 d=0 k=0.95 u1 seed=12 ok=True gates=5 t=10.96s group=success tilt_sat=54.9% thr_max=0.800 ring_min=0.098
+[expE] T=12 d=0 k=0.95 u1 seed=13 ok=False gates=2 t=4.28s group=collision tilt_sat=50.9% thr_max=0.800 ring_min=0.109
+[expE] T=12 d=0 k=0.95 u1 seed=14 ok=True gates=5 t=10.96s group=success tilt_sat=51.1% thr_max=0.800 ring_min=0.105
+[expE] T=12 d=0 k=0.95 u1 seed=15 ok=True gates=5 t=10.98s group=success tilt_sat=50.5% thr_max=0.800 ring_min=0.109
+[expE] T=12 d=0 k=0.95 u1 seed=16 ok=False gates=1 t=4.28s group=collision tilt_sat=47.2% thr_max=0.800 ring_min=0.103
+[expE] T=12 d=0 k=0.95 u1 seed=17 ok=False gates=3 t=8.84s group=collision tilt_sat=57.5% thr_max=0.800 ring_min=0.076
+[expE] T=12 d=0 k=0.95 u1 seed=18 ok=True gates=5 t=10.96s group=success tilt_sat=52.4% thr_max=0.800 ring_min=0.107
+[expE] T=12 d=0 k=0.95 u1 seed=19 ok=True gates=5 t=10.98s group=success tilt_sat=57.4% thr_max=0.800 ring_min=0.110
+[expE] T=12 d=0 k=0.9 u1 seed= 0 ok=True gates=5 t=10.98s group=success tilt_sat=56.5% thr_max=0.800 ring_min=0.080
+[expE] T=12 d=0 k=0.9 u1 seed= 1 ok=False gates=1 t=4.24s group=collision tilt_sat=54.2% thr_max=0.800 ring_min=0.104
+[expE] T=12 d=0 k=0.9 u1 seed= 2 ok=True gates=5 t=10.98s group=success tilt_sat=52.3% thr_max=0.800 ring_min=0.106
+[expE] T=12 d=0 k=0.9 u1 seed= 3 ok=True gates=5 t=11.04s group=success tilt_sat=58.2% thr_max=0.800 ring_min=0.094
+[expE] T=12 d=0 k=0.9 u1 seed= 4 ok=True gates=5 t=10.98s group=success tilt_sat=60.3% thr_max=0.800 ring_min=0.100
+[expE] T=12 d=0 k=0.9 u1 seed= 5 ok=False gates=2 t=4.26s group=collision tilt_sat=53.1% thr_max=0.800 ring_min=0.108
+[expE] T=12 d=0 k=0.9 u1 seed= 6 ok=False gates=1 t=4.26s group=collision tilt_sat=43.2% thr_max=0.800 ring_min=0.104
+[expE] T=12 d=0 k=0.9 u1 seed= 7 ok=True gates=5 t=10.96s group=success tilt_sat=59.5% thr_max=0.800 ring_min=0.099
+[expE] T=12 d=0 k=0.9 u1 seed= 8 ok=True gates=5 t=11.00s group=success tilt_sat=57.3% thr_max=0.800 ring_min=0.083
+[expE] T=12 d=0 k=0.9 u1 seed= 9 ok=True gates=5 t=10.96s group=success tilt_sat=57.3% thr_max=0.800 ring_min=0.104
+[expE] T=12 d=0 k=0.9 u1 seed=10 ok=False gates=1 t=4.22s group=collision tilt_sat=50.7% thr_max=0.800 ring_min=0.106
+[expE] T=12 d=0 k=0.9 u1 seed=11 ok=False gates=3 t=8.76s group=collision tilt_sat=50.5% thr_max=0.800 ring_min=0.105
+[expE] T=12 d=0 k=0.9 u1 seed=12 ok=False gates=1 t=4.28s group=collision tilt_sat=52.3% thr_max=0.800 ring_min=0.102
+[expE] T=12 d=0 k=0.9 u1 seed=13 ok=True gates=5 t=11.00s group=success tilt_sat=55.5% thr_max=0.800 ring_min=0.081
+[expE] T=12 d=0 k=0.9 u1 seed=14 ok=False gates=1 t=4.18s group=collision tilt_sat=49.3% thr_max=0.800 ring_min=0.083
+[expE] T=12 d=0 k=0.9 u1 seed=15 ok=False gates=1 t=4.26s group=collision tilt_sat=49.8% thr_max=0.800 ring_min=0.107
+[expE] T=12 d=0 k=0.9 u1 seed=16 ok=False gates=1 t=4.28s group=collision tilt_sat=52.8% thr_max=0.800 ring_min=0.099
+[expE] T=12 d=0 k=0.9 u1 seed=17 ok=True gates=5 t=10.98s group=success tilt_sat=58.1% thr_max=0.800 ring_min=0.091
+[expE] T=12 d=0 k=0.9 u1 seed=18 ok=False gates=3 t=8.74s group=collision tilt_sat=46.0% thr_max=0.800 ring_min=0.105
+[expE] T=12 d=0 k=0.9 u1 seed=19 ok=True gates=5 t=10.98s group=success tilt_sat=52.8% thr_max=0.800 ring_min=0.108
+[expE] T=12 d=0 k=0.8 u1 seed= 0 ok=True gates=5 t=10.98s group=success tilt_sat=62.3% thr_max=0.800 ring_min=0.114
+[expE] T=12 d=0 k=0.8 u1 seed= 1 ok=True gates=5 t=11.00s group=success tilt_sat=59.3% thr_max=0.800 ring_min=0.108
+[expE] T=12 d=0 k=0.8 u1 seed= 2 ok=True gates=5 t=10.96s group=success tilt_sat=47.4% thr_max=0.800 ring_min=0.107
+[expE] T=12 d=0 k=0.8 u1 seed= 3 ok=True gates=5 t=11.04s group=success tilt_sat=56.3% thr_max=0.800 ring_min=0.119
+[expE] T=12 d=0 k=0.8 u1 seed= 4 ok=True gates=5 t=10.94s group=success tilt_sat=49.9% thr_max=0.800 ring_min=0.091
+[expE] T=12 d=0 k=0.8 u1 seed= 5 ok=False gates=3 t=8.74s group=collision tilt_sat=51.9% thr_max=0.800 ring_min=0.117
+[expE] T=12 d=0 k=0.8 u1 seed= 6 ok=True gates=5 t=10.94s group=success tilt_sat=55.2% thr_max=0.800 ring_min=0.092
+[expE] T=12 d=0 k=0.8 u1 seed= 7 ok=False gates=1 t=4.18s group=collision tilt_sat=54.1% thr_max=0.800 ring_min=0.093
+[expE] T=12 d=0 k=0.8 u1 seed= 8 ok=True gates=5 t=11.00s group=success tilt_sat=59.3% thr_max=0.800 ring_min=0.108
+[expE] T=12 d=0 k=0.8 u1 seed= 9 ok=True gates=5 t=10.98s group=success tilt_sat=48.3% thr_max=0.800 ring_min=0.105
+[expE] T=12 d=0 k=0.8 u1 seed=10 ok=False gates=1 t=4.24s group=collision tilt_sat=50.0% thr_max=0.800 ring_min=0.102
+[expE] T=12 d=0 k=0.8 u1 seed=11 ok=True gates=5 t=11.00s group=success tilt_sat=53.6% thr_max=0.800 ring_min=0.092
+[expE] T=12 d=0 k=0.8 u1 seed=12 ok=False gates=1 t=4.22s group=collision tilt_sat=39.8% thr_max=0.800 ring_min=0.083
+[expE] T=12 d=0 k=0.8 u1 seed=13 ok=True gates=5 t=11.00s group=success tilt_sat=52.4% thr_max=0.800 ring_min=0.091
+[expE] T=12 d=0 k=0.8 u1 seed=14 ok=True gates=5 t=11.00s group=success tilt_sat=50.2% thr_max=0.800 ring_min=0.122
+[expE] T=12 d=0 k=0.8 u1 seed=15 ok=False gates=1 t=4.26s group=collision tilt_sat=48.8% thr_max=0.800 ring_min=0.101
+[expE] T=12 d=0 k=0.8 u1 seed=16 ok=False gates=3 t=8.76s group=collision tilt_sat=51.4% thr_max=0.800 ring_min=0.107
+[expE] T=12 d=0 k=0.8 u1 seed=17 ok=False gates=1 t=4.22s group=collision tilt_sat=42.2% thr_max=0.800 ring_min=0.086
+[expE] T=12 d=0 k=0.8 u1 seed=18 ok=False gates=1 t=4.24s group=collision tilt_sat=58.5% thr_max=0.800 ring_min=0.085
+[expE] T=12 d=0 k=0.8 u1 seed=19 ok=True gates=5 t=10.98s group=success tilt_sat=60.7% thr_max=0.800 ring_min=0.103
+
+## Experiment E -- d=0, original weights, T_end=T_traj, level 0, seeds 0-19. Baseline of each row: k_end=1.0 at the same T_traj.
+
+### success on the seeds where k_end=1.0 succeeded
+
+| T_traj \ k_end | 1 | 0.99 | 0.97 | 0.95 | 0.9 | 0.8 |
+|---|---|---|---|---|---|---|
+| 14 | 100% (13/13) | 85% (11/13) | 92% (12/13) | 92% (12/13) | 77% (10/13) | 85% (11/13) |
+| 12 | 100% (13/13) | 54% (7/13) | 62% (8/13) | 69% (9/13) | 62% (8/13) | 62% (8/13) |
+
+### success rate (all seeds)
+
+| T_traj \ k_end | 1 | 0.99 | 0.97 | 0.95 | 0.9 | 0.8 |
+|---|---|---|---|---|---|---|
+| 14 | 65% (13/20) | 75% (15/20) | 95% (19/20) | 90% (18/20) | 75% (15/20) | 75% (15/20) |
+| 12 | 65% (13/20) | 55% (11/20) | 65% (13/20) | 65% (13/20) | 50% (10/20) | 60% (12/20) |
+
+### mean lap time of the successes [s]
+
+| T_traj \ k_end | 1 | 0.99 | 0.97 | 0.95 | 0.9 | 0.8 |
+|---|---|---|---|---|---|---|
+| 14 | 12.80 | 12.81 | 12.80 | 12.79 | 12.80 | 12.79 |
+| 12 | 10.98 | 10.97 | 10.96 | 10.98 | 10.99 | 10.98 |
+
+### minimum clearance to a gate frame over all episodes [m]
+
+| T_traj \ k_end | 1 | 0.99 | 0.97 | 0.95 | 0.9 | 0.8 |
+|---|---|---|---|---|---|---|
+| 14 | 0.077 | 0.098 | 0.079 | 0.077 | 0.077 | 0.093 |
+| 12 | 0.084 | 0.078 | 0.083 | 0.076 | 0.080 | 0.083 |
+
+### steps with thrust command > 0.8 N * k(t)
+
+| T_traj \ k_end | 1 | 0.99 | 0.97 | 0.95 | 0.9 | 0.8 |
+|---|---|---|---|---|---|---|
+| 14 | 0.0% | 0.2% | 0.2% | 0.2% | 0.2% | 0.2% |
+| 12 | 0.0% | 0.3% | 0.3% | 0.2% | 0.3% | 0.3% |
+
+### failure causes
+
+| T_traj \ k_end | 1 | 0.99 | 0.97 | 0.95 | 0.9 | 0.8 |
+|---|---|---|---|---|---|---|
+| 14 | collision:7 | collision:5 | collision:1 | collision:2 | collision:5 | collision:5 |
+| 12 | collision:7 | collision:9 | collision:7 | collision:7 | collision:10 | collision:8 |
+
+### Seeds that succeed at k_end=1.0 and fail at k_end=0.99 or 0.97
+
+`nominal_ring_same_pass` = how close the SAME seed came to that gate's frame in the k_end=1.0 run (m, 0 = touching).
+
+| T_traj | k_end | seed | failed_on_pass | fail_gate_id | fail_cause | fail_time_s | fail_dist_to_frame | nominal_ring_same_pass | nominal_ring_min_overall | nominal_time_s |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 14.00 | 0.990 | 8 | 4 | 3 | gate | 10.22 | 0.096 | 0.105 | 0.105 | 12.82 |
+| 14.00 | 0.990 | 13 | 2 | 1 | gate | 4.92 | 0.100 | 0.116 | 0.104 | 12.76 |
+| 14.00 | 0.970 | 13 | 1 | 0 | gate | 2.76 | 0.075 | 0.104 | 0.104 | 12.76 |
+| 12.00 | 0.990 | 0 | 2 | 1 | gate | 4.18 | 0.091 | 0.148 | 0.085 | 10.96 |
+| 12.00 | 0.990 | 2 | 2 | 1 | gate | 4.18 | 0.083 | 0.118 | 0.116 | 10.96 |
+| 12.00 | 0.990 | 8 | 5 | 3 | gate | 8.84 | 0.079 | 0.143 | 0.098 | 11.02 |
+| 12.00 | 0.990 | 9 | 2 | 1 | gate | 4.24 | 0.099 | 0.146 | 0.107 | 10.98 |
+| 12.00 | 0.990 | 14 | 2 | 1 | gate | 4.20 | 0.083 | 0.118 | 0.095 | 11.04 |
+| 12.00 | 0.990 | 17 | 2 | 1 | gate | 4.26 | 0.086 | 0.110 | 0.103 | 10.98 |
+| 12.00 | 0.970 | 8 | 3 | 1 | gate | 4.18 | 0.100 | 0.147 | 0.098 | 11.02 |
+| 12.00 | 0.970 | 9 | 2 | 1 | gate | 4.28 | 0.099 | 0.146 | 0.107 | 10.98 |
+| 12.00 | 0.970 | 14 | 2 | 1 | gate | 4.18 | 0.078 | 0.118 | 0.095 | 11.04 |
+| 12.00 | 0.970 | 16 | 4 | 3 | gate | 8.78 | 0.094 | 0.099 | 0.099 | 10.98 |
+| 12.00 | 0.970 | 17 | 1 | 0 | gate | 2.40 | 0.089 | 0.153 | 0.103 | 10.98 |
+[expF] T=18.75 d=0 k=1 r1_t1 seed= 0 ok=True gates=5 t=17.12s group=success tilt_sat=48.9% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t1 seed= 1 ok=True gates=5 t=17.14s group=success tilt_sat=59.3% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t1 seed= 2 ok=True gates=5 t=17.10s group=success tilt_sat=41.5% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t1 seed= 3 ok=True gates=5 t=17.12s group=success tilt_sat=50.7% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t1 seed= 4 ok=True gates=5 t=17.14s group=success tilt_sat=48.3% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t1 seed= 5 ok=True gates=5 t=17.16s group=success tilt_sat=57.0% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t1 seed= 6 ok=True gates=5 t=17.12s group=success tilt_sat=50.4% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t1 seed= 7 ok=True gates=5 t=17.16s group=success tilt_sat=47.8% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t1 seed= 8 ok=True gates=5 t=17.08s group=success tilt_sat=53.2% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t1 seed= 9 ok=True gates=5 t=17.06s group=success tilt_sat=47.7% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t1 seed=10 ok=True gates=5 t=17.12s group=success tilt_sat=53.5% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t1 seed=11 ok=True gates=5 t=17.10s group=success tilt_sat=51.7% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t1 seed=12 ok=True gates=5 t=17.08s group=success tilt_sat=46.6% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t1 seed=13 ok=True gates=5 t=17.10s group=success tilt_sat=46.2% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t1 seed=14 ok=True gates=5 t=17.18s group=success tilt_sat=52.3% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t1 seed=15 ok=True gates=5 t=17.08s group=success tilt_sat=47.7% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t1 seed=16 ok=True gates=5 t=17.14s group=success tilt_sat=54.0% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t1 seed=17 ok=True gates=5 t=17.12s group=success tilt_sat=49.1% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t1 seed=18 ok=True gates=5 t=17.12s group=success tilt_sat=49.3% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t1 seed=19 ok=True gates=5 t=17.14s group=success tilt_sat=51.2% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t10 seed= 0 ok=True gates=5 t=17.12s group=success tilt_sat=56.5% thr_max=0.662 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t10 seed= 1 ok=True gates=5 t=17.16s group=success tilt_sat=45.7% thr_max=0.666 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t10 seed= 2 ok=True gates=5 t=17.08s group=success tilt_sat=48.8% thr_max=0.660 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t10 seed= 3 ok=True gates=5 t=17.10s group=success tilt_sat=45.6% thr_max=0.664 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t10 seed= 4 ok=False gates=3 t=13.66s group=collision tilt_sat=44.7% thr_max=0.666 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t10 seed= 5 ok=True gates=5 t=17.10s group=success tilt_sat=51.6% thr_max=0.661 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t10 seed= 6 ok=True gates=5 t=17.16s group=success tilt_sat=55.9% thr_max=0.666 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t10 seed= 7 ok=True gates=5 t=17.14s group=success tilt_sat=53.7% thr_max=0.669 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t10 seed= 8 ok=True gates=5 t=17.08s group=success tilt_sat=57.3% thr_max=0.666 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t10 seed= 9 ok=True gates=5 t=17.08s group=success tilt_sat=48.8% thr_max=0.671 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t10 seed=10 ok=True gates=5 t=17.14s group=success tilt_sat=46.1% thr_max=0.667 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t10 seed=11 ok=True gates=5 t=17.10s group=success tilt_sat=53.7% thr_max=0.665 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t10 seed=12 ok=True gates=5 t=17.12s group=success tilt_sat=46.4% thr_max=0.661 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t10 seed=13 ok=True gates=5 t=17.12s group=success tilt_sat=50.9% thr_max=0.661 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t10 seed=14 ok=False gates=1 t=6.62s group=collision tilt_sat=51.4% thr_max=0.660 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t10 seed=15 ok=True gates=5 t=17.08s group=success tilt_sat=49.8% thr_max=0.668 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t10 seed=16 ok=True gates=5 t=17.10s group=success tilt_sat=42.5% thr_max=0.663 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t10 seed=17 ok=True gates=5 t=17.14s group=success tilt_sat=57.2% thr_max=0.662 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t10 seed=18 ok=True gates=5 t=17.16s group=success tilt_sat=57.2% thr_max=0.670 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t10 seed=19 ok=True gates=5 t=17.14s group=success tilt_sat=51.3% thr_max=0.663 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t30 seed= 0 ok=True gates=5 t=17.12s group=success tilt_sat=46.0% thr_max=0.613 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t30 seed= 1 ok=False gates=3 t=13.70s group=collision tilt_sat=51.5% thr_max=0.617 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t30 seed= 2 ok=True gates=5 t=17.12s group=success tilt_sat=45.7% thr_max=0.612 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t30 seed= 3 ok=True gates=5 t=17.14s group=success tilt_sat=55.3% thr_max=0.615 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t30 seed= 4 ok=True gates=5 t=17.08s group=success tilt_sat=56.3% thr_max=0.617 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t30 seed= 5 ok=True gates=5 t=17.10s group=success tilt_sat=46.1% thr_max=0.613 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t30 seed= 6 ok=True gates=5 t=17.14s group=success tilt_sat=63.5% thr_max=0.617 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t30 seed= 7 ok=True gates=5 t=17.12s group=success tilt_sat=61.6% thr_max=0.619 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t30 seed= 8 ok=True gates=5 t=17.10s group=success tilt_sat=64.7% thr_max=0.617 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t30 seed= 9 ok=True gates=5 t=17.06s group=success tilt_sat=56.9% thr_max=0.620 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t30 seed=10 ok=True gates=5 t=17.12s group=success tilt_sat=55.7% thr_max=0.617 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t30 seed=11 ok=True gates=5 t=17.10s group=success tilt_sat=56.1% thr_max=0.616 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t30 seed=12 ok=True gates=5 t=17.08s group=success tilt_sat=48.7% thr_max=0.613 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t30 seed=13 ok=True gates=5 t=17.14s group=success tilt_sat=52.6% thr_max=0.613 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t30 seed=14 ok=True gates=5 t=17.16s group=success tilt_sat=55.5% thr_max=0.612 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t30 seed=15 ok=True gates=5 t=17.14s group=success tilt_sat=39.2% thr_max=0.618 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t30 seed=16 ok=True gates=5 t=17.16s group=success tilt_sat=54.7% thr_max=0.614 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t30 seed=17 ok=True gates=5 t=17.14s group=success tilt_sat=56.9% thr_max=0.614 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t30 seed=18 ok=True gates=5 t=17.18s group=success tilt_sat=48.5% thr_max=0.620 ring_min=nan
+[expF] T=18.75 d=0 k=1 r1_t30 seed=19 ok=True gates=5 t=17.12s group=success tilt_sat=47.9% thr_max=0.615 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t1 seed= 0 ok=True gates=5 t=17.16s group=success tilt_sat=6.9% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t1 seed= 1 ok=True gates=5 t=17.20s group=success tilt_sat=6.5% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t1 seed= 2 ok=True gates=5 t=17.12s group=success tilt_sat=8.2% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t1 seed= 3 ok=True gates=5 t=17.14s group=success tilt_sat=7.2% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t1 seed= 4 ok=True gates=5 t=17.14s group=success tilt_sat=8.2% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t1 seed= 5 ok=True gates=5 t=17.14s group=success tilt_sat=9.3% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t1 seed= 6 ok=True gates=5 t=17.14s group=success tilt_sat=9.3% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t1 seed= 7 ok=True gates=5 t=17.16s group=success tilt_sat=8.6% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t1 seed= 8 ok=True gates=5 t=17.12s group=success tilt_sat=9.2% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t1 seed= 9 ok=True gates=5 t=17.12s group=success tilt_sat=9.1% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t1 seed=10 ok=True gates=5 t=17.12s group=success tilt_sat=8.6% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t1 seed=11 ok=True gates=5 t=17.12s group=success tilt_sat=9.2% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t1 seed=12 ok=True gates=5 t=17.14s group=success tilt_sat=8.1% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t1 seed=13 ok=True gates=5 t=17.12s group=success tilt_sat=7.1% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t1 seed=14 ok=True gates=5 t=17.14s group=success tilt_sat=5.5% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t1 seed=15 ok=True gates=5 t=17.16s group=success tilt_sat=8.9% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t1 seed=16 ok=True gates=5 t=17.12s group=success tilt_sat=7.1% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t1 seed=17 ok=True gates=5 t=17.20s group=success tilt_sat=9.0% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t1 seed=18 ok=True gates=5 t=17.18s group=success tilt_sat=7.1% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t1 seed=19 ok=True gates=5 t=17.14s group=success tilt_sat=8.1% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t10 seed= 0 ok=True gates=5 t=17.14s group=success tilt_sat=8.1% thr_max=0.662 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t10 seed= 1 ok=True gates=5 t=17.20s group=success tilt_sat=4.9% thr_max=0.666 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t10 seed= 2 ok=True gates=5 t=17.12s group=success tilt_sat=9.1% thr_max=0.660 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t10 seed= 3 ok=True gates=5 t=17.12s group=success tilt_sat=9.8% thr_max=0.664 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t10 seed= 4 ok=True gates=5 t=17.12s group=success tilt_sat=9.9% thr_max=0.666 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t10 seed= 5 ok=True gates=5 t=17.16s group=success tilt_sat=6.3% thr_max=0.661 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t10 seed= 6 ok=True gates=5 t=17.14s group=success tilt_sat=7.1% thr_max=0.666 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t10 seed= 7 ok=True gates=5 t=17.14s group=success tilt_sat=6.0% thr_max=0.669 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t10 seed= 8 ok=True gates=5 t=17.16s group=success tilt_sat=6.2% thr_max=0.666 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t10 seed= 9 ok=True gates=5 t=17.10s group=success tilt_sat=4.2% thr_max=0.671 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t10 seed=10 ok=True gates=5 t=17.14s group=success tilt_sat=8.4% thr_max=0.667 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t10 seed=11 ok=True gates=5 t=17.12s group=success tilt_sat=7.9% thr_max=0.665 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t10 seed=12 ok=True gates=5 t=17.14s group=success tilt_sat=6.5% thr_max=0.661 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t10 seed=13 ok=True gates=5 t=17.14s group=success tilt_sat=8.6% thr_max=0.661 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t10 seed=14 ok=True gates=5 t=17.20s group=success tilt_sat=7.4% thr_max=0.660 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t10 seed=15 ok=True gates=5 t=17.14s group=success tilt_sat=8.2% thr_max=0.668 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t10 seed=16 ok=True gates=5 t=17.14s group=success tilt_sat=6.7% thr_max=0.663 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t10 seed=17 ok=True gates=5 t=17.16s group=success tilt_sat=8.3% thr_max=0.662 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t10 seed=18 ok=True gates=5 t=17.18s group=success tilt_sat=6.9% thr_max=0.670 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t10 seed=19 ok=True gates=5 t=17.16s group=success tilt_sat=5.9% thr_max=0.663 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t30 seed= 0 ok=True gates=5 t=17.14s group=success tilt_sat=9.1% thr_max=0.613 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t30 seed= 1 ok=True gates=5 t=17.16s group=success tilt_sat=8.3% thr_max=0.617 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t30 seed= 2 ok=True gates=5 t=17.12s group=success tilt_sat=7.2% thr_max=0.612 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t30 seed= 3 ok=True gates=5 t=17.12s group=success tilt_sat=5.5% thr_max=0.615 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t30 seed= 4 ok=False gates=3 t=13.70s group=collision tilt_sat=8.5% thr_max=0.617 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t30 seed= 5 ok=True gates=5 t=17.18s group=success tilt_sat=6.4% thr_max=0.613 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t30 seed= 6 ok=True gates=5 t=17.12s group=success tilt_sat=4.9% thr_max=0.617 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t30 seed= 7 ok=True gates=5 t=17.16s group=success tilt_sat=8.7% thr_max=0.619 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t30 seed= 8 ok=True gates=5 t=17.12s group=success tilt_sat=8.4% thr_max=0.617 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t30 seed= 9 ok=True gates=5 t=17.10s group=success tilt_sat=6.4% thr_max=0.620 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t30 seed=10 ok=True gates=5 t=17.12s group=success tilt_sat=7.8% thr_max=0.617 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t30 seed=11 ok=True gates=5 t=17.14s group=success tilt_sat=9.2% thr_max=0.616 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t30 seed=12 ok=True gates=5 t=17.14s group=success tilt_sat=7.7% thr_max=0.613 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t30 seed=13 ok=True gates=5 t=17.14s group=success tilt_sat=8.3% thr_max=0.613 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t30 seed=14 ok=True gates=5 t=17.22s group=success tilt_sat=8.2% thr_max=0.612 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t30 seed=15 ok=True gates=5 t=17.16s group=success tilt_sat=7.6% thr_max=0.618 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t30 seed=16 ok=True gates=5 t=17.16s group=success tilt_sat=6.3% thr_max=0.614 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t30 seed=17 ok=True gates=5 t=17.16s group=success tilt_sat=7.8% thr_max=0.614 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t30 seed=18 ok=True gates=5 t=17.16s group=success tilt_sat=8.5% thr_max=0.620 ring_min=nan
+[expF] T=18.75 d=0 k=1 r10_t30 seed=19 ok=True gates=5 t=17.16s group=success tilt_sat=8.3% thr_max=0.615 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t1 seed= 0 ok=True gates=5 t=17.12s group=success tilt_sat=0.0% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t1 seed= 1 ok=True gates=5 t=17.16s group=success tilt_sat=0.0% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t1 seed= 2 ok=True gates=5 t=17.12s group=success tilt_sat=0.0% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t1 seed= 3 ok=True gates=5 t=17.12s group=success tilt_sat=0.0% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t1 seed= 4 ok=True gates=5 t=17.12s group=success tilt_sat=0.0% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t1 seed= 5 ok=True gates=5 t=17.12s group=success tilt_sat=0.0% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t1 seed= 6 ok=True gates=5 t=17.12s group=success tilt_sat=0.0% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t1 seed= 7 ok=True gates=5 t=17.14s group=success tilt_sat=0.0% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t1 seed= 8 ok=True gates=5 t=17.10s group=success tilt_sat=0.0% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t1 seed= 9 ok=True gates=5 t=17.10s group=success tilt_sat=0.0% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t1 seed=10 ok=True gates=5 t=17.12s group=success tilt_sat=0.0% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t1 seed=11 ok=True gates=5 t=17.12s group=success tilt_sat=0.0% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t1 seed=12 ok=True gates=5 t=17.14s group=success tilt_sat=0.0% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t1 seed=13 ok=True gates=5 t=17.12s group=success tilt_sat=0.0% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t1 seed=14 ok=True gates=5 t=17.14s group=success tilt_sat=0.0% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t1 seed=15 ok=True gates=5 t=17.12s group=success tilt_sat=0.0% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t1 seed=16 ok=True gates=5 t=17.10s group=success tilt_sat=0.0% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t1 seed=17 ok=True gates=5 t=17.14s group=success tilt_sat=0.0% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t1 seed=18 ok=True gates=5 t=17.14s group=success tilt_sat=0.0% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t1 seed=19 ok=True gates=5 t=17.14s group=success tilt_sat=0.0% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t10 seed= 0 ok=True gates=5 t=17.12s group=success tilt_sat=0.0% thr_max=0.661 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t10 seed= 1 ok=True gates=5 t=17.16s group=success tilt_sat=0.0% thr_max=0.666 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t10 seed= 2 ok=True gates=5 t=17.10s group=success tilt_sat=0.0% thr_max=0.660 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t10 seed= 3 ok=True gates=5 t=17.12s group=success tilt_sat=0.0% thr_max=0.664 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t10 seed= 4 ok=True gates=5 t=17.12s group=success tilt_sat=0.0% thr_max=0.666 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t10 seed= 5 ok=True gates=5 t=17.12s group=success tilt_sat=0.0% thr_max=0.661 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t10 seed= 6 ok=True gates=5 t=17.12s group=success tilt_sat=0.0% thr_max=0.665 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t10 seed= 7 ok=True gates=5 t=17.14s group=success tilt_sat=0.0% thr_max=0.669 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t10 seed= 8 ok=True gates=5 t=17.10s group=success tilt_sat=0.0% thr_max=0.666 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t10 seed= 9 ok=True gates=5 t=17.10s group=success tilt_sat=0.0% thr_max=0.671 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t10 seed=10 ok=True gates=5 t=17.12s group=success tilt_sat=0.0% thr_max=0.667 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t10 seed=11 ok=True gates=5 t=17.10s group=success tilt_sat=0.0% thr_max=0.665 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t10 seed=12 ok=True gates=5 t=17.12s group=success tilt_sat=0.0% thr_max=0.661 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t10 seed=13 ok=True gates=5 t=17.12s group=success tilt_sat=0.0% thr_max=0.661 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t10 seed=14 ok=True gates=5 t=17.14s group=success tilt_sat=0.0% thr_max=0.660 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t10 seed=15 ok=True gates=5 t=17.12s group=success tilt_sat=0.0% thr_max=0.668 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t10 seed=16 ok=True gates=5 t=17.10s group=success tilt_sat=0.0% thr_max=0.663 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t10 seed=17 ok=True gates=5 t=17.14s group=success tilt_sat=0.0% thr_max=0.662 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t10 seed=18 ok=True gates=5 t=17.14s group=success tilt_sat=0.0% thr_max=0.670 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t10 seed=19 ok=True gates=5 t=17.14s group=success tilt_sat=0.0% thr_max=0.663 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t30 seed= 0 ok=True gates=5 t=17.12s group=success tilt_sat=0.0% thr_max=0.613 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t30 seed= 1 ok=True gates=5 t=17.16s group=success tilt_sat=0.0% thr_max=0.617 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t30 seed= 2 ok=True gates=5 t=17.10s group=success tilt_sat=0.0% thr_max=0.612 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t30 seed= 3 ok=True gates=5 t=17.12s group=success tilt_sat=0.0% thr_max=0.615 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t30 seed= 4 ok=True gates=5 t=17.12s group=success tilt_sat=0.0% thr_max=0.617 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t30 seed= 5 ok=True gates=5 t=17.12s group=success tilt_sat=0.0% thr_max=0.613 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t30 seed= 6 ok=True gates=5 t=17.12s group=success tilt_sat=0.0% thr_max=0.616 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t30 seed= 7 ok=True gates=5 t=17.14s group=success tilt_sat=0.0% thr_max=0.619 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t30 seed= 8 ok=True gates=5 t=17.10s group=success tilt_sat=0.0% thr_max=0.617 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t30 seed= 9 ok=True gates=5 t=17.10s group=success tilt_sat=0.0% thr_max=0.620 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t30 seed=10 ok=True gates=5 t=17.12s group=success tilt_sat=0.0% thr_max=0.617 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t30 seed=11 ok=True gates=5 t=17.10s group=success tilt_sat=0.0% thr_max=0.616 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t30 seed=12 ok=True gates=5 t=17.12s group=success tilt_sat=0.0% thr_max=0.613 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t30 seed=13 ok=True gates=5 t=17.12s group=success tilt_sat=0.0% thr_max=0.613 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t30 seed=14 ok=True gates=5 t=17.14s group=success tilt_sat=0.0% thr_max=0.612 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t30 seed=15 ok=True gates=5 t=17.12s group=success tilt_sat=0.0% thr_max=0.618 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t30 seed=16 ok=True gates=5 t=17.10s group=success tilt_sat=0.0% thr_max=0.614 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t30 seed=17 ok=True gates=5 t=17.14s group=success tilt_sat=0.0% thr_max=0.614 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t30 seed=18 ok=True gates=5 t=17.14s group=success tilt_sat=0.0% thr_max=0.620 ring_min=nan
+[expF] T=18.75 d=0 k=1 r30_t30 seed=19 ok=True gates=5 t=17.14s group=success tilt_sat=0.0% thr_max=0.615 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t1 seed= 0 ok=False gates=0 t=0.96s group=fall tilt_sat=72.9% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t1 seed= 1 ok=False gates=0 t=3.78s group=collision tilt_sat=88.9% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t1 seed= 2 ok=False gates=0 t=0.94s group=fall tilt_sat=78.7% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t1 seed= 3 ok=False gates=0 t=2.20s group=collision tilt_sat=88.2% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t1 seed= 4 ok=False gates=0 t=0.92s group=fall tilt_sat=69.6% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t1 seed= 5 ok=False gates=0 t=1.86s group=collision tilt_sat=82.8% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t1 seed= 6 ok=False gates=2 t=7.22s group=collision tilt_sat=91.4% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t1 seed= 7 ok=False gates=0 t=0.94s group=fall tilt_sat=68.1% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t1 seed= 8 ok=False gates=0 t=3.70s group=collision tilt_sat=91.9% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t1 seed= 9 ok=False gates=0 t=1.56s group=fall tilt_sat=83.3% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t1 seed=10 ok=False gates=0 t=3.88s group=collision tilt_sat=86.1% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t1 seed=11 ok=False gates=0 t=3.42s group=collision tilt_sat=86.5% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t1 seed=12 ok=False gates=0 t=2.78s group=collision tilt_sat=78.4% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t1 seed=13 ok=False gates=1 t=6.16s group=collision tilt_sat=89.9% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t1 seed=14 ok=False gates=0 t=2.78s group=collision tilt_sat=87.8% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t1 seed=15 ok=False gates=0 t=4.10s group=collision tilt_sat=90.2% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t1 seed=16 ok=False gates=0 t=3.68s group=collision tilt_sat=86.4% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t1 seed=17 ok=False gates=0 t=2.64s group=collision tilt_sat=84.1% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t1 seed=18 ok=False gates=0 t=3.74s group=collision tilt_sat=91.4% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t1 seed=19 ok=False gates=0 t=2.84s group=collision tilt_sat=79.6% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t10 seed= 0 ok=False gates=1 t=6.50s group=collision tilt_sat=92.3% thr_max=0.662 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t10 seed= 1 ok=False gates=4 t=17.08s group=collision tilt_sat=94.6% thr_max=0.667 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t10 seed= 2 ok=False gates=0 t=3.72s group=collision tilt_sat=88.7% thr_max=0.661 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t10 seed= 3 ok=False gates=1 t=6.62s group=collision tilt_sat=92.1% thr_max=0.665 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t10 seed= 4 ok=False gates=0 t=3.72s group=collision tilt_sat=89.8% thr_max=0.666 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t10 seed= 5 ok=False gates=4 t=17.12s group=collision tilt_sat=94.9% thr_max=0.662 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t10 seed= 6 ok=False gates=1 t=6.98s group=collision tilt_sat=93.1% thr_max=0.666 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t10 seed= 7 ok=False gates=0 t=2.96s group=collision tilt_sat=89.9% thr_max=0.670 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t10 seed= 8 ok=False gates=2 t=7.72s group=collision tilt_sat=91.7% thr_max=0.667 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t10 seed= 9 ok=False gates=3 t=13.84s group=collision tilt_sat=94.5% thr_max=0.671 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t10 seed=10 ok=False gates=1 t=6.04s group=collision tilt_sat=92.7% thr_max=0.667 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t10 seed=11 ok=True gates=5 t=17.12s group=success tilt_sat=95.4% thr_max=0.665 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t10 seed=12 ok=False gates=1 t=6.44s group=collision tilt_sat=91.3% thr_max=0.662 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t10 seed=13 ok=False gates=0 t=3.80s group=collision tilt_sat=90.5% thr_max=0.662 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t10 seed=14 ok=False gates=3 t=10.54s group=collision tilt_sat=94.7% thr_max=0.660 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t10 seed=15 ok=False gates=3 t=11.00s group=collision tilt_sat=94.5% thr_max=0.669 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t10 seed=16 ok=False gates=0 t=3.76s group=collision tilt_sat=85.1% thr_max=0.663 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t10 seed=17 ok=False gates=1 t=5.96s group=collision tilt_sat=94.0% thr_max=0.663 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t10 seed=18 ok=False gates=4 t=17.08s group=collision tilt_sat=95.3% thr_max=0.670 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t10 seed=19 ok=False gates=1 t=6.12s group=collision tilt_sat=91.5% thr_max=0.664 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t30 seed= 0 ok=False gates=1 t=6.96s group=collision tilt_sat=92.0% thr_max=0.614 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t30 seed= 1 ok=False gates=2 t=7.80s group=collision tilt_sat=92.6% thr_max=0.617 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t30 seed= 2 ok=False gates=3 t=10.48s group=collision tilt_sat=94.5% thr_max=0.613 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t30 seed= 3 ok=False gates=4 t=17.12s group=collision tilt_sat=94.9% thr_max=0.616 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t30 seed= 4 ok=False gates=3 t=10.78s group=collision tilt_sat=92.4% thr_max=0.617 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t30 seed= 5 ok=False gates=4 t=16.08s group=collision tilt_sat=95.4% thr_max=0.614 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t30 seed= 6 ok=False gates=2 t=9.10s group=collision tilt_sat=92.7% thr_max=0.617 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t30 seed= 7 ok=True gates=5 t=17.28s group=success tilt_sat=95.1% thr_max=0.620 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t30 seed= 8 ok=False gates=2 t=7.72s group=collision tilt_sat=92.7% thr_max=0.617 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t30 seed= 9 ok=False gates=1 t=7.06s group=collision tilt_sat=92.1% thr_max=0.621 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t30 seed=10 ok=True gates=5 t=17.14s group=success tilt_sat=95.4% thr_max=0.618 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t30 seed=11 ok=False gates=3 t=13.10s group=collision tilt_sat=95.1% thr_max=0.616 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t30 seed=12 ok=False gates=1 t=7.02s group=collision tilt_sat=92.9% thr_max=0.614 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t30 seed=13 ok=False gates=0 t=4.08s group=collision tilt_sat=89.7% thr_max=0.613 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t30 seed=14 ok=False gates=1 t=6.86s group=collision tilt_sat=93.0% thr_max=0.612 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t30 seed=15 ok=False gates=2 t=9.06s group=collision tilt_sat=90.7% thr_max=0.619 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t30 seed=16 ok=False gates=1 t=6.44s group=collision tilt_sat=94.4% thr_max=0.615 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t30 seed=17 ok=False gates=1 t=5.96s group=collision tilt_sat=92.3% thr_max=0.614 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t30 seed=18 ok=False gates=3 t=13.96s group=collision tilt_sat=94.1% thr_max=0.620 ring_min=nan
+[expF] T=18.75 d=1 k=1 r1_t30 seed=19 ok=False gates=3 t=10.76s group=collision tilt_sat=93.5% thr_max=0.615 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t1 seed= 0 ok=False gates=0 t=2.30s group=collision tilt_sat=81.7% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t1 seed= 1 ok=False gates=0 t=3.12s group=collision tilt_sat=82.1% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t1 seed= 2 ok=False gates=0 t=2.68s group=collision tilt_sat=85.8% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t1 seed= 3 ok=False gates=0 t=0.92s group=fall tilt_sat=63.0% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t1 seed= 4 ok=False gates=0 t=0.98s group=fall tilt_sat=65.3% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t1 seed= 5 ok=False gates=1 t=6.64s group=collision tilt_sat=91.3% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t1 seed= 6 ok=False gates=0 t=1.14s group=fall tilt_sat=77.2% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t1 seed= 7 ok=False gates=3 t=13.92s group=out_of_bounds tilt_sat=94.1% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t1 seed= 8 ok=True gates=5 t=17.22s group=success tilt_sat=93.3% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t1 seed= 9 ok=False gates=1 t=6.62s group=collision tilt_sat=89.7% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t1 seed=10 ok=False gates=3 t=12.40s group=collision tilt_sat=91.3% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t1 seed=11 ok=False gates=0 t=3.86s group=collision tilt_sat=78.2% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t1 seed=12 ok=False gates=0 t=3.66s group=collision tilt_sat=80.9% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t1 seed=13 ok=True gates=5 t=17.08s group=success tilt_sat=92.5% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t1 seed=14 ok=False gates=0 t=1.20s group=fall tilt_sat=78.3% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t1 seed=15 ok=False gates=0 t=3.52s group=collision tilt_sat=84.7% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t1 seed=16 ok=False gates=0 t=2.46s group=fall tilt_sat=77.2% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t1 seed=17 ok=False gates=0 t=3.04s group=collision tilt_sat=86.8% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t1 seed=18 ok=False gates=0 t=3.30s group=fall tilt_sat=81.8% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t1 seed=19 ok=False gates=0 t=3.72s group=collision tilt_sat=86.6% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t10 seed= 0 ok=False gates=1 t=6.42s group=collision tilt_sat=93.8% thr_max=0.662 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t10 seed= 1 ok=True gates=5 t=17.46s group=success tilt_sat=96.3% thr_max=0.667 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t10 seed= 2 ok=True gates=5 t=17.28s group=success tilt_sat=96.8% thr_max=0.661 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t10 seed= 3 ok=False gates=3 t=13.72s group=collision tilt_sat=96.1% thr_max=0.665 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t10 seed= 4 ok=True gates=5 t=17.24s group=success tilt_sat=96.2% thr_max=0.666 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t10 seed= 5 ok=True gates=5 t=17.32s group=success tilt_sat=96.7% thr_max=0.662 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t10 seed= 6 ok=True gates=5 t=17.34s group=success tilt_sat=96.4% thr_max=0.666 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t10 seed= 7 ok=False gates=1 t=6.48s group=collision tilt_sat=93.8% thr_max=0.670 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t10 seed= 8 ok=True gates=5 t=17.28s group=success tilt_sat=96.4% thr_max=0.667 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t10 seed= 9 ok=True gates=5 t=17.08s group=success tilt_sat=97.0% thr_max=0.671 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t10 seed=10 ok=True gates=5 t=17.24s group=success tilt_sat=95.8% thr_max=0.667 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t10 seed=11 ok=False gates=1 t=6.52s group=collision tilt_sat=92.9% thr_max=0.665 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t10 seed=12 ok=True gates=5 t=17.28s group=success tilt_sat=96.3% thr_max=0.662 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t10 seed=13 ok=False gates=3 t=13.82s group=collision tilt_sat=96.5% thr_max=0.662 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t10 seed=14 ok=True gates=5 t=17.32s group=success tilt_sat=96.7% thr_max=0.660 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t10 seed=15 ok=True gates=5 t=17.28s group=success tilt_sat=96.5% thr_max=0.669 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t10 seed=16 ok=False gates=1 t=6.46s group=collision tilt_sat=93.2% thr_max=0.663 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t10 seed=17 ok=True gates=5 t=17.38s group=success tilt_sat=96.2% thr_max=0.663 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t10 seed=18 ok=False gates=1 t=6.82s group=collision tilt_sat=93.3% thr_max=0.670 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t10 seed=19 ok=True gates=5 t=17.30s group=success tilt_sat=96.4% thr_max=0.664 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t30 seed= 0 ok=False gates=1 t=6.44s group=collision tilt_sat=93.8% thr_max=0.614 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t30 seed= 1 ok=False gates=3 t=13.76s group=collision tilt_sat=95.2% thr_max=0.617 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t30 seed= 2 ok=False gates=3 t=13.72s group=collision tilt_sat=95.3% thr_max=0.613 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t30 seed= 3 ok=False gates=1 t=6.86s group=collision tilt_sat=92.7% thr_max=0.616 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t30 seed= 4 ok=True gates=5 t=17.28s group=success tilt_sat=95.4% thr_max=0.617 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t30 seed= 5 ok=False gates=1 t=6.92s group=collision tilt_sat=93.1% thr_max=0.614 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t30 seed= 6 ok=False gates=1 t=6.88s group=collision tilt_sat=93.0% thr_max=0.617 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t30 seed= 7 ok=False gates=1 t=6.56s group=collision tilt_sat=94.8% thr_max=0.620 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t30 seed= 8 ok=False gates=1 t=6.90s group=collision tilt_sat=93.3% thr_max=0.617 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t30 seed= 9 ok=False gates=3 t=13.78s group=collision tilt_sat=94.5% thr_max=0.621 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t30 seed=10 ok=False gates=1 t=6.90s group=collision tilt_sat=93.0% thr_max=0.618 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t30 seed=11 ok=True gates=5 t=17.10s group=success tilt_sat=96.6% thr_max=0.616 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t30 seed=12 ok=False gates=1 t=6.90s group=collision tilt_sat=91.3% thr_max=0.614 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t30 seed=13 ok=False gates=3 t=13.80s group=collision tilt_sat=95.2% thr_max=0.613 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t30 seed=14 ok=False gates=3 t=13.74s group=collision tilt_sat=95.2% thr_max=0.612 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t30 seed=15 ok=True gates=5 t=17.34s group=success tilt_sat=96.5% thr_max=0.619 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t30 seed=16 ok=False gates=1 t=6.60s group=collision tilt_sat=94.5% thr_max=0.615 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t30 seed=17 ok=True gates=5 t=17.40s group=success tilt_sat=95.5% thr_max=0.614 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t30 seed=18 ok=False gates=1 t=6.86s group=collision tilt_sat=93.6% thr_max=0.620 ring_min=nan
+[expF] T=18.75 d=1 k=1 r10_t30 seed=19 ok=False gates=3 t=13.84s group=collision tilt_sat=96.4% thr_max=0.615 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t1 seed= 0 ok=True gates=5 t=17.10s group=success tilt_sat=95.0% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t1 seed= 1 ok=True gates=5 t=17.16s group=success tilt_sat=95.3% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t1 seed= 2 ok=True gates=5 t=17.08s group=success tilt_sat=95.1% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t1 seed= 3 ok=True gates=5 t=17.12s group=success tilt_sat=94.3% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t1 seed= 4 ok=True gates=5 t=17.10s group=success tilt_sat=94.2% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t1 seed= 5 ok=True gates=5 t=17.14s group=success tilt_sat=95.1% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t1 seed= 6 ok=True gates=5 t=17.14s group=success tilt_sat=94.3% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t1 seed= 7 ok=True gates=5 t=17.16s group=success tilt_sat=93.6% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t1 seed= 8 ok=True gates=5 t=17.12s group=success tilt_sat=93.6% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t1 seed= 9 ok=False gates=0 t=3.70s group=collision tilt_sat=83.2% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t1 seed=10 ok=True gates=5 t=17.16s group=success tilt_sat=93.7% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t1 seed=11 ok=True gates=5 t=17.18s group=success tilt_sat=92.3% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t1 seed=12 ok=True gates=5 t=17.16s group=success tilt_sat=94.1% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t1 seed=13 ok=True gates=5 t=17.14s group=success tilt_sat=93.1% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t1 seed=14 ok=True gates=5 t=17.12s group=success tilt_sat=93.7% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t1 seed=15 ok=True gates=5 t=17.12s group=success tilt_sat=94.4% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t1 seed=16 ok=True gates=5 t=17.08s group=success tilt_sat=95.6% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t1 seed=17 ok=True gates=5 t=17.16s group=success tilt_sat=95.1% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t1 seed=18 ok=False gates=0 t=3.70s group=collision tilt_sat=86.5% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t1 seed=19 ok=True gates=5 t=17.16s group=success tilt_sat=93.2% thr_max=0.800 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t10 seed= 0 ok=False gates=1 t=6.54s group=collision tilt_sat=92.4% thr_max=0.662 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t10 seed= 1 ok=False gates=3 t=13.68s group=collision tilt_sat=95.0% thr_max=0.667 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t10 seed= 2 ok=True gates=5 t=17.12s group=success tilt_sat=95.9% thr_max=0.661 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t10 seed= 3 ok=True gates=5 t=17.12s group=success tilt_sat=96.3% thr_max=0.665 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t10 seed= 4 ok=True gates=5 t=17.20s group=success tilt_sat=95.7% thr_max=0.666 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t10 seed= 5 ok=True gates=5 t=17.18s group=success tilt_sat=95.1% thr_max=0.662 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t10 seed= 6 ok=True gates=5 t=17.18s group=success tilt_sat=94.5% thr_max=0.666 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t10 seed= 7 ok=True gates=5 t=17.20s group=success tilt_sat=95.3% thr_max=0.670 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t10 seed= 8 ok=True gates=5 t=17.16s group=success tilt_sat=95.8% thr_max=0.667 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t10 seed= 9 ok=True gates=5 t=17.18s group=success tilt_sat=95.7% thr_max=0.671 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t10 seed=10 ok=True gates=5 t=17.16s group=success tilt_sat=94.8% thr_max=0.667 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t10 seed=11 ok=True gates=5 t=17.10s group=success tilt_sat=95.7% thr_max=0.665 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t10 seed=12 ok=True gates=5 t=17.20s group=success tilt_sat=95.6% thr_max=0.662 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t10 seed=13 ok=True gates=5 t=17.20s group=success tilt_sat=94.8% thr_max=0.662 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t10 seed=14 ok=True gates=5 t=17.24s group=success tilt_sat=94.9% thr_max=0.660 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t10 seed=15 ok=True gates=5 t=17.18s group=success tilt_sat=95.7% thr_max=0.668 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t10 seed=16 ok=False gates=1 t=6.60s group=collision tilt_sat=89.4% thr_max=0.663 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t10 seed=17 ok=True gates=5 t=17.18s group=success tilt_sat=95.5% thr_max=0.663 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t10 seed=18 ok=True gates=5 t=17.20s group=success tilt_sat=96.2% thr_max=0.670 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t10 seed=19 ok=True gates=5 t=17.20s group=success tilt_sat=95.8% thr_max=0.664 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t30 seed= 0 ok=False gates=1 t=6.62s group=collision tilt_sat=92.7% thr_max=0.614 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t30 seed= 1 ok=False gates=3 t=13.78s group=collision tilt_sat=94.3% thr_max=0.617 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t30 seed= 2 ok=True gates=5 t=17.08s group=success tilt_sat=96.8% thr_max=0.613 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t30 seed= 3 ok=True gates=5 t=17.14s group=success tilt_sat=95.9% thr_max=0.616 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t30 seed= 4 ok=False gates=4 t=13.82s group=collision tilt_sat=95.1% thr_max=0.617 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t30 seed= 5 ok=True gates=5 t=17.16s group=success tilt_sat=96.6% thr_max=0.614 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t30 seed= 6 ok=False gates=1 t=6.76s group=collision tilt_sat=91.1% thr_max=0.617 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t30 seed= 7 ok=False gates=2 t=6.66s group=collision tilt_sat=92.2% thr_max=0.620 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t30 seed= 8 ok=True gates=5 t=17.18s group=success tilt_sat=95.8% thr_max=0.617 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t30 seed= 9 ok=True gates=5 t=17.12s group=success tilt_sat=96.7% thr_max=0.621 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t30 seed=10 ok=True gates=5 t=17.18s group=success tilt_sat=95.0% thr_max=0.618 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t30 seed=11 ok=True gates=5 t=17.18s group=success tilt_sat=96.0% thr_max=0.616 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t30 seed=12 ok=True gates=5 t=17.24s group=success tilt_sat=95.1% thr_max=0.614 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t30 seed=13 ok=True gates=5 t=17.18s group=success tilt_sat=95.2% thr_max=0.613 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t30 seed=14 ok=True gates=5 t=17.16s group=success tilt_sat=95.9% thr_max=0.612 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t30 seed=15 ok=True gates=5 t=17.20s group=success tilt_sat=95.2% thr_max=0.619 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t30 seed=16 ok=True gates=5 t=17.10s group=success tilt_sat=96.0% thr_max=0.615 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t30 seed=17 ok=True gates=5 t=17.24s group=success tilt_sat=95.8% thr_max=0.614 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t30 seed=18 ok=False gates=1 t=6.74s group=collision tilt_sat=91.1% thr_max=0.620 ring_min=nan
+[expF] T=18.75 d=1 k=1 r30_t30 seed=19 ok=True gates=5 t=17.26s group=success tilt_sat=95.2% thr_max=0.615 ring_min=nan
+
+## Experiment F, delay d=0 -- T_traj=18.75, k_end=1.0, level 0, seeds 0-19. R = diag(rpy_scale * [1,1,1], thrust_scale * 50).
+
+### success rate
+
+| rpy_weight_scale \ thrust_weight_scale | 1 | 10 | 30 |
+|---|---|---|---|
+| 1 | 100% (20/20) | 90% (18/20) | 95% (19/20) |
+| 10 | 100% (20/20) | 100% (20/20) | 95% (19/20) |
+| 30 | 100% (20/20) | 100% (20/20) | 100% (20/20) |
+
+### maximum commanded thrust over all episodes [N]
+
+| rpy_weight_scale \ thrust_weight_scale | 1 | 10 | 30 |
+|---|---|---|---|
+| 1 | 0.800 | 0.671 | 0.620 |
+| 10 | 0.800 | 0.671 | 0.620 |
+| 30 | 0.800 | 0.671 | 0.620 |
+
+### steps with |roll| or |pitch| command >= 0.49 rad
+
+| rpy_weight_scale \ thrust_weight_scale | 1 | 10 | 30 |
+|---|---|---|---|
+| 1 | 50.3% | 50.8% | 53.2% |
+| 10 | 8.1% | 7.3% | 7.7% |
+| 30 | 0.0% | 0.0% | 0.0% |
+
+### mean lap time of the successes [s]
+
+| rpy_weight_scale \ thrust_weight_scale | 1 | 10 | 30 |
+|---|---|---|---|
+| 1 | 17.12 | 17.12 | 17.12 |
+| 10 | 17.14 | 17.15 | 17.15 |
+| 30 | 17.12 | 17.12 | 17.12 |
+
+### mean gates passed, all episodes
+
+| rpy_weight_scale \ thrust_weight_scale | 1 | 10 | 30 |
+|---|---|---|---|
+| 1 | 5.00 | 4.70 | 4.90 |
+| 10 | 5.00 | 5.00 | 4.90 |
+| 30 | 5.00 | 5.00 | 5.00 |
+
+### failure causes
+
+| rpy_weight_scale \ thrust_weight_scale | 1 | 10 | 30 |
+|---|---|---|---|
+| 1 | - | collision:2 | collision:1 |
+| 10 | - | - | collision:1 |
+| 30 | - | - | - |
+
+## Experiment F, delay d=1 -- T_traj=18.75, k_end=1.0, level 0, seeds 0-19. R = diag(rpy_scale * [1,1,1], thrust_scale * 50).
+
+### success rate
+
+| rpy_weight_scale \ thrust_weight_scale | 1 | 10 | 30 |
+|---|---|---|---|
+| 1 | 0% (0/20) | 5% (1/20) | 10% (2/20) |
+| 10 | 10% (2/20) | 65% (13/20) | 20% (4/20) |
+| 30 | 90% (18/20) | 85% (17/20) | 70% (14/20) |
+
+### maximum commanded thrust over all episodes [N]
+
+| rpy_weight_scale \ thrust_weight_scale | 1 | 10 | 30 |
+|---|---|---|---|
+| 1 | 0.800 | 0.671 | 0.621 |
+| 10 | 0.800 | 0.671 | 0.621 |
+| 30 | 0.800 | 0.671 | 0.621 |
+
+### steps with |roll| or |pitch| command >= 0.49 rad
+
+| rpy_weight_scale \ thrust_weight_scale | 1 | 10 | 30 |
+|---|---|---|---|
+| 1 | 86.7% | 93.5% | 93.8% |
+| 10 | 88.8% | 96.1% | 94.9% |
+| 30 | 94.0% | 95.3% | 95.4% |
+
+### mean lap time of the successes [s]
+
+| rpy_weight_scale \ thrust_weight_scale | 1 | 10 | 30 |
+|---|---|---|---|
+| 1 | - | 17.12 | 17.21 |
+| 10 | 17.15 | 17.29 | 17.28 |
+| 30 | 17.13 | 17.18 | 17.17 |
+
+### mean gates passed, all episodes
+
+| rpy_weight_scale \ thrust_weight_scale | 1 | 10 | 30 |
+|---|---|---|---|
+| 1 | 0.150 | 1.75 | 2.35 |
+| 10 | 0.900 | 3.80 | 2.40 |
+| 30 | 4.50 | 4.50 | 4.10 |
+
+### failure causes
+
+| rpy_weight_scale \ thrust_weight_scale | 1 | 10 | 30 |
+|---|---|---|---|
+| 1 | collision:15, fall:5 | collision:19 | collision:18 |
+| 10 | collision:11, fall:6, out_of_bounds:1 | collision:7 | collision:16 |
+| 30 | collision:2 | collision:3 | collision:6 |

@@ -2,7 +2,7 @@
 
 Stack it directly on the base env and put any command-modifying wrapper *outside* it:
 
-    env = ThrustDegradeDelay(EpisodeLogger(base_env, out_dir, freq), ...)
+    env = ThrustDegradeDelay(EpisodeLogger(base_env, out_dir, freq), T_end=T_traj, ...)
 
 Saved arrays (T = number of env steps taken):
     t              (T,)    time of each step, n / freq

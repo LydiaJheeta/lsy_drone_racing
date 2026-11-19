@@ -13,7 +13,9 @@ Order of operations for the command applied at env step n (t = n / freq):
 `T_end` must be set to the reference duration (`T_traj`) of the experiment being run, so that the
 drone sees the whole degradation 1.0 -> k_end within one lap. With a fixed `T_end` (the old default
 of 18 s) a fast lap (small `T_traj`) only ever saw part of the drop. No single default can be
-right for every `T_traj`, so callers pass it explicitly (`T_end=T_traj`, `set_params(T_end=...)`).
+right for every `T_traj`, so it is a REQUIRED keyword-only argument: `T_end=T_traj` at
+construction, `set_params(T_end=...)` between the blocks of a sweep. Omitting it is a TypeError,
+and it cannot be filled by a misplaced positional argument.
 
 The wrapper contains no randomness. It accepts a `seed` that is forwarded to `env.reset`, so two runs
 with the same seed and the same commands are identical.
@@ -37,8 +39,9 @@ class ThrustDegradeDelay(gymnasium.Wrapper):
     def __init__(
         self,
         env: gymnasium.Env,
+        *,
+        T_end: float,
         k_end: float = 0.85,
-        T_end: float = 18.0,
         delay: int = 2,
         freq: float = 50.0,
         seed: int | None = None,
@@ -49,10 +52,11 @@ class ThrustDegradeDelay(gymnasium.Wrapper):
 
         Args:
             env: Env with a 4-element attitude `Box` action space.
+            T_end: Time in seconds over which k falls linearly from 1.0 to `k_end`. REQUIRED and
+                keyword-only: it must be the `T_traj` of the experiment, and no default can be
+                right for every `T_traj`, so there is deliberately none to pass silently.
+                `set_params` can change it between the blocks of a sweep.
             k_end: Thrust scale reached at `T_end` and kept afterwards.
-            T_end: Time in seconds over which k falls linearly from 1.0 to `k_end`. Set this to
-                the `T_traj` of the experiment (the default 18.0 only fits the nominal 18.75 s
-                reference); `set_params` can change it between the blocks of a sweep.
             delay: Command delay in env steps (2 steps at 50 Hz = 40 ms).
             freq: Env step frequency in Hz (time = steps / freq).
             seed: Default seed used by `reset()` when none is passed.

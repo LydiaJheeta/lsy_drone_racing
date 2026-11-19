@@ -1,0 +1,31 @@
+/home/lydiajheeta/repos/lsy_drone_racing/.pixi/envs/tests/lib/python3.13/site-packages/jax/_src/core.py:687: RuntimeWarning: overflow encountered in cast
+  c_arg = dtypes.canonicalize_value(arg)
+[ppo] results/ppo_smoke_20261113_155144 | 244 updates x 8192 steps = 1998848 timesteps
+[ppo] machine load at start: {'loadavg': [3.35, 2.33, 1.94], 'n_cpus': 8, 'torch_threads': 4, 'n_python_procs': 10, 'other_jobs': ['round4']}
+[   1/244] step      8192 sps    1408 (env    1550) eps   18 R  -10.34 gates 0.00 succ 0.000 fail 1.000 to 0.000
+[  10/244] step     81920 sps    7679 (env   13415) eps   69 R  -11.89 gates 0.00 succ 0.000 fail 1.000 to 0.000
+[  20/244] step    163840 sps    6947 (env   10831) eps   44 R  -12.03 gates 0.00 succ 0.000 fail 1.000 to 0.000
+[  30/244] step    245760 sps    6825 (env   11468) eps   31 R  -13.62 gates 0.00 succ 0.000 fail 1.000 to 0.000
+[  40/244] step    327680 sps    7624 (env   12691) eps   24 R  -13.71 gates 0.00 succ 0.000 fail 1.000 to 0.000
+[  50/244] step    409600 sps    8093 (env   13228) eps   35 R  -14.72 gates 0.00 succ 0.000 fail 1.000 to 0.000
+[  60/244] step    491520 sps    7374 (env   12758) eps   31 R  -14.23 gates 0.00 succ 0.000 fail 1.000 to 0.000
+[  70/244] step    573440 sps    7775 (env   13025) eps   49 R  -14.11 gates 0.00 succ 0.000 fail 1.000 to 0.000
+[  80/244] step    655360 sps    7969 (env   13033) eps   46 R  -13.85 gates 0.00 succ 0.000 fail 1.000 to 0.000
+[  90/244] step    737280 sps    7971 (env   12822) eps   20 R  -15.00 gates 0.00 succ 0.000 fail 1.000 to 0.000
+[ 100/244] step    819200 sps    4524 (env    7668) eps   17 R  -15.47 gates 0.00 succ 0.000 fail 1.000 to 0.000
+[ 110/244] step    901120 sps    7580 (env   12417) eps   18 R  -16.98 gates 0.00 succ 0.000 fail 1.000 to 0.000
+[ 120/244] step    983040 sps    6485 (env   10457) eps   28 R  -15.01 gates 0.00 succ 0.000 fail 1.000 to 0.000
+[ 130/244] step   1064960 sps    6857 (env   11501) eps   16 R  -14.04 gates 0.00 succ 0.000 fail 1.000 to 0.000
+[ 140/244] step   1146880 sps    5738 (env    9847) eps   24 R  -15.15 gates 0.00 succ 0.000 fail 0.958 to 0.042
+[ 150/244] step   1228800 sps    6466 (env   10620) eps   16 R  -19.59 gates 0.00 succ 0.000 fail 0.688 to 0.312
+[ 160/244] step   1310720 sps    3340 (env    5784) eps   14 R  -21.56 gates 0.00 succ 0.000 fail 0.786 to 0.214
+[ 170/244] step   1392640 sps    8111 (env   14190) eps   16 R  -19.01 gates 0.00 succ 0.000 fail 0.938 to 0.062
+[ 180/244] step   1474560 sps    7908 (env   12944) eps   23 R  -20.25 gates 0.00 succ 0.000 fail 0.609 to 0.391
+[ 190/244] step   1556480 sps    6780 (env   11224) eps   10 R  -17.02 gates 0.00 succ 0.000 fail 0.800 to 0.200
+[ 200/244] step   1638400 sps    8328 (env   13578) eps   17 R  -16.89 gates 0.00 succ 0.000 fail 0.941 to 0.059
+[ 210/244] step   1720320 sps    7951 (env   13486) eps    6 R  -17.16 gates 0.00 succ 0.000 fail 0.833 to 0.167
+[ 220/244] step   1802240 sps    7967 (env   13878) eps   11 R  -18.05 gates 0.00 succ 0.000 fail 0.909 to 0.091
+[ 230/244] step   1884160 sps    7839 (env   13427) eps   14 R  -18.90 gates 0.00 succ 0.000 fail 0.786 to 0.214
+[ 240/244] step   1966080 sps    7798 (env   11948) eps    9 R  -19.74 gates 0.00 succ 0.000 fail 0.889 to 0.111
+[ppo] done in 287.6s -> results/ppo_smoke_20261113_155144
+results/ppo_smoke_20261113_155144

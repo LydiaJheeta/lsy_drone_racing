@@ -254,7 +254,7 @@ def exp_b(out: Path, seeds: range = range(20), ts: tuple[float, ...] = T_VALUES,
     cfg = load_cfg(config)
     mpc = load_controller_cls(PROJECT_DIR / "my_mpc.py")
     env, lg = _build_env(cfg, "wrapped", (sub / "logs") if log_episodes else None,
-                         dict(k_end=1.0, delay=0))
+                         dict(k_end=1.0, delay=0, T_end=ts[0]))  # set per block below
     f = open(sub / "episodes.csv", "w", newline="")
     w = csv.DictWriter(f, fieldnames=GRID_FIELDS)
     w.writeheader()

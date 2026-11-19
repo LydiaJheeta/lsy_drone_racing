@@ -74,3 +74,37 @@ def test_controller_passes_u_weight_scale_to_the_solver(real_env, tmp_path, monk
     assert np.allclose(np.diag(W0)[nx:], [10.0, 10.0, 10.0, 500.0])
     u = c.compute_control(obs, info)
     assert u.shape == (4,) and np.all(np.isfinite(u))
+
+
+def test_rpy_and_thrust_weight_scales_are_independent_and_multiplicative(monkeypatch):
+    """R = u_weight_scale * diag(rpy_scale * [1,1,1], thrust_scale * 50) (experiment F)."""
+    import my_mpc
+    from crazyflow.dynamics import Dynamics, load_params
+
+    class FakeSolver:
+        def __init__(self, ocp, **kwargs):
+            self.ocp = ocp
+
+        def cost_set(self, stage, field, value):
+            pass
+
+    monkeypatch.setattr(my_mpc, "AcadosOcpSolver", FakeSolver)
+    params = load_params(Dynamics.so_rpy, "cf21B_500")
+
+    def diag_R(**kw):
+        _, ocp = my_mpc.create_ocp_solver(0.5, 25, params, **kw)
+        return np.diag(ocp.cost.W)[ocp.model.x.rows():]
+
+    assert np.allclose(diag_R(), [1.0, 1.0, 1.0, 50.0])
+    assert np.allclose(diag_R(rpy_weight_scale=10.0), [10.0, 10.0, 10.0, 50.0])  # thrust untouched
+    assert np.allclose(diag_R(thrust_weight_scale=30.0), [1.0, 1.0, 1.0, 1500.0])  # rpy untouched
+    assert np.allclose(diag_R(rpy_weight_scale=10.0, thrust_weight_scale=30.0),
+                       [10.0, 10.0, 10.0, 1500.0])
+    # the three factors are multiplicative, so u_weight_scale=s == both scales = s
+    assert np.allclose(diag_R(u_weight_scale=3.0),
+                       diag_R(rpy_weight_scale=3.0, thrust_weight_scale=3.0))
+    assert np.allclose(diag_R(u_weight_scale=2.0, rpy_weight_scale=5.0),
+                       diag_R(rpy_weight_scale=10.0, thrust_weight_scale=2.0))
+    for bad in ({"rpy_weight_scale": 0.0}, {"thrust_weight_scale": -1.0}):
+        with pytest.raises(ValueError):
+            my_mpc.create_ocp_solver(0.5, 25, params, **bad)

@@ -45,7 +45,7 @@ def test_scaling_hits_only_thrust_and_follows_k_of_t():
 
 def test_delay_is_d_steps_and_first_command_repeats():
     env = FakeEnv(n_steps=100)
-    w = ThrustDegradeDelay(env, k_end=1.0, delay=2)
+    w = ThrustDegradeDelay(env, k_end=1.0, T_end=18.0, delay=2)
     w.reset(seed=0)
     cmds = [_cmd(i, 0.3 + 0.01 * i) for i in range(8)]
     for c in cmds:
@@ -56,7 +56,7 @@ def test_delay_is_d_steps_and_first_command_repeats():
 
 def test_clip_to_env_thrust_limits_after_scaling():
     env = FakeEnv()
-    w = ThrustDegradeDelay(env, k_end=1.0, delay=0)
+    w = ThrustDegradeDelay(env, k_end=1.0, T_end=18.0, delay=0)
     w.reset(seed=0)
     w.step(np.array([0, 0, 0, 5.0]))
     w.step(np.array([0, 0, 0, 0.001]))
@@ -67,7 +67,7 @@ def test_clip_to_env_thrust_limits_after_scaling():
 def test_same_seed_is_reproducible_and_seed_is_forwarded():
     def run(seed):
         env = FakeEnv(n_steps=50)
-        w = ThrustDegradeDelay(env, k_end=0.85, delay=2, seed=seed)
+        w = ThrustDegradeDelay(env, k_end=0.85, T_end=18.0, delay=2, seed=seed)
         obs, _ = w.reset()  # default seed from the constructor
         out = [obs["pos"].copy()]
         for i in range(10):
@@ -78,7 +78,8 @@ def test_same_seed_is_reproducible_and_seed_is_forwarded():
     a, b = run(7), run(7)
     assert a[0] == [7] and b[0] == [7]
     assert np.array_equal(a[1], b[1]) and np.array_equal(a[2], b[2])
-    assert ThrustDegradeDelay(FakeEnv(), seed=7).reset(seed=3) is not None  # explicit seed wins
+    w = ThrustDegradeDelay(FakeEnv(), T_end=18.0, seed=7)
+    assert w.reset(seed=3) is not None  # an explicit seed wins over the constructor's
 
 
 def test_reset_clears_buffer_and_clock():
@@ -95,7 +96,7 @@ def test_reset_clears_buffer_and_clock():
 
 def test_hover_fill_applies_hover_during_the_first_d_steps():
     env = FakeEnv(n_steps=100)
-    w = ThrustDegradeDelay(env, k_end=1.0, delay=2, fill="hover", hover_thrust=0.4258)
+    w = ThrustDegradeDelay(env, k_end=1.0, T_end=18.0, delay=2, fill="hover", hover_thrust=0.4258)
     w.reset(seed=0)
     cmds = [_cmd(i, 0.7) for i in range(6)]
     for c in cmds:
@@ -105,12 +106,12 @@ def test_hover_fill_applies_hover_during_the_first_d_steps():
     for n in range(2, 6):  # afterwards identical to the default behaviour
         assert np.allclose(env.received[n], cmds[n - 2], atol=1e-6)
     with pytest.raises(ValueError):
-        ThrustDegradeDelay(FakeEnv(), fill="hover")  # hover needs hover_thrust
+        ThrustDegradeDelay(FakeEnv(), T_end=18.0, fill="hover")  # hover needs hover_thrust
 
 
 def test_set_params_applies_from_next_reset():
     env = FakeEnv(n_steps=100)
-    w = ThrustDegradeDelay(env, k_end=1.0, delay=0)
+    w = ThrustDegradeDelay(env, k_end=1.0, T_end=18.0, delay=0)
     w.set_params(k_end=1.0, delay=3)
     w.reset(seed=0)
     cmds = [_cmd(i, 0.3 + 0.01 * i) for i in range(6)]
@@ -150,3 +151,14 @@ def test_new_T_end_is_applied_to_the_commands_of_the_next_episode():
         w.step(_cmd(n, 0.6))
     assert env.received[25][3] == pytest.approx(0.6 * 0.75, rel=1e-6)  # t=0.5 s -> k=0.75
     assert env.received[50][3] == pytest.approx(0.6 * 0.5, rel=1e-6)  # t=1.0 s -> k=k_end
+
+
+def test_T_end_is_required_and_cannot_be_passed_positionally():
+    """No default: a wrong T_end can no longer slip through unnoticed (round 4)."""
+    with pytest.raises(TypeError):
+        ThrustDegradeDelay(FakeEnv())  # T_end missing
+    with pytest.raises(TypeError):
+        ThrustDegradeDelay(FakeEnv(), 0.85)  # a positional k_end would have become T_end
+    with pytest.raises(ValueError):
+        ThrustDegradeDelay(FakeEnv(), T_end=0.0)  # still validated
+    assert ThrustDegradeDelay(FakeEnv(), T_end=12.0).T_end == 12.0

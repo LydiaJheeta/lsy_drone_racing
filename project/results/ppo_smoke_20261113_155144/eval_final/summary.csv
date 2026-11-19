@@ -1,0 +1,2 @@
+T_traj,condition,n,n_success,success_rate,lap_time_mean_s,lap_time_std_s,gates_mean_all,gates_mean_failed,failure_causes
+0.0,nominal,20,0,0.0,nan,nan,0.0,0.0,"collision:6, timeout:14"

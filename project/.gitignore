@@ -11,3 +11,6 @@ __pycache__/
 # These params.json hold an absolute local path ("controller": "/home/<user>/...") -> keep local.
 results/ablation_*/params.json
 results/eval_*/params.json
+
+# PPO checkpoints (binary, re-creatable from progress.csv + meta.json)
+results/**/*.pt
